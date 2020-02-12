@@ -1,0 +1,28 @@
+2020-01-08 02:22:35,520 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-01-08 02:22:35,521 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-01-08 02:22:35,801 [    281]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 256 ms
+2020-01-08 02:22:36,020 [    500]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-01-08 02:22:36,273 [    753]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 253 ms
+2020-01-08 02:22:36,273 [    753]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-01-08 02:22:36,379 [    859]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-01-08 02:22:36,505 [    985]   INFO - .incremental.IncProjectBuilder - Building project; isRebuild:true; isMake:false parallel compilation:false
+2020-01-08 02:22:36,508 [    988]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JVM: true
+2020-01-08 02:22:36,508 [    988]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JS: false
+2020-01-08 02:22:36,517 [    997]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin compiler daemon enabled: true
+2020-01-08 02:22:36,517 [    997]   INFO - kotlin.jps.build.KotlinBuilder - Label in local history: build started b7384cf2
+2020-01-08 02:22:36,530 [   1010]   INFO - s.index.CompilerReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException
+2020-01-08 02:22:36,689 [   1169]   INFO - .incremental.IncProjectBuilder - Cleaned output directories in 13 ms
+2020-01-08 02:22:38,575 [   3055]   INFO - kotlin.jps.build.KotlinBuilder - KotlinTargetsIndex created in 1344 ms
+2020-01-08 02:22:38,585 [   3065]   INFO - kotlin.jps.build.KotlinBuilder - Total Kotlin global compile context initialization time: 1374 ms
+2020-01-08 02:22:38,628 [   3108]   INFO - s.incremental.java.JavaBuilder - Compiling 7 java files; module: AST
+2020-01-08 02:22:40,190 [   4670]   INFO - rains.jps.cmdline.BuildSession - Build duration: Builder 'Java' took 1 s 459 ms; 7 sources processed (208 ms per file)
+2020-01-08 02:22:40,193 [   4673]   INFO - s.incremental.java.JavaBuilder - javac 1.8.0_141 was used to compile [AST]
+2020-01-08 02:22:40,653 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-01-08 02:22:40,654 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-01-08 02:22:40,888 [    235]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 211 ms
+2020-01-08 02:22:41,290 [    637]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-01-08 02:22:41,478 [    825]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 188 ms
+2020-01-08 02:22:41,478 [    825]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-01-08 02:22:41,548 [    895]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-01-08 02:22:41,640 [    987]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 988 ms
+2020-01-08 02:34:50,036 [ 729383]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.

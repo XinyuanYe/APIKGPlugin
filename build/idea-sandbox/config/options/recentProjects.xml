@@ -1,0 +1,43 @@
+<application>
+  <component name="RecentProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="$USER_HOME$/Documents/ANU/ANU Honours Project/Code" />
+        <option value="$USER_HOME$/IdeaProjects/XYXY" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="$USER_HOME$/Documents/ANU/ANU Honours Project/Code" />
+      </list>
+    </option>
+    <option name="lastPath" value="$USER_HOME$/Documents/ANU/ANU Honours Project/Code" />
+    <option name="pid" value="" />
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Documents/ANU/ANU Honours Project/Code">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-183.6156.11" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1581488426105" />
+              <option name="buildTimestamp" value="1553518698572" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/IdeaProjects/XYXY">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="IC-183.6156.11" />
+              <option name="productionCode" value="IC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1581482403008" />
+              <option name="buildTimestamp" value="1553518734090" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

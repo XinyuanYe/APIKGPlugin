@@ -1,0 +1,18 @@
+<idea-plugin>
+  <version>1.0-SNAPSHOT</version>
+  <change-notes>
+      Add change notes here.&lt;br&gt;
+      &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
+  <idea-version since-build="183.6156" until-build="183.*"/>
+  <id>com.your.company.my_gradle_plugin</id>
+  <name>Plugin display name here</name>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+  <description>
+    Enter short description for your plugin here.&lt;br&gt;
+    &lt;em&gt;most HTML tags may be used&lt;/em&gt;
+    </description>
+  <extensions defaultExtensionNs="com.intellij">
+    <localInspection language="JAVA" displayName="SDK: using KG inspection" groupPath="Java" groupBundle="messages.InspectionsBundle" groupKey="group.names.probable.bugs" enabledByDefault="true" level="WARNING" implementationClass="KGInspection"/>
+  </extensions>
+  <actions/>
+</idea-plugin>
