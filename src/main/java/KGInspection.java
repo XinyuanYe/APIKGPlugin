@@ -1,9 +1,10 @@
 import KGtree.KGnode;
-import com.intellij.codeInspection.AbstractBaseJavaLocalInspectionTool;
-import com.intellij.codeInspection.InspectionsBundle;
-import com.intellij.codeInspection.ProblemsHolder;
+import com.intellij.codeInspection.*;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
+import com.intellij.psi.tree.IElementType;
+import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,15 +16,16 @@ import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
 
 public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     private static final Logger LOG = Logger.getInstance(KGInspection.class);
+    private final CriQuickFix myQuickFix = new CriQuickFix();
 
-    // a simple data structure to store the information
-    // kgnode
-    static KGnode kgTree = KGnode.newNode("root", null);
+    // Defines the text of the quick fix intention
+    public static final String QUICK_FIX_NAME = "SDK: This is a warning! Use KG to fix this!";
 
     // count for precise recording
     static int methodCount = 1;
     static int declarationStatementCount = 1;
-
+    static int expressionStatementCount = 1;
+    static int forStatementCount = 1;
     /**
      * This method is overridden to provide a custom visitor
      * that inspects AST/PSI Tree from Method
@@ -39,12 +41,11 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
         return new JavaElementVisitor() {
 
+
             /**
              * This string defines the short message shown to a user signaling the inspection
              * found a problem. It reuses a string from the inspections bundle.
              */
-//            @NonNls
-//            private final String DESCRIPTION_TEMPLATE = "SDK " + InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
             @NonNls
             private final String DESCRIPTION_TEMPLATE = "SDK inspection using KG!";
 
@@ -53,95 +54,100 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             @Override
             public void visitMethod(PsiMethod method) {
                 super.visitMethod(method);
+
+                // a simple data structure to store the information
+                // kgnode
+                KGnode kgTree = KGnode.newNode("root", null);
                 // first level of KG tree is ROOT - ignore this level
                 // second level of KG tree is all the method, this is kgTree.children
 
-                // add this method to KG Tree
-                if (!checkDuplicate(kgTree, method.getName())) {
-                    String methodDeclaration = "Method (" + methodCount + ")";
-                    // create a KGnode object for this methodDeclaration
-                    KGnode kg_methodDeclaration = KGnode.newNode(methodDeclaration, method.getName());
-                    // add to KG tree
-                    kgTree.children.add(kg_methodDeclaration);
-                    // get the index of current methodDeclaration, so its corresponding elements
-                    // can be added correctly in the KG tree
-                    int kg_method_index = kgTree.children.indexOf(kg_methodDeclaration);
+//                String methodDeclaration = "Method (" + methodCount + ")";
+                String methodDeclaration = "Method";
 
-                    // get the current method node, and add all its information
-                    // under this node
-                    KGnode currentMethod = kgTree.children.get(kg_method_index);
+                // create a KGnode object for this methodDeclaration
+                KGnode kg_methodDeclaration = KGnode.newNode(methodDeclaration, method.getName());
+                // add to KG tree
+                kgTree.children.add(kg_methodDeclaration);
+                // get the index of current methodDeclaration, so its corresponding elements
+                // can be added correctly in the KG tree
+                int kg_method_index = kgTree.children.indexOf(kg_methodDeclaration);
 
-                    // NAME, RETURN_TYPE, PARAMETERS, and BODY is one level below current method node
-                    // i.e. currentMethod.children
+                // get the current method node, and add all its information
+                // under this node
+                KGnode currentMethod = kgTree.children.get(kg_method_index);
 
-                    // create a KGnode object for NAME of current method
-                    KGnode kg_methodName = KGnode.newNode("NAME", null);
-                    currentMethod.children.add(kg_methodName);
-                    int kg_methodName_index = currentMethod.children.indexOf(kg_methodName);
-                    // get method name
-                    String methodName = method.getName();
-                    // add method name under the NAME node
-                    currentMethod.children.get(kg_methodName_index).children.add(KGnode.newNode(methodName, null));
+                // NAME, RETURN_TYPE, PARAMETERS, and BODY is one level below current method node
+                // i.e. currentMethod.children
 
-                    // create a KGnode object for RETURN_TYPE of current method
-                    KGnode kg_returnType = KGnode.newNode("RETURN_TYPE", null);
-                    currentMethod.children.add(kg_returnType);
-                    int kg_returnType_index = currentMethod.children.indexOf(kg_returnType);
-                    // get method return type
-                    String methodType = method.getReturnType().getPresentableText();
-                    currentMethod.children.get(kg_returnType_index).children.add(KGnode.newNode(methodType, null));
+                // create a KGnode object for NAME of current method
+                KGnode kg_methodName = KGnode.newNode("NAME", null);
+                currentMethod.children.add(kg_methodName);
+                int kg_methodName_index = currentMethod.children.indexOf(kg_methodName);
+                // get method name
+                String methodName = method.getName();
+                // add method name under the NAME node
+                currentMethod.children.get(kg_methodName_index).children.add(KGnode.newNode(methodName, null));
 
-                    // create a KGnode object for PARAMETERS of current method
-                    KGnode kg_methodParameters = KGnode.newNode("PARAMETERS", null);
-                    currentMethod.children.add(kg_methodParameters);
-                    int kg_methodParameters_index = currentMethod.children.indexOf(kg_methodParameters);
+                // create a KGnode object for RETURN_TYPE of current method
+                KGnode kg_returnType = KGnode.newNode("RETURN_TYPE", null);
+                currentMethod.children.add(kg_returnType);
+                int kg_returnType_index = currentMethod.children.indexOf(kg_returnType);
+                // get method return type
+                String methodType = method.getReturnType().getPresentableText();
+                currentMethod.children.get(kg_returnType_index).children.add(KGnode.newNode(methodType, null));
 
-                    //check if method has parameters
-                    if (method.hasParameters()) {
-                        // get parameters types
-                        PsiParameter[] parameters = method.getParameterList().getParameters();
-                        for (int i = 0; i < parameters.length; i++) {
-                            String parameterName = parameters[i].getName();
-                            KGnode kg_parameterName = KGnode.newNode(parameterName, null);
+                // create a KGnode object for PARAMETERS of current method
+                KGnode kg_methodParameters = KGnode.newNode("PARAMETERS", null);
+                currentMethod.children.add(kg_methodParameters);
+                int kg_methodParameters_index = currentMethod.children.indexOf(kg_methodParameters);
 
-                            currentMethod.children.get(kg_methodParameters_index).children.add(kg_parameterName);
-                            int kg_parameterName_index = currentMethod.children.get(kg_methodParameters_index).children.indexOf(kg_parameterName);
+                //check if method has parameters
+                if (method.hasParameters()) {
+                    // get parameters types
+                    PsiParameter[] parameters = method.getParameterList().getParameters();
+                    for (int i = 0; i < parameters.length; i++) {
+                        String parameterName = parameters[i].getName();
+                        KGnode kg_parameterName = KGnode.newNode(parameterName, null);
 
-                            String parameterType = parameters[i].getType().getPresentableText();
-                            currentMethod.children.get(kg_methodParameters_index).children.get(kg_parameterName_index).children.add(KGnode.newNode(parameterType, null));
-                        }
+                        currentMethod.children.get(kg_methodParameters_index).children.add(kg_parameterName);
+                        int kg_parameterName_index = currentMethod.children.get(kg_methodParameters_index).children.indexOf(kg_parameterName);
+
+                        String parameterType = parameters[i].getType().getPresentableText();
+                        currentMethod.children.get(kg_methodParameters_index).children.get(kg_parameterName_index).children.add(KGnode.newNode(parameterType, null));
                     }
-                    else {
-                        // add NULL under PARAMETERS node
-                        currentMethod.children.get(kg_methodParameters_index).children.add(KGnode.newNode("NULL", null));
-                    }
-
-                    // create a KGnode object for BODY of current method
-                    KGnode kg_body = KGnode.newNode("BODY", null);
-                    currentMethod.children.add(kg_body);
-                    int kg_body_index = currentMethod.children.indexOf(kg_body);
-
-                    // get the current method's BODY node, and add all its information
-                    // under this BODY node
-                    KGnode currentBody = currentMethod.children.get(kg_body_index);
-
-                    // body of the function
-                    // check if there is a body first, to avoid NULL
-                    if (!method.getBody().isEmpty()) {
-                        PsiStatement[] statements = method.getBody().getStatements();
-                        for (int i=0; i<statements.length; i++) {
-                            PsiStatement statement = statements[i];
-                            whatStatement(currentBody, statement);
-
-                        }
-
-                    }
-                    // increment the count so the naming for next method is correct
-                    // reset declarationStatementCount for new method
-                    methodCount += 1;
-                    declarationStatementCount = 1;
-                    KGnode.LevelOrderTraversal(kgTree);
                 }
+                else {
+                    // add NULL under PARAMETERS node
+                    currentMethod.children.get(kg_methodParameters_index).children.add(KGnode.newNode("NULL", null));
+                }
+
+                // create a KGnode object for BODY of current method
+                KGnode kg_body = KGnode.newNode("BODY", null);
+                currentMethod.children.add(kg_body);
+                int kg_body_index = currentMethod.children.indexOf(kg_body);
+
+                // get the current method's BODY node, and add all its information
+                // under this BODY node
+                KGnode currentBody = currentMethod.children.get(kg_body_index);
+
+                // body of the function
+                // check if there is a body first, to avoid NULL
+                if (!method.getBody().isEmpty()) {
+                    PsiStatement[] statements = method.getBody().getStatements();
+                    for (int i=0; i<statements.length; i++) {
+                        PsiStatement statement = statements[i];
+                        whatStatement(currentBody, statement);
+
+                    }
+
+                }
+                // increment the count so the naming for next method is correct
+                // reset declarationStatementCount for new method
+                methodCount += 1;
+                declarationStatementCount = 1;
+                expressionStatementCount = 1;
+                KGnode.LevelOrderTraversal(kgTree);
+                holder.registerProblem(method,DESCRIPTION_TEMPLATE,myQuickFix);
             }
         };
     }
@@ -172,6 +178,45 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             }
             // increment the count so the naming for next declaration statement is correct
             declarationStatementCount += 1;
+        }
+        else if (statement instanceof PsiExpressionStatement) {
+            // create a KGnode object for this expression statement
+            KGnode kg_expressionStatement = KGnode.newNode("ExpressionStatement" + "(" + expressionStatementCount + ")", null);
+            kgTree.children.add(kg_expressionStatement);
+            int kg_expressionStatement_index = kgTree.children.indexOf(kg_expressionStatement);
+
+            // get the current method's BODY's expression statement node, and add all its information
+            // under this node
+            KGnode currentExpressionStatement = kgTree.children.get(kg_expressionStatement_index);
+
+            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) statement;
+            PsiElement[] expressions = psiExpressionStatement.getChildren();
+            for (int i=0; i<expressions.length; i++) {
+                PsiElement expression = expressions[i];
+                whatElement(currentExpressionStatement, expression);
+            }
+            // increment the count so the naming for next declaration statement is correct
+            expressionStatementCount += 1;
+        }
+        else if (statement instanceof PsiForStatement) {
+            // create a KGnode object for this for statement
+            KGnode kg_forStatement = KGnode.newNode("ForStatement" + "(" + forStatementCount + ")", null);
+            kgTree.children.add(kg_forStatement);
+            int kg_forStatement_index = kgTree.children.indexOf(kg_forStatement);
+
+            // get the current method's BODY's for statement node, and add all its information
+            // under this node
+
+            KGnode currentForStatement = kgTree.children.get(kg_forStatement_index);
+
+            PsiForStatement psiForStatement = (PsiForStatement) statement;
+            PsiElement[] children = psiForStatement.getChildren();
+            for (int i=0; i<children.length; i++) {
+                PsiElement child = children[i];
+                whatElement(currentForStatement, child);
+            }
+
+
         }
         else if (statement instanceof PsiReturnStatement) {
             // create a KGnode object for this RETURN statement
@@ -251,7 +296,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 getArguments(kg_currentArguments, psiExpressions);
             }
             else {
-                kg_currentArguments.children.add(KGnode.newNode("NULL", null));
+                kg_currentArguments.children.add(KGnode.newNode("null", null));
             }
         }
         else if (psiElement instanceof PsiMethodCallExpression) {
@@ -299,6 +344,89 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
             kgTree.children.get(kg_referenceElement_index).children.add(KGnode.newNode(referenceElement_name,null));
         }
+        else if (psiElement instanceof PsiLiteralExpression) {
+            // create a KGnode object for Literal Expression
+            KGnode kg_literalExpression = KGnode.newNode("LiteralExpression", null);
+            kgTree.children.add(kg_literalExpression);
+            int kg_literalExpression_index = kgTree.children.indexOf(kg_literalExpression);
+
+            KGnode current_literalExpression = kgTree.children.get(kg_literalExpression_index);
+
+            PsiLiteralExpression psiLiteralExpression = (PsiLiteralExpression) psiElement;
+            current_literalExpression.children.add(KGnode.newNode(psiLiteralExpression.getText(), null));
+        }
+        else if (psiElement instanceof PsiBinaryExpression) {
+            // create a KGnode object for Binary Expression
+            KGnode kg_binaryExpression = KGnode.newNode("BinaryExpression", null);
+            kgTree.children.add(kg_binaryExpression);
+            int kg_binaryExpression_index = kgTree.children.indexOf(kg_binaryExpression);
+
+            KGnode current_binaryExpression = kgTree.children.get(kg_binaryExpression_index);
+
+            PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) psiElement;
+            current_binaryExpression.children.add(KGnode.newNode(psiBinaryExpression.getText(), null));
+        }
+        else if (psiElement instanceof PsiExpressionStatement) {
+            // create a KGnode object for ExpressionStatement
+            KGnode kg_expressionStatement = KGnode.newNode("ExpressionStatement", null);
+            kgTree.children.add(kg_expressionStatement);
+            int kg_expressionStatement_index = kgTree.children.indexOf(kg_expressionStatement);
+
+            KGnode current_expressionStatement = kgTree.children.get(kg_expressionStatement_index);
+
+            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
+            PsiElement[] children = psiExpressionStatement.getChildren();
+            for (int i=0; i<children.length; i++) {
+                PsiElement child = children[i];
+                whatElement(current_expressionStatement, child);
+            }
+        }
+        else if (psiElement instanceof PsiAssignmentExpression) {
+            // create a KGnode object for Assignment Expression
+            KGnode kg_assignmentExpression = KGnode.newNode("AssignmentExpression", null);
+            kgTree.children.add(kg_assignmentExpression);
+            int kg_assignmentExpression_index = kgTree.children.indexOf(kg_assignmentExpression);
+
+            KGnode current_assignmentExpression = kgTree.children.get(kg_assignmentExpression_index);
+
+            PsiAssignmentExpression psiAssignmentExpression = (PsiAssignmentExpression) psiElement;
+            String expression = psiAssignmentExpression.getText();
+            current_assignmentExpression.children.add(KGnode.newNode(expression, null));
+        }
+        else if (psiElement instanceof PsiPrefixExpression) {
+            // create a KGnode object for Prefix Expression
+            KGnode kg_prefixExpression = KGnode.newNode("PrefixExpression", null);
+            kgTree.children.add(kg_prefixExpression);
+            int kg_prefixExpression_index = kgTree.children.indexOf(kg_prefixExpression);
+
+            KGnode current_prefixExpression = kgTree.children.get(kg_prefixExpression_index);
+
+            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiElement;
+            String expression = psiPrefixExpression.getText();
+            current_prefixExpression.children.add(KGnode.newNode(expression, null));
+        }
+        else if (psiElement instanceof PsiBlockStatement) {
+            // create a KGnode object for Block statement
+            KGnode kg_blockStatement = KGnode.newNode("BlockStatement", null);
+            kgTree.children.add(kg_blockStatement);
+            int kg_blockStatement_index = kgTree.children.indexOf(kg_blockStatement);
+
+            KGnode current_blockStatement = kgTree.children.get(kg_blockStatement_index);
+
+            PsiBlockStatement psiBlockStatement = (PsiBlockStatement) psiElement;
+            PsiCodeBlock psiCodeBlock = psiBlockStatement.getCodeBlock();
+            // check if the code block is empty
+            if (!psiCodeBlock.isEmpty()) {
+                PsiElement[] children = psiCodeBlock.getChildren();
+                for (int i=0; i<children.length; i++) {
+                    PsiElement child = children[i];
+                    whatElement(current_blockStatement, child);
+                }
+            }
+            else {
+                current_blockStatement.children.add(KGnode.newNode("null", null));
+            }
+        }
     }
 
     private static void getArguments(KGnode kgTree, PsiExpression[] psiExpressions) {
@@ -339,6 +467,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
+    // check if method has already existed in KG tree
     private static boolean checkDuplicate(KGnode kgTree, String methodName) {
         int treeSize = kgTree.children.size();
         for (int i=0; i<treeSize; i++) {
@@ -347,5 +476,40 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             }
         }
         return false;
+    }
+
+    /**
+     * This class provides a solution to inspection problem expressions by manipulating
+     * the PSI tree
+     */
+    private static class CriQuickFix implements LocalQuickFix {
+
+        /**
+         * Returns a partially localized string for the quick fix intention.
+         * Used by the test code for this plugin.
+         *
+         * @return Quick fix short name.
+         */
+        @NotNull
+        @Override
+        public String getName() {
+            return QUICK_FIX_NAME;
+        }
+
+        /**
+         * This method manipulates the PSI tree to replace 'a==b' with 'a.equals(b)
+         * or 'a!=b' with '!a.equals(b)'
+         *
+         * @param project    The project that contains the file being edited.
+         * @param descriptor A problem found by this inspection.
+         */
+        public void applyFix(@NotNull Project project, @NotNull ProblemDescriptor descriptor) {
+
+        }
+
+        @NotNull
+        public String getFamilyName() {
+            return getName();
+        }
     }
 }
