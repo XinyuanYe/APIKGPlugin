@@ -53,4 +53,22 @@ Expressionşÿÿÿ'^void]main\test„visitûÿÿÿ3IYiyplus
 equalsExprmainnotEqualsExpr'[	FILE_PATHPARTIAL_CODEZModifierVisitorıÿÿÿ1GWVoidVisitorAdapterşÿÿÿgwYOverrideûÿÿÿ5K[k{Xı¨b|ãjŠatestFunction`String	^int]ONE_BILLION\
 checkEqual	[ONE_BILLIONôü¨	b $yÙ7pø%amethodVisitor%Main`Stringûÿÿÿ5BOc	Statement5Void*MethodDeclaration*NodeListOHashMap\KGnodeıÿÿÿ5BO
 ExpressionB^intvoidKGnodeşÿÿÿ]tmpmethodCountmainkGnode\whatExpressionBhashMapPrinter\visit*whatArgumentsOcreateKGnodecmainwhatStatements5[tmpmethodCount	FILE_NAMECODEkGnodeZVoidVisitorAdapter(YOverride,’Ö©bÃIòÒaKGnode`StringKGnode^voidKGnode]LevelOrderTraversalnewNode\LevelOrderTraversaltoStringnewNode[childrenkey
-pÚ©b$µ[¦acharAtCodeExampleSimple`Stringşÿÿÿ^charşÿÿÿ]getChar	thisWorks\getChar	thisWorksNÚ©b$µ[¦acharAtCodeExampleSimple`String^char]getChar\getChar
+pÚ©b$µ[¦acharAtCodeExampleSimple`Stringşÿÿÿ^charşÿÿÿ]getChar	thisWorks\getChar	thisWorksNÚ©b$µ[¦acharAtCodeExampleSimple`String^char]getChar\getChar}Ù©bŠ÷y÷acharAtCodeExampleModerate`String^intchar]getCharrandomGenerator\getCharrandomGeneratortestƒÙ©bŠ÷y÷acharAtCodeExampleModerate`Stringşÿÿÿ^intchar]getCharrandomGenerator\getCharrandomGeneratortestƒÙ©bŠ÷y÷acharAtCodeExampleModerate`Stringşÿÿÿ^intchar]getCharrandomGenerator\getCharrandomGeneratorworlƒÙ©bŠ÷y÷acharAtCodeExampleModerate`Stringşÿÿÿ^intchar]getCharrandomGenerator\getCharrandomGeneratorworlƒÙ©bŠ÷y÷acharAtCodeExampleModerate`Stringşÿÿÿ^intchar]getCharrandomGenerator\getCharrandomGeneratorworlƒÙ©bŠ÷y÷acharAtCodeExampleModerate`Stringşÿÿÿ^intchar]getCharrandomGenerator\getCharrandomGeneratorworl‰Ù©bŠ÷y÷acharAtCodeExampleModerate`String^intşÿÿÿchar]getCharrandomGeneratorplus\getCharrandomGeneratorplusÙ©bŠ÷y÷acharAtCodeExampleModerate`String^intşÿÿÿchar]getCharrandomGeneratorplusOne\getCharrandomGeneratorplusOne¤Ù©bŠ÷y÷acharAtCodeExampleModerate`String^intşÿÿÿcharboolean]getCharrandomGeneratorplusOnehehe\getCharrandomGeneratorplusOnehehe;íªaCharAt_example^void]getChar\getCharb­Êitwæ©a
+ASTtriplet[third_entityfirst_entity	second_entityname`String\
+ASTtripletgetNametoString!b+2V.wæ©a
+ASTtriplet[third_entityfirst_entity	second_entityname`String\
+ASTtripletgetNametoString!b+2V.NØ©bØíŸŞafileReaderCodeExample`String
+^void
+]readFile
+\readFile
+;íªaCharAt_example^void]getChar\getCharb­ÊitNØ©bØíŸŞafileReaderCodeExample`String
+^void
+]readFile
+\readFile
+å© Ğ« Ï« (×«aListGet`List\misuseb`ë±(Õ«aSetFirst`Set\misuseb¿V£NÉ«aMaps`String	MapHashMap	\keyMayBeNull	mapMayContainNullbu×LXÖ«a
+JFramePack`JFrameşÿÿÿ\needsPackToLayoutpackAfterShowHasNoEffectb¬ÑĞ« (Õ«aSetFirst`Set\misuseb¿V£XÖ«a
+JFramePack`JFrameşÿÿÿ\needsPackToLayoutpackAfterShowHasNoEffectb¬Ñ(×«aListGet`List\misuseb`ë±NØ©bØíŸŞafileReaderCodeExample`String
+^void
+]readFile
+\readFile
+NÉ«aMaps`String	MapHashMap	\keyMayBeNull	mapMayContainNullbu×LÏ« (×«aListGet`List\misuseb`ë±NÉ«aMaps`String	MapHashMap	\keyMayBeNull	mapMayContainNullbu×L0İ«aexample\chartAtNoIndexWarningsb±%j,İ«aexample\fileReaderTryCatch	b±%j0İ«aexample\chartAtNoIndexWarnings	b±%j,İ«aexample\fileReaderTryCatch	b±%j,İ«aexample\fileReaderTryCatch	b±%j,İ«aexample\fileReaderTryCatch	b±%j,İ«aexample\fileReaderTryCatch	b±%jNÉ«aMaps`String	MapHashMap	\keyMayBeNull	mapMayContainNullbu×L

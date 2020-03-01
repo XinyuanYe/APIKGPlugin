@@ -1,18 +1,14 @@
-import KGtree.KGnode;
+import ASTtriplet.ASTtriplet;
 import com.intellij.codeInspection.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
-import com.intellij.psi.tree.IElementType;
-import com.intellij.util.IncorrectOperationException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.StringTokenizer;
-
-import static com.siyeh.ig.psiutils.ExpressionUtils.isNullLiteral;
+import java.util.Map;
 
 public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     private static final Logger LOG = Logger.getInstance(KGInspection.class);
@@ -21,11 +17,26 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     // Defines the text of the quick fix intention
     public static final String QUICK_FIX_NAME = "SDK: This is a warning! Use KG to fix this!";
 
-    // count for precise recording
-    static int methodCount = 1;
-    static int declarationStatementCount = 1;
-    static int expressionStatementCount = 1;
-    static int forStatementCount = 1;
+    // fixed name
+    static final String METHOD_DEFINITION = "MethodDefinition";
+    static final String DECLARATION_STMT = "DeclarationStatement";
+    static final String NEW_EXPRESSION = "NewExpression";
+    static final String RETURN_STMT = "ReturnStatement";
+    static final String METHODCALL_EXPRESSION = "MethodCallExpression";
+    static final String EXPRESSION_STMT = "ExpressionStatement";
+    static final String IF_STMT = "IfStatement";
+    static final String IF_BLOCK = "IfBlock";
+    static final String ELSE_BLOCK = "ElseBlock";
+    static final String BINARY_EXPRESSION = "BinaryExpression";
+    static final String LITERAL_EXPRESSION = "LiteralExpression";
+    static final String TRY_STATEMENT = "TryStatement";
+    static final String CATCH_SECTION = "CatchSection";
+
+    // triplet counting
+    static int id = 1;
+    static int lowest_id = 1;
+    static int highest_id = 1;
+
     /**
      * This method is overridden to provide a custom visitor
      * that inspects AST/PSI Tree from Method
@@ -41,7 +52,6 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
         return new JavaElementVisitor() {
 
-
             /**
              * This string defines the short message shown to a user signaling the inspection
              * found a problem. It reuses a string from the inspections bundle.
@@ -55,80 +65,44 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             public void visitMethod(PsiMethod method) {
                 super.visitMethod(method);
 
-                // a simple data structure to store the information
-                // kgnode
-                KGnode kgTree = KGnode.newNode("root", null);
-                // first level of KG tree is ROOT - ignore this level
-                // second level of KG tree is all the method, this is kgTree.children
+                // create a list to store all the triplets in this METHOD
+                ArrayList<ASTtriplet> asTtriplets = new ArrayList<ASTtriplet>();
 
-//                String methodDeclaration = "Method (" + methodCount + ")";
-                String methodDeclaration = "Method";
-
-                // create a KGnode object for this methodDeclaration
-                KGnode kg_methodDeclaration = KGnode.newNode(methodDeclaration, method.getName());
-                // add to KG tree
-                kgTree.children.add(kg_methodDeclaration);
-                // get the index of current methodDeclaration, so its corresponding elements
-                // can be added correctly in the KG tree
-                int kg_method_index = kgTree.children.indexOf(kg_methodDeclaration);
-
-                // get the current method node, and add all its information
-                // under this node
-                KGnode currentMethod = kgTree.children.get(kg_method_index);
-
-                // NAME, RETURN_TYPE, PARAMETERS, and BODY is one level below current method node
-                // i.e. currentMethod.children
-
-                // create a KGnode object for NAME of current method
-                KGnode kg_methodName = KGnode.newNode("NAME", null);
-                currentMethod.children.add(kg_methodName);
-                int kg_methodName_index = currentMethod.children.indexOf(kg_methodName);
-                // get method name
+                // GET method name
                 String methodName = method.getName();
-                // add method name under the NAME node
-                currentMethod.children.get(kg_methodName_index).children.add(KGnode.newNode(methodName, null));
 
-                // create a KGnode object for RETURN_TYPE of current method
-                KGnode kg_returnType = KGnode.newNode("RETURN_TYPE", null);
-                currentMethod.children.add(kg_returnType);
-                int kg_returnType_index = currentMethod.children.indexOf(kg_returnType);
-                // get method return type
-                String methodType = method.getReturnType().getPresentableText();
-                currentMethod.children.get(kg_returnType_index).children.add(KGnode.newNode(methodType, null));
-
-                // create a KGnode object for PARAMETERS of current method
-                KGnode kg_methodParameters = KGnode.newNode("PARAMETERS", null);
-                currentMethod.children.add(kg_methodParameters);
-                int kg_methodParameters_index = currentMethod.children.indexOf(kg_methodParameters);
-
+                // GET method parameter and its type
+                // create a list to store parameters of the method
+                ArrayList<Map<String, String>> mapArrayList = new ArrayList<>();
                 //check if method has parameters
                 if (method.hasParameters()) {
-                    // get parameters types
                     PsiParameter[] parameters = method.getParameterList().getParameters();
                     for (int i = 0; i < parameters.length; i++) {
                         String parameterName = parameters[i].getName();
-                        KGnode kg_parameterName = KGnode.newNode(parameterName, null);
-
-                        currentMethod.children.get(kg_methodParameters_index).children.add(kg_parameterName);
-                        int kg_parameterName_index = currentMethod.children.get(kg_methodParameters_index).children.indexOf(kg_parameterName);
-
                         String parameterType = parameters[i].getType().getPresentableText();
-                        currentMethod.children.get(kg_methodParameters_index).children.get(kg_parameterName_index).children.add(KGnode.newNode(parameterType, null));
+                        Map<String,String> tmp = new HashMap<>();
+                        tmp.put("parameter:"+parameterName, "type:"+parameterType);
+                        mapArrayList.add(tmp);
                     }
                 }
+                // no parameters put UNK
                 else {
-                    // add NULL under PARAMETERS node
-                    currentMethod.children.get(kg_methodParameters_index).children.add(KGnode.newNode("NULL", null));
+                    Map<String,String> tmp = new HashMap<>();
+                    tmp.put("parameter:" + "UNK", "type:" + "UNK");
+                    mapArrayList.add(tmp);
                 }
 
-                // create a KGnode object for BODY of current method
-                KGnode kg_body = KGnode.newNode("BODY", null);
-                currentMethod.children.add(kg_body);
-                int kg_body_index = currentMethod.children.indexOf(kg_body);
+                // GET method return type
+                String methodType = method.getReturnType().getPresentableText();
 
-                // get the current method's BODY node, and add all its information
-                // under this BODY node
-                KGnode currentBody = currentMethod.children.get(kg_body_index);
+                // Triplet format: <{method:methodName}, [{parameter:parameterName, type:parameterType}...], {relation:StatementType}>
+
+                ASTtriplet method_Triplet = new ASTtriplet(id++);
+                method_Triplet.first_entity.put("method", methodName);
+                method_Triplet.second_entity = mapArrayList;
+                method_Triplet.third_entity.put("relation", METHOD_DEFINITION);
+                asTtriplets.add(method_Triplet);
+
 
                 // body of the function
                 // check if there is a body first, to avoid NULL
@@ -136,346 +110,503 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     PsiStatement[] statements = method.getBody().getStatements();
                     for (int i=0; i<statements.length; i++) {
                         PsiStatement statement = statements[i];
-                        whatStatement(currentBody, statement);
-
+                        whatStatement(asTtriplets, statement);
                     }
 
                 }
-                // increment the count so the naming for next method is correct
-                // reset declarationStatementCount for new method
-                methodCount += 1;
-                declarationStatementCount = 1;
-                expressionStatementCount = 1;
-                KGnode.LevelOrderTraversal(kgTree);
-                holder.registerProblem(method,DESCRIPTION_TEMPLATE,myQuickFix);
+                id = 1;
+                for (ASTtriplet t : asTtriplets) {
+                    System.out.println(t.toString());
+                }
+                System.out.println();
             }
         };
     }
 
-    private static void whatStatement(KGnode kgTree, PsiStatement statement) {
+    private static void whatStatement(ArrayList<ASTtriplet> asTtriplets, PsiStatement statement) {
         // check if the given statement is an Declaration statement
         if (statement instanceof PsiDeclarationStatement) {
 
-            // create a KGnode object for this declaration statement
-            KGnode kg_DeclarationStatement = KGnode.newNode("DeclarationStatement" + "(" + declarationStatementCount + ")", null);
-            kgTree.children.add(kg_DeclarationStatement);
-            int kg_declarationStatement_index = kgTree.children.indexOf(kg_DeclarationStatement);
-
-            // get the current method's BODY's declaration statement node, and add all its information
-            // under this node
-            KGnode currentDeclarationStatement = kgTree.children.get(kg_declarationStatement_index);
-
             PsiDeclarationStatement declarationStatement = (PsiDeclarationStatement) statement;
             PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
+
             for (int i=0; i<declaredElements.length; i++) {
                 PsiElement declaredElement = declaredElements[i];
                 PsiElement[] children = declaredElement.getChildren();
-                for (int j=0; j<children.length;j++) {
-                    PsiElement child = children[j];
-                    whatElement(currentDeclarationStatement, child);
-                }
-                //
+                whatElement(asTtriplets, children, DECLARATION_STMT);
             }
-            // increment the count so the naming for next declaration statement is correct
-            declarationStatementCount += 1;
-        }
-        else if (statement instanceof PsiExpressionStatement) {
-            // create a KGnode object for this expression statement
-            KGnode kg_expressionStatement = KGnode.newNode("ExpressionStatement" + "(" + expressionStatementCount + ")", null);
-            kgTree.children.add(kg_expressionStatement);
-            int kg_expressionStatement_index = kgTree.children.indexOf(kg_expressionStatement);
-
-            // get the current method's BODY's expression statement node, and add all its information
-            // under this node
-            KGnode currentExpressionStatement = kgTree.children.get(kg_expressionStatement_index);
-
-            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) statement;
-            PsiElement[] expressions = psiExpressionStatement.getChildren();
-            for (int i=0; i<expressions.length; i++) {
-                PsiElement expression = expressions[i];
-                whatElement(currentExpressionStatement, expression);
-            }
-            // increment the count so the naming for next declaration statement is correct
-            expressionStatementCount += 1;
-        }
-        else if (statement instanceof PsiForStatement) {
-            // create a KGnode object for this for statement
-            KGnode kg_forStatement = KGnode.newNode("ForStatement" + "(" + forStatementCount + ")", null);
-            kgTree.children.add(kg_forStatement);
-            int kg_forStatement_index = kgTree.children.indexOf(kg_forStatement);
-
-            // get the current method's BODY's for statement node, and add all its information
-            // under this node
-
-            KGnode currentForStatement = kgTree.children.get(kg_forStatement_index);
-
-            PsiForStatement psiForStatement = (PsiForStatement) statement;
-            PsiElement[] children = psiForStatement.getChildren();
-            for (int i=0; i<children.length; i++) {
-                PsiElement child = children[i];
-                whatElement(currentForStatement, child);
-            }
-
-
         }
         else if (statement instanceof PsiReturnStatement) {
-            // create a KGnode object for this RETURN statement
-            KGnode kg_ReturnStatement = KGnode.newNode("ReturnStmt", null);
-            kgTree.children.add(kg_ReturnStatement);
-            int kg_ReturnStatement_index = kgTree.children.indexOf(kg_ReturnStatement);
-
-            // get the current method's BODY's RETURN statement node, and add all its information
-            // under this node
-            KGnode currentReturnStatement = kgTree.children.get(kg_ReturnStatement_index);
-
             PsiReturnStatement returnStatement = (PsiReturnStatement) statement;
             PsiElement[] children = returnStatement.getChildren();
-            for (int i=0; i<children.length; i++) {
-                PsiElement child = children[i];
-                whatElement(currentReturnStatement, child);
+            whatElement(asTtriplets, children, RETURN_STMT);
+        }
+        else if (statement instanceof PsiExpressionStatement) {
+            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) statement;
+            PsiElement[] expressions = psiExpressionStatement.getChildren();
+            whatElement(asTtriplets, expressions, EXPRESSION_STMT);
+
+        }
+        else if (statement instanceof PsiIfStatement) {
+            // add if statement relation
+            ASTtriplet asTtriplet = new ASTtriplet(id);
+            asTtriplet.first_entity.put("special_entity", "if");
+            Map<String, String> tmp = new HashMap<>();
+            tmp.put("related_triplet", "triplet_" + (++id));
+            asTtriplet.second_entity.add(tmp);
+            asTtriplet.third_entity.put("relation", IF_STMT);
+            asTtriplets.add(asTtriplet);
+
+            PsiIfStatement psiIfStatement = (PsiIfStatement) statement;
+            PsiElement[] children = psiIfStatement.getChildren();
+            whatElement(asTtriplets, children, IF_STMT);
+
+        }
+        else if (statement instanceof PsiTryStatement) {
+
+            PsiTryStatement psiTryStatement = (PsiTryStatement) statement;
+
+            int statementCount = psiTryStatement.getTryBlock().getStatementCount();
+
+            lowest_id = id;
+            highest_id = id + statementCount;
+
+            ASTtriplet asTtriplet = new ASTtriplet(id++);
+            asTtriplet.first_entity.put("special_entity", "Try");
+            Map<String, String> tmp = new HashMap<>();
+            String related_triplet = "";
+            // get all the triplets that are related to this Try statement
+            // i.e. the content of Try
+            for (int i=0; i<statementCount; i++) {
+                if (i != statementCount - 1) {
+                    related_triplet += "triplet_" + (id + i) + ", ";
+                }
+                else {
+                    related_triplet += "triplet_" + (id + i);
+
+                }
             }
+            tmp.put("related_triplet", related_triplet);
+            asTtriplet.second_entity.add(tmp);
+            asTtriplet.third_entity.put("relation", TRY_STATEMENT);
+            asTtriplets.add(asTtriplet);
+
+            PsiElement[] statements = psiTryStatement.getTryBlock().getChildren();
+            whatElement(asTtriplets, statements, TRY_STATEMENT);
+
+            id = highest_id;
+
+            PsiElement[] catchStmts = psiTryStatement.getChildren();
+            whatElement(asTtriplets, catchStmts, CATCH_SECTION);
         }
     }
 
-    private static void whatElement(KGnode kgTree, PsiElement psiElement) {
-        if (psiElement instanceof PsiTypeElement) {
-            // create a KGnode object for TYPE
-            KGnode kg_type = KGnode.newNode("TYPE", null);
-            kgTree.children.add(kg_type);
-            int kg_type_index = kgTree.children.indexOf(kg_type);
+    private static void whatElement(ArrayList<ASTtriplet> asTtriplets, PsiElement[] psiElements, String relationType) {
 
-            PsiTypeElement psiTypeElement = (PsiTypeElement) psiElement;
-            String psiType = psiTypeElement.getType().getPresentableText();
+        String psiType = "UNK";
+        String psiIdentName = "UNK";
+        String referenceElement_name = "UNK";
+        String methodCall_name = "UNK";
 
-            // add under TYPE node
-            kgTree.children.get(kg_type_index).children.add(KGnode.newNode(psiType, null));
-        }
-        else if (psiElement instanceof PsiIdentifier) {
-            // create a KGnode object for IDENTIFIER/NAME
-            KGnode kg_name = KGnode.newNode("NAME", null);
-            kgTree.children.add(kg_name);
-            int kg_name_index = kgTree.children.indexOf(kg_name);
+        Boolean elseSection = false;
 
-            PsiIdentifier psiIdentifier = (PsiIdentifier) psiElement;
-            String psiIdentName = psiIdentifier.getText();
+        for (PsiElement psiElement : psiElements) {
 
-            // add under NAME node
-            kgTree.children.get(kg_name_index).children.add(KGnode.newNode(psiIdentName, null));
-        }
-        else if (psiElement instanceof PsiNewExpression) {
-            // create a KGnode object for NEW expression
-            KGnode kg_newExpression = KGnode.newNode("NewExpression", null);
-            kgTree.children.add(kg_newExpression);
-            int kg_newExpression_index = kgTree.children.indexOf(kg_newExpression);
-
-            // get the current NEW Expression node, and add all its information
-            // under this node
-            KGnode currentNewExpression = kgTree.children.get(kg_newExpression_index);
-
-            PsiNewExpression psiNewExpression = (PsiNewExpression) psiElement;
-            PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
-            for (int i=0; i<newExpressionChildren.length; i++) {
-                PsiElement child = newExpressionChildren[i];
-                // go further to check what element it is
-                whatElement(currentNewExpression, child);
+            if (psiElement instanceof PsiTypeElement) {
+                PsiTypeElement psiTypeElement = (PsiTypeElement) psiElement;
+                psiType = psiTypeElement.getType().getPresentableText();
             }
-        }
-        // based on inspection, all arguments are under PsiExpressionList
-        else if (psiElement instanceof PsiExpressionList) {
-            // create a Kgnode object for ARGUMENTS
-            KGnode kg_arguments = KGnode.newNode("ARGUMENTS", null);
-            kgTree.children.add(kg_arguments);
-            int kg_arguments_index = kgTree.children.indexOf(kg_arguments);
+            else if (psiElement instanceof PsiIdentifier) {
+                PsiIdentifier psiIdentifier = (PsiIdentifier) psiElement;
+                psiIdentName = psiIdentifier.getText();
 
-            // get ARGUMENT NODE
-            KGnode kg_currentArguments = kgTree.children.get(kg_arguments_index);
+            }
+            else if (psiElement instanceof PsiDeclarationStatement) {
+                PsiDeclarationStatement declarationStatement = (PsiDeclarationStatement) psiElement;
+                PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
 
-            PsiExpressionList psiExpressionList = (PsiExpressionList) psiElement;
-            if (!psiExpressionList.isEmpty()) {
+                for (int i=0; i<declaredElements.length; i++) {
+                    PsiElement declaredElement = declaredElements[i];
+                    PsiElement[] children = declaredElement.getChildren();
+                    whatElement(asTtriplets, children, TRY_STATEMENT);
+                }
+            }
+            else if (psiElement instanceof PsiExpressionStatement) {
+                if (relationType.equals(TRY_STATEMENT)) {
+                    PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
+                    PsiElement[] expressions = psiExpressionStatement.getChildren();
+                    whatElement(asTtriplets, expressions, TRY_STATEMENT);
+                }
+                else if (relationType.equals(CATCH_SECTION)) {
+                    PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
+                    PsiElement[] expressions = psiExpressionStatement.getChildren();
+                    whatElement(asTtriplets, expressions, CATCH_SECTION);
+                }
+                else if (relationType.equals(IF_BLOCK)) {
+                    PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
+                    PsiElement[] expressions = psiExpressionStatement.getChildren();
+                    whatElement(asTtriplets, expressions, IF_BLOCK);
+                }
+                else if (relationType.equals(ELSE_BLOCK)) {
+                    PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
+                    PsiElement[] expressions = psiExpressionStatement.getChildren();
+                    whatElement(asTtriplets, expressions, ELSE_BLOCK);
+                }
+            }
+            // the statement has a new expression
+            // which this triplet needs to go deeper
+            else if (psiElement instanceof PsiNewExpression) {
+                if (relationType.equals(TRY_STATEMENT)) {
+                    ASTtriplet asTtriplet = new ASTtriplet(id);
+                    asTtriplet.first_entity.put(psiType, psiIdentName);
+                    Map<String, String> tmp = new HashMap<>();
+                    tmp.put("related_triplet", "triplet_" + (++highest_id));
+                    asTtriplet.second_entity.add(tmp);
+                    asTtriplet.third_entity.put("relation", DECLARATION_STMT);
+                    asTtriplets.add(asTtriplet);
+
+                    PsiNewExpression psiNewExpression = (PsiNewExpression) psiElement;
+                    PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
+
+                    whatElement(asTtriplets, newExpressionChildren, TRY_STATEMENT);
+                }
+                else if (relationType.equals(NEW_EXPRESSION)) {
+                    ASTtriplet asTtriplet = new ASTtriplet(id);
+                    asTtriplet.first_entity.put(psiType, psiIdentName);
+                    Map<String, String> tmp = new HashMap<>();
+                    tmp.put("related_triplet", "triplet_" + (++id));
+                    asTtriplet.second_entity.add(tmp);
+                    asTtriplet.third_entity.put("relation", relationType);
+                    asTtriplets.add(asTtriplet);
+
+                    PsiNewExpression psiNewExpression = (PsiNewExpression) psiElement;
+                    PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
+
+                    whatElement(asTtriplets, newExpressionChildren, NEW_EXPRESSION);
+                }
+            }
+            else if (psiElement instanceof PsiReferenceExpression) {
+                PsiReferenceExpression psiReferenceExpression = (PsiReferenceExpression) psiElement;
+                methodCall_name = psiReferenceExpression.getCanonicalText();
+
+            }
+            else if (psiElement instanceof PsiJavaCodeReferenceElement) {
+
+                PsiJavaCodeReferenceElement referenceElement = (PsiJavaCodeReferenceElement) psiElement;
+                referenceElement_name = referenceElement.getText();
+
+            }
+            else if (psiElement instanceof PsiExpressionList) {
+                PsiExpressionList psiExpressionList = (PsiExpressionList) psiElement;
                 PsiExpression[] psiExpressions = psiExpressionList.getExpressions();
-                getArguments(kg_currentArguments, psiExpressions);
-            }
-            else {
-                kg_currentArguments.children.add(KGnode.newNode("null", null));
-            }
-        }
-        else if (psiElement instanceof PsiMethodCallExpression) {
-            // create a Kgnode object for MethodCallExpr
-            KGnode kg_methodCallExpression = KGnode.newNode("MethodCallExpr", null);
-            kgTree.children.add(kg_methodCallExpression);
-            int kg_methodCallExpression_index = kgTree.children.indexOf(kg_methodCallExpression);
-
-            // get the current MethodCallExpression node, and add all its information
-            // under this node
-            KGnode currentMethodCallExpression = kgTree.children.get(kg_methodCallExpression_index);
-
-            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
-            PsiElement[] children = psiMethodCallExpression.getChildren();
-            for (int i=0; i<children.length; i++) {
-                PsiElement child = children[i];
-                whatElement(currentMethodCallExpression, child);
-            }
-        }
-        else if (psiElement instanceof PsiReferenceExpression) {
-            // create a Kgnode object for ReferenceExpression
-            KGnode kg_referenceExpression = KGnode.newNode("ReferenceExpression", null);
-            kgTree.children.add(kg_referenceExpression);
-            int kg_referenceExpression_index = kgTree.children.indexOf(kg_referenceExpression);
-
-            // get the current ReferenceExpression node, and add all its information
-            // under this node
-            KGnode currentReferenceExpression = kgTree.children.get(kg_referenceExpression_index);
-
-            PsiReferenceExpression psiReferenceExpression = (PsiReferenceExpression) psiElement;
-            PsiElement[] children = psiReferenceExpression.getChildren();
-            for (int i=0; i<children.length; i++) {
-                PsiElement child = children[i];
-                whatElement(currentReferenceExpression, child);
-            }
-        }
-        else if (psiElement instanceof PsiJavaCodeReferenceElement) {
-            // create a KGnode object for Reference Element
-            KGnode kg_referenceElement = KGnode.newNode("ReferenceElement",null);
-            kgTree.children.add(kg_referenceElement);
-            int kg_referenceElement_index = kgTree.children.indexOf(kg_referenceElement);
-
-            PsiJavaCodeReferenceElement referenceElement = (PsiJavaCodeReferenceElement) psiElement;
-            String referenceElement_name = referenceElement.getText();
-
-            kgTree.children.get(kg_referenceElement_index).children.add(KGnode.newNode(referenceElement_name,null));
-        }
-        else if (psiElement instanceof PsiLiteralExpression) {
-            // create a KGnode object for Literal Expression
-            KGnode kg_literalExpression = KGnode.newNode("LiteralExpression", null);
-            kgTree.children.add(kg_literalExpression);
-            int kg_literalExpression_index = kgTree.children.indexOf(kg_literalExpression);
-
-            KGnode current_literalExpression = kgTree.children.get(kg_literalExpression_index);
-
-            PsiLiteralExpression psiLiteralExpression = (PsiLiteralExpression) psiElement;
-            current_literalExpression.children.add(KGnode.newNode(psiLiteralExpression.getText(), null));
-        }
-        else if (psiElement instanceof PsiBinaryExpression) {
-            // create a KGnode object for Binary Expression
-            KGnode kg_binaryExpression = KGnode.newNode("BinaryExpression", null);
-            kgTree.children.add(kg_binaryExpression);
-            int kg_binaryExpression_index = kgTree.children.indexOf(kg_binaryExpression);
-
-            KGnode current_binaryExpression = kgTree.children.get(kg_binaryExpression_index);
-
-            PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) psiElement;
-            current_binaryExpression.children.add(KGnode.newNode(psiBinaryExpression.getText(), null));
-        }
-        else if (psiElement instanceof PsiExpressionStatement) {
-            // create a KGnode object for ExpressionStatement
-            KGnode kg_expressionStatement = KGnode.newNode("ExpressionStatement", null);
-            kgTree.children.add(kg_expressionStatement);
-            int kg_expressionStatement_index = kgTree.children.indexOf(kg_expressionStatement);
-
-            KGnode current_expressionStatement = kgTree.children.get(kg_expressionStatement_index);
-
-            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
-            PsiElement[] children = psiExpressionStatement.getChildren();
-            for (int i=0; i<children.length; i++) {
-                PsiElement child = children[i];
-                whatElement(current_expressionStatement, child);
-            }
-        }
-        else if (psiElement instanceof PsiAssignmentExpression) {
-            // create a KGnode object for Assignment Expression
-            KGnode kg_assignmentExpression = KGnode.newNode("AssignmentExpression", null);
-            kgTree.children.add(kg_assignmentExpression);
-            int kg_assignmentExpression_index = kgTree.children.indexOf(kg_assignmentExpression);
-
-            KGnode current_assignmentExpression = kgTree.children.get(kg_assignmentExpression_index);
-
-            PsiAssignmentExpression psiAssignmentExpression = (PsiAssignmentExpression) psiElement;
-            String expression = psiAssignmentExpression.getText();
-            current_assignmentExpression.children.add(KGnode.newNode(expression, null));
-        }
-        else if (psiElement instanceof PsiPrefixExpression) {
-            // create a KGnode object for Prefix Expression
-            KGnode kg_prefixExpression = KGnode.newNode("PrefixExpression", null);
-            kgTree.children.add(kg_prefixExpression);
-            int kg_prefixExpression_index = kgTree.children.indexOf(kg_prefixExpression);
-
-            KGnode current_prefixExpression = kgTree.children.get(kg_prefixExpression_index);
-
-            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiElement;
-            String expression = psiPrefixExpression.getText();
-            current_prefixExpression.children.add(KGnode.newNode(expression, null));
-        }
-        else if (psiElement instanceof PsiBlockStatement) {
-            // create a KGnode object for Block statement
-            KGnode kg_blockStatement = KGnode.newNode("BlockStatement", null);
-            kgTree.children.add(kg_blockStatement);
-            int kg_blockStatement_index = kgTree.children.indexOf(kg_blockStatement);
-
-            KGnode current_blockStatement = kgTree.children.get(kg_blockStatement_index);
-
-            PsiBlockStatement psiBlockStatement = (PsiBlockStatement) psiElement;
-            PsiCodeBlock psiCodeBlock = psiBlockStatement.getCodeBlock();
-            // check if the code block is empty
-            if (!psiCodeBlock.isEmpty()) {
-                PsiElement[] children = psiCodeBlock.getChildren();
-                for (int i=0; i<children.length; i++) {
-                    PsiElement child = children[i];
-                    whatElement(current_blockStatement, child);
+                if (relationType.equals(NEW_EXPRESSION)) {
+                    getArguments(asTtriplets, psiExpressions, referenceElement_name, relationType);
+                }
+                else if (relationType.equals(METHODCALL_EXPRESSION)) {
+                    getArguments(asTtriplets, psiExpressions, methodCall_name, relationType);
+                }
+                else if (relationType.equals(TRY_STATEMENT)) {
+                    getArguments(asTtriplets, psiExpressions, methodCall_name, TRY_STATEMENT);
+                }
+                else if (relationType.equals(CATCH_SECTION)) {
+                    getArguments(asTtriplets, psiExpressions, methodCall_name, CATCH_SECTION);
+                }
+                else if (relationType.equals(IF_BLOCK)) {
+                    getArguments(asTtriplets, psiExpressions, methodCall_name, IF_BLOCK);
                 }
             }
-            else {
-                current_blockStatement.children.add(KGnode.newNode("null", null));
-            }
-        }
-    }
+            else if (psiElement instanceof PsiMethodCallExpression) {
+                if (relationType.equals(RETURN_STMT)) {
+                    ASTtriplet asTtriplet = new ASTtriplet(id);
+                    asTtriplet.first_entity.put("special_entity", "return");
+                    Map<String, String> tmp = new HashMap<>();
+                    tmp.put("related_triplet", "triplet_" + (++id));
+                    asTtriplet.second_entity.add(tmp);
+                    asTtriplet.third_entity.put("relation", relationType);
+                    asTtriplets.add(asTtriplet);
 
-    private static void getArguments(KGnode kgTree, PsiExpression[] psiExpressions) {
-        for (int i=0; i<psiExpressions.length; i++) {
-            PsiExpression psiExpression = psiExpressions[i];
-            // Arguments are PsiReferenceExpression
-            if (psiExpression instanceof PsiReferenceExpression) {
-                String argument = ((PsiReferenceExpression) psiExpression).getCanonicalText();
-                kgTree.children.add(KGnode.newNode(argument, null));
-            }
-            // Arguments are Binary Expression, i.e. 1+1, 1-1, 1*1, ...
-            else if (psiExpression instanceof PsiBinaryExpression) {
-                String argument = ((PsiBinaryExpression) psiExpression).getText();
-                kgTree.children.add(KGnode.newNode(argument, null));
-            }
-            // Arguments are Literal Expression, i.e., 6, 9, 69, ...
-            else if (psiExpression instanceof PsiLiteralExpression) {
-                String argument = ((PsiLiteralExpression) psiExpression).getText();
-                kgTree.children.add(KGnode.newNode(argument, null));
-            }
-            // Arguments are Method Call Expression, i.e., foo(foo_1())
-            else if (psiExpression instanceof PsiMethodCallExpression) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
 
-                // create a Kgnode object for nested method Call Expression
-                KGnode kg_methodCallExpression = KGnode.newNode("MethodCallExpr", null);
-                kgTree.children.add(kg_methodCallExpression);
-                int kg_methodCallExpression_index = kgTree.children.indexOf(kg_methodCallExpression);
+                    whatElement(asTtriplets, children, METHODCALL_EXPRESSION);
 
-                KGnode currentMethodCallExpression = kgTree.children.get(kg_methodCallExpression_index);
+                }
+                else if (relationType.equals(EXPRESSION_STMT)) {
 
-                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
-                PsiElement[] children = psiMethodCallExpression.getChildren();
-                for (int j=0; j<children.length; j++) {
-                    PsiElement child = children[j];
-                    whatElement(currentMethodCallExpression, child);
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+
+                    whatElement(asTtriplets, children, METHODCALL_EXPRESSION);
+                }
+                else if (relationType.equals(BINARY_EXPRESSION)) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+
+                    whatElement(asTtriplets, children, METHODCALL_EXPRESSION);
+                }
+                else if (relationType.equals(TRY_STATEMENT)) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+
+                    whatElement(asTtriplets, children, TRY_STATEMENT);
+                }
+                else if (relationType.equals(CATCH_SECTION)) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+
+                    whatElement(asTtriplets, children, CATCH_SECTION);
+                }
+                else if (relationType.equals(IF_BLOCK)) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+
+                    whatElement(asTtriplets, children, IF_BLOCK);
+                }
+            }
+            else if (psiElement instanceof PsiBinaryExpression) {
+                if (relationType.equals(IF_STMT)) {
+
+                    PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) psiElement;
+                    String rightOperand = psiBinaryExpression.getROperand().getText();
+                    String operation = psiBinaryExpression.getOperationTokenType().toString();
+                    ASTtriplet asTtriplet = new ASTtriplet(id);
+                    asTtriplet.first_entity.put("related_triplet","triplet_" + (++id));
+                    Map<String, String> tmp = new HashMap<>();
+                    tmp.put("value_literals", rightOperand);
+                    asTtriplet.second_entity.add(tmp);
+                    asTtriplet.third_entity.put("relation", BINARY_EXPRESSION + " - " + transformOPToken(operation));
+                    asTtriplets.add(asTtriplet);
+
+                    PsiElement[] child = new PsiElement[1];
+                    child[0] = psiBinaryExpression.getLOperand();
+                    whatElement(asTtriplets, child, BINARY_EXPRESSION);
+                }
+            }
+            else if (psiElement instanceof PsiLiteralExpression) {
+
+                PsiLiteralExpression psiLiteralExpression = (PsiLiteralExpression) psiElement;
+                String text = psiLiteralExpression.getText();
+
+                ASTtriplet asTtriplet = new ASTtriplet(id++);
+                asTtriplet.first_entity.put(psiType,psiIdentName);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("content", text);
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", relationType);
+                asTtriplets.add(asTtriplet);
+
+            }
+            else if (psiElement instanceof PsiCatchSection) {
+                PsiCatchSection psiCatchSection = (PsiCatchSection) psiElement;
+                psiIdentName = psiCatchSection.getParameter().getName();
+                psiType = psiCatchSection.getParameter().getType().getPresentableText();
+                ASTtriplet asTtriplet = new ASTtriplet(id);
+                asTtriplet.first_entity.put(psiType,psiIdentName);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("related_entity", "triplet_" + (++id));
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", relationType);
+                asTtriplets.add(asTtriplet);
+
+                PsiElement[] children = psiCatchSection.getCatchBlock().getChildren();
+                whatElement(asTtriplets, children, CATCH_SECTION);
+            }
+            // this is if-else block, needs to be fixed
+            else if (psiElement instanceof PsiBlockStatement) {
+                if (relationType.equals(IF_STMT)) {
+                    // now is IF content
+                    if (!elseSection) {
+                        PsiBlockStatement psiBlockStatement = (PsiBlockStatement) psiElement;
+                        // no content, maybe all is comment or unfinished
+                        if (psiBlockStatement.getCodeBlock().isEmpty()) {
+                            ASTtriplet asTtriplet = new ASTtriplet(id++);
+                            asTtriplet.first_entity.put("UNK","UNK");
+                            Map<String, String> tmp = new HashMap<>();
+                            tmp.put("UNK", "UNK");
+                            asTtriplet.second_entity.add(tmp);
+                            asTtriplet.third_entity.put("relation", IF_BLOCK);
+                            asTtriplets.add(asTtriplet);
+                        }
+                        else {
+                            PsiElement[] children = psiBlockStatement.getCodeBlock().getChildren();
+                            whatElement(asTtriplets, children, IF_BLOCK);
+                        }
+                    }
+                    // now is ELSE CONTENT
+                    else {
+                        PsiBlockStatement psiBlockStatement = (PsiBlockStatement) psiElement;
+                        // no content
+                        if (psiBlockStatement.getCodeBlock().isEmpty()) {
+                            ASTtriplet asTtriplet = new ASTtriplet(id++);
+                            asTtriplet.first_entity.put("UNK","UNK");
+                            Map<String, String> tmp = new HashMap<>();
+                            tmp.put("UNK", "UNK");
+                            asTtriplet.second_entity.add(tmp);
+                            asTtriplet.third_entity.put("relation", ELSE_BLOCK);
+                            asTtriplets.add(asTtriplet);
+                        }
+                        else {
+                            PsiElement[] children = psiBlockStatement.getCodeBlock().getChildren();
+                            whatElement(asTtriplets,children,ELSE_BLOCK);
+                        }
+
+                    }
+                }
+            }
+            else if (psiElement instanceof PsiKeyword) {
+                PsiKeyword psiKeyword = (PsiKeyword) psiElement;
+                String keyword = psiKeyword.getText().toLowerCase();
+                if (keyword.equals("else")) {
+                    elseSection = true;
                 }
             }
         }
     }
 
-    // check if method has already existed in KG tree
-    private static boolean checkDuplicate(KGnode kgTree, String methodName) {
-        int treeSize = kgTree.children.size();
-        for (int i=0; i<treeSize; i++) {
-            if (kgTree.children.get(i).getReference().equals(methodName)) {
-                return true;
+
+    // GET ARGUMENTS
+    private static void getArguments(ArrayList<ASTtriplet> asTtriplets, PsiExpression[] psiExpressions, String first_Entity, String relationType) {
+        if (psiExpressions.length == 0) {
+            if (relationType.equals(NEW_EXPRESSION)) {
+                ASTtriplet asTtriplet = new ASTtriplet(id++);
+                asTtriplet.first_entity.put("class", first_Entity);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("parameter:" + "UNK", "type:" + "UNK");
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", relationType);
+                asTtriplets.add(asTtriplet);
+            }
+            else if (relationType.equals(METHODCALL_EXPRESSION)) {
+
+                ASTtriplet asTtriplet = new ASTtriplet(id++);
+                asTtriplet.first_entity.put("method", first_Entity);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("parameter:" + "UNK", "type:" + "UNK");
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", relationType);
+                asTtriplets.add(asTtriplet);
+            }
+            // assume METHODCALL EXPRESSION
+            else if (relationType.equals(TRY_STATEMENT)) {
+                ASTtriplet asTtriplet = new ASTtriplet(++id);
+                asTtriplet.first_entity.put("method", first_Entity);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("parameter:" + "UNK", "type:" + "UNK");
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", METHODCALL_EXPRESSION);
+                asTtriplets.add(asTtriplet);
+            }
+            else if (relationType.equals(CATCH_SECTION)) {
+                ASTtriplet asTtriplet = new ASTtriplet(id++);
+                asTtriplet.first_entity.put("method", first_Entity);
+                Map<String, String> tmp = new HashMap<>();
+                tmp.put("parameter:" + "UNK", "type:" + "UNK");
+                asTtriplet.second_entity.add(tmp);
+                asTtriplet.third_entity.put("relation", METHODCALL_EXPRESSION);
+                asTtriplets.add(asTtriplet);
             }
         }
-        return false;
+        else {
+            // create a triplet first
+            ASTtriplet asTtriplet;
+            if (relationType.equals(TRY_STATEMENT)) {
+                asTtriplet = new ASTtriplet(highest_id++);
+
+            }
+            else {
+                asTtriplet = new ASTtriplet(id++);
+            }
+            Map<String, String> tmp = new HashMap<>();
+            for (int i = 0; i < psiExpressions.length; i++) {
+                PsiExpression psiExpression = psiExpressions[i];
+                if (relationType.equals(METHODCALL_EXPRESSION)) {
+                    if (psiExpression instanceof PsiReferenceExpression) {
+                        String argument = ((PsiReferenceExpression) psiExpression).getCanonicalText();
+                        String type = ((PsiReferenceExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "method", first_Entity, "relation", relationType);
+
+                    } else if (psiExpression instanceof PsiLiteralExpression) {
+                        String argument = ((PsiLiteralExpression) psiExpression).getText();
+                        String type = ((PsiLiteralExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "method", first_Entity, "relation", relationType);
+
+                    } else if (psiExpression instanceof PsiNewExpression) {
+                        String argument = ((PsiNewExpression) psiExpression).getText();
+                        String type = ((PsiNewExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "method", first_Entity, "relation", relationType);
+                    }
+                    else if (psiExpression instanceof PsiMethodCallExpression) {
+                        String argument = ((PsiMethodCallExpression) psiExpression).getText();
+                        String type = ((PsiMethodCallExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "method", first_Entity, "relation", relationType);
+                    }
+                } else if (relationType.equals(NEW_EXPRESSION)) {
+                    if (psiExpression instanceof PsiReferenceExpression) {
+                        String argument = ((PsiReferenceExpression) psiExpression).getCanonicalText();
+                        String type = ((PsiReferenceExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "class", first_Entity, "relation", relationType);
+                    }
+                }
+                else if (relationType.equals(TRY_STATEMENT)) {
+                    // assume is NEW expression
+                    if (psiExpression instanceof PsiLiteralExpression) {
+                        String argument = ((PsiLiteralExpression) psiExpression).getText();
+                        String type = ((PsiLiteralExpression) psiExpression).getType().getPresentableText();
+                        tmp.put("parameter:" + argument, "type:" + type);
+                        addEntities(asTtriplet, "class", first_Entity, "relation", NEW_EXPRESSION);
+                    }
+                }
+//                else if (relationType.equals(IF_BLOCK)) {
+//                    String argument = ((PsiLiteralExpression) psiExpression).getText();
+//                    String type = ((PsiLiteralExpression) psiExpression).getType().getPresentableText();
+//                    tmp.put("parameter:" + argument, "type:" + type);
+//                    addEntities(asTtriplet, "class", first_Entity, "relation", IF_BLOCK);
+//                }
+            }
+            asTtriplet.second_entity.add(tmp);
+            asTtriplets.add(asTtriplet);
+        }
+    }
+
+    private static void addEntities(ASTtriplet asTtriplet, String firstEntityKey, String firstEntityValue,
+                                    String thirdEntityKey,String thirdEntityValue) {
+
+        if (asTtriplet.first_entity.isEmpty()) {
+            asTtriplet.first_entity.put(firstEntityKey, firstEntityValue);
+        }
+
+        if (asTtriplet.third_entity.isEmpty()) {
+            asTtriplet.third_entity.put(thirdEntityKey, thirdEntityValue);
+        }
+    }
+
+    private static String transformOPToken(String operation) {
+        if (operation.equals("NE")) {
+            return "!=";
+        }
+        else if (operation.equals("EQEQ")) {
+            return "==";
+        }
+        else if (operation.equals("LT")) {
+            return "<";
+        }
+        else if (operation.equals("LE")) {
+            return "<=";
+        }
+        else if (operation.equals("GT")) {
+            return ">";
+        }
+        else if (operation.equals("GE")) {
+            return ">=";
+        }
+        else {
+            return operation;
+        }
     }
 
     /**

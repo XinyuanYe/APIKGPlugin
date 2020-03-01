@@ -26,3 +26,994 @@
 2020-01-08 02:22:41,548 [    895]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
 2020-01-08 02:22:41,640 [    987]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 988 ms
 2020-01-08 02:34:50,036 [ 729383]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.
+2020-02-20 17:34:17,452 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-20 17:34:17,453 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-20 17:34:17,769 [    317]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 284 ms
+2020-02-20 17:34:18,034 [    582]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-20 17:34:18,363 [    911]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 329 ms
+2020-02-20 17:34:18,363 [    911]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-20 17:34:18,489 [   1037]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-20 17:34:18,634 [   1182]   INFO - .incremental.IncProjectBuilder - Building project; isRebuild:true; isMake:false parallel compilation:false
+2020-02-20 17:34:18,637 [   1185]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JVM: true
+2020-02-20 17:34:18,637 [   1185]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin incremental compilation enabled for JS: false
+2020-02-20 17:34:18,645 [   1193]   INFO - kotlin.jps.build.KotlinBuilder - is Kotlin compiler daemon enabled: true
+2020-02-20 17:34:18,645 [   1193]   INFO - kotlin.jps.build.KotlinBuilder - Label in local history: build started 3cc90457
+2020-02-20 17:34:18,651 [   1199]   INFO - s.index.CompilerReferenceIndex - backward reference index version differ due to: class java.io.FileNotFoundException
+2020-02-20 17:34:18,711 [   1259]   INFO - .incremental.IncProjectBuilder - Cleaned output directories in 15 ms
+2020-02-20 17:34:19,721 [   2269]   INFO - kotlin.jps.build.KotlinBuilder - KotlinTargetsIndex created in 777 ms
+2020-02-20 17:34:19,729 [   2277]   INFO - kotlin.jps.build.KotlinBuilder - Total Kotlin global compile context initialization time: 790 ms
+2020-02-20 17:34:19,750 [   2298]   INFO - s.incremental.java.JavaBuilder - Compiling 14 java files; module: AST
+2020-02-20 17:34:21,599 [   4147]   INFO - rains.jps.cmdline.BuildSession - Build duration: Builder 'Java' took 1 s 761 ms; 14 sources processed (125 ms per file)
+2020-02-20 17:34:21,602 [   4150]   INFO - s.incremental.java.JavaBuilder - javac 1.8.0_141 was used to compile [AST]
+2020-02-20 17:34:22,004 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-20 17:34:22,005 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-20 17:34:22,310 [    306]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 271 ms
+2020-02-20 17:34:22,497 [    493]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-20 17:34:22,761 [    757]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 264 ms
+2020-02-20 17:34:22,761 [    757]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-20 17:34:22,842 [    838]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-20 17:34:22,959 [    955]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 956 ms
+2020-02-28 10:43:04,387 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 10:43:04,389 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 10:43:04,831 [    444]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 408 ms
+2020-02-28 10:43:05,142 [    755]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 10:43:05,611 [   1224]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 469 ms
+2020-02-28 10:43:05,612 [   1225]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 10:43:05,810 [   1423]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 10:43:06,599 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 10:43:06,601 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 10:43:07,068 [    469]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 419 ms
+2020-02-28 10:43:07,300 [    701]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 10:43:07,676 [   1077]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 376 ms
+2020-02-28 10:43:07,676 [   1077]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 10:43:07,798 [   1199]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 10:43:07,953 [   1354]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1356 ms
+2020-02-28 10:43:39,458 [  32859]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.
+2020-02-28 11:54:28,922 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:54:28,924 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:54:29,365 [    443]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 410 ms
+2020-02-28 11:54:29,715 [    793]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:54:30,143 [   1221]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 428 ms
+2020-02-28 11:54:30,143 [   1221]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:54:30,314 [   1392]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:54:31,008 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:54:31,009 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:54:31,467 [    459]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 418 ms
+2020-02-28 11:54:31,756 [    748]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:54:32,139 [   1131]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 383 ms
+2020-02-28 11:54:32,139 [   1131]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:54:32,281 [   1273]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:54:32,512 [   1504]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1505 ms
+2020-02-28 11:55:33,095 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:55:33,097 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:55:33,602 [    507]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 454 ms
+2020-02-28 11:55:33,899 [    804]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:55:34,321 [   1226]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 422 ms
+2020-02-28 11:55:34,322 [   1227]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:55:34,476 [   1381]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:55:35,189 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:55:35,189 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:55:35,633 [    444]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 400 ms
+2020-02-28 11:55:35,946 [    757]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:55:36,269 [   1080]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 323 ms
+2020-02-28 11:55:36,269 [   1080]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:55:36,442 [   1253]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:55:36,675 [   1486]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1488 ms
+2020-02-28 11:56:48,506 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:56:48,506 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:56:48,969 [    463]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 429 ms
+2020-02-28 11:56:49,285 [    779]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:56:49,724 [   1218]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 439 ms
+2020-02-28 11:56:49,725 [   1219]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:56:49,874 [   1368]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:56:50,587 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 11:56:50,588 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 11:56:51,040 [    453]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 402 ms
+2020-02-28 11:56:51,334 [    747]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 11:56:51,739 [   1152]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 405 ms
+2020-02-28 11:56:51,739 [   1152]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 11:56:51,930 [   1343]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 11:56:52,133 [   1546]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1549 ms
+2020-02-28 12:01:43,649 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:01:43,650 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:01:44,131 [    482]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 446 ms
+2020-02-28 12:01:44,438 [    789]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:01:44,847 [   1198]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 409 ms
+2020-02-28 12:01:44,847 [   1198]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:01:45,010 [   1361]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:01:45,746 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:01:45,747 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:01:46,226 [    480]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 428 ms
+2020-02-28 12:01:46,545 [    799]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:01:46,893 [   1147]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 348 ms
+2020-02-28 12:01:46,893 [   1147]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:01:47,082 [   1336]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:01:47,295 [   1549]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1551 ms
+2020-02-28 12:02:42,150 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:02:42,150 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:02:42,636 [    486]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 456 ms
+2020-02-28 12:02:42,973 [    823]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:02:43,440 [   1290]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 467 ms
+2020-02-28 12:02:43,440 [   1290]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:02:43,599 [   1449]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:02:44,300 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:02:44,301 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:02:44,757 [    457]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 418 ms
+2020-02-28 12:02:45,153 [    853]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:02:45,498 [   1198]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 345 ms
+2020-02-28 12:02:45,498 [   1198]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:02:45,696 [   1396]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:02:45,897 [   1597]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1599 ms
+2020-02-28 12:04:24,813 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:04:24,813 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:04:25,217 [    404]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 378 ms
+2020-02-28 12:04:25,523 [    710]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:04:25,995 [   1182]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 472 ms
+2020-02-28 12:04:25,995 [   1182]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:04:26,169 [   1356]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:04:26,927 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:04:26,928 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:04:27,458 [    531]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 456 ms
+2020-02-28 12:04:27,714 [    787]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:04:28,062 [   1135]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 348 ms
+2020-02-28 12:04:28,062 [   1135]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:04:28,324 [   1397]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:04:28,530 [   1603]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1606 ms
+2020-02-28 12:04:45,060 [  18133]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.
+2020-02-28 12:05:59,632 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:05:59,632 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:06:00,143 [    511]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 478 ms
+2020-02-28 12:06:00,470 [    838]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:06:00,907 [   1275]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-02-28 12:06:00,908 [   1276]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:06:01,042 [   1410]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:06:01,723 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:06:01,724 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:06:02,153 [    430]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 391 ms
+2020-02-28 12:06:02,427 [    704]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:06:02,858 [   1135]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 431 ms
+2020-02-28 12:06:02,859 [   1136]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:06:03,001 [   1278]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:06:03,176 [   1453]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1455 ms
+2020-02-28 12:07:02,033 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:07:02,033 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:07:02,503 [    470]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 430 ms
+2020-02-28 12:07:02,854 [    821]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:07:03,292 [   1259]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-02-28 12:07:03,292 [   1259]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:07:03,431 [   1398]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:07:04,085 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 12:07:04,086 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 12:07:04,487 [    402]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 364 ms
+2020-02-28 12:07:04,713 [    628]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 12:07:05,085 [   1000]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 372 ms
+2020-02-28 12:07:05,085 [   1000]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 12:07:05,248 [   1163]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 12:07:05,423 [   1338]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1340 ms
+2020-02-28 15:14:24,362 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 15:14:24,363 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 15:14:24,722 [    360]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 321 ms
+2020-02-28 15:14:24,994 [    632]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 15:14:25,456 [   1094]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 462 ms
+2020-02-28 15:14:25,457 [   1095]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 15:14:25,646 [   1284]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 15:14:26,352 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 15:14:26,353 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 15:14:26,721 [    369]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 330 ms
+2020-02-28 15:14:26,973 [    621]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 15:14:27,382 [   1030]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 409 ms
+2020-02-28 15:14:27,382 [   1030]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 15:14:27,569 [   1217]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 15:14:27,783 [   1431]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1432 ms
+2020-02-28 15:15:53,387 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 15:15:53,388 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 15:15:53,867 [    480]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 442 ms
+2020-02-28 15:15:54,213 [    826]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 15:15:54,680 [   1293]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 466 ms
+2020-02-28 15:15:54,680 [   1293]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 15:15:54,825 [   1438]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 15:15:55,516 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-28 15:15:55,517 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-28 15:15:55,936 [    420]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 378 ms
+2020-02-28 15:15:56,177 [    661]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-28 15:15:56,811 [   1295]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 634 ms
+2020-02-28 15:15:56,811 [   1295]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-28 15:15:56,951 [   1435]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-28 15:15:57,210 [   1694]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1696 ms
+2020-02-29 13:42:36,714 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 13:42:36,715 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 13:42:37,160 [    447]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 409 ms
+2020-02-29 13:42:37,544 [    831]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 13:42:38,015 [   1302]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 472 ms
+2020-02-29 13:42:38,015 [   1302]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 13:42:38,152 [   1439]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 13:42:38,823 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 13:42:38,824 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 13:42:39,212 [    389]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 355 ms
+2020-02-29 13:42:39,420 [    597]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 13:42:39,803 [    980]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 383 ms
+2020-02-29 13:42:39,803 [    980]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 13:42:39,929 [   1106]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 13:42:40,091 [   1268]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1270 ms
+2020-02-29 16:27:37,540 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 16:27:37,540 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 16:27:37,895 [    355]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 310 ms
+2020-02-29 16:27:38,259 [    719]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 16:27:38,884 [   1344]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 625 ms
+2020-02-29 16:27:38,884 [   1344]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 16:27:39,164 [   1624]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 16:27:40,062 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 16:27:40,063 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 16:27:40,652 [    590]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 543 ms
+2020-02-29 16:27:40,888 [    826]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 16:27:41,382 [   1320]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 494 ms
+2020-02-29 16:27:41,382 [   1320]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 16:27:41,505 [   1443]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 16:27:41,871 [   1809]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1811 ms
+2020-02-29 16:43:00,601 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 16:43:00,602 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 16:43:01,040 [    439]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 405 ms
+2020-02-29 16:43:01,332 [    731]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 16:43:01,723 [   1122]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 391 ms
+2020-02-29 16:43:01,723 [   1122]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 16:43:01,855 [   1254]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 16:43:02,610 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 16:43:02,610 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 16:43:03,022 [    412]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 372 ms
+2020-02-29 16:43:03,239 [    629]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 16:43:03,654 [   1044]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 415 ms
+2020-02-29 16:43:03,654 [   1044]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 16:43:03,790 [   1180]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 16:43:03,962 [   1352]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1355 ms
+2020-02-29 18:02:28,419 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:02:28,422 [      3]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:02:28,912 [    493]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 453 ms
+2020-02-29 18:02:29,311 [    892]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:02:29,788 [   1369]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 477 ms
+2020-02-29 18:02:29,789 [   1370]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:02:29,940 [   1521]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:02:30,713 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:02:30,714 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:02:31,286 [    573]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 502 ms
+2020-02-29 18:02:31,517 [    804]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:02:31,966 [   1253]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 449 ms
+2020-02-29 18:02:31,966 [   1253]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:02:32,128 [   1415]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:02:32,310 [   1597]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1598 ms
+2020-02-29 18:07:48,167 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:07:48,168 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:07:48,666 [    499]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 462 ms
+2020-02-29 18:07:49,007 [    840]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:07:49,435 [   1268]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 428 ms
+2020-02-29 18:07:49,435 [   1268]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:07:49,564 [   1397]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:07:50,288 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:07:50,289 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:07:50,710 [    422]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 381 ms
+2020-02-29 18:07:50,941 [    653]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:07:51,401 [   1113]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 460 ms
+2020-02-29 18:07:51,402 [   1114]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:07:51,561 [   1273]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:07:51,734 [   1446]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1448 ms
+2020-02-29 18:21:31,743 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:21:31,744 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:21:32,240 [    497]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 454 ms
+2020-02-29 18:21:32,563 [    820]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:21:33,035 [   1292]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 472 ms
+2020-02-29 18:21:33,035 [   1292]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:21:33,174 [   1431]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:21:33,883 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:21:33,883 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:21:34,304 [    421]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 380 ms
+2020-02-29 18:21:34,527 [    644]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:21:35,012 [   1129]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 486 ms
+2020-02-29 18:21:35,013 [   1130]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:21:35,148 [   1265]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:21:35,356 [   1473]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1475 ms
+2020-02-29 18:35:15,441 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:35:15,442 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:35:15,878 [    437]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 393 ms
+2020-02-29 18:35:16,211 [    770]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:35:16,693 [   1252]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 482 ms
+2020-02-29 18:35:16,693 [   1252]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:35:16,901 [   1460]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:35:17,714 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:35:17,715 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:35:18,177 [    463]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 410 ms
+2020-02-29 18:35:18,413 [    699]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:35:18,792 [   1078]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 379 ms
+2020-02-29 18:35:18,792 [   1078]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:35:18,989 [   1275]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:35:19,191 [   1477]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1479 ms
+2020-02-29 18:49:24,008 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:49:24,009 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:49:24,511 [    503]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 467 ms
+2020-02-29 18:49:24,874 [    866]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:49:25,356 [   1348]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 482 ms
+2020-02-29 18:49:25,357 [   1349]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:49:25,505 [   1497]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:49:26,255 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:49:26,256 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:49:26,712 [    457]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 413 ms
+2020-02-29 18:49:26,977 [    722]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:49:27,448 [   1193]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 471 ms
+2020-02-29 18:49:27,448 [   1193]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:49:27,611 [   1356]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:49:27,781 [   1526]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1528 ms
+2020-02-29 18:51:32,074 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:51:32,075 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:51:32,500 [    426]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 396 ms
+2020-02-29 18:51:32,969 [    895]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:51:34,144 [   2070]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 1175 ms
+2020-02-29 18:51:34,149 [   2075]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:51:34,629 [   2555]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:51:36,225 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:51:36,226 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:51:36,690 [    465]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 396 ms
+2020-02-29 18:51:36,914 [    689]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:51:37,288 [   1063]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 374 ms
+2020-02-29 18:51:37,288 [   1063]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:51:37,425 [   1200]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:51:37,608 [   1383]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1385 ms
+2020-02-29 18:54:27,877 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:54:27,878 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:54:28,351 [    474]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 439 ms
+2020-02-29 18:54:28,696 [    819]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:54:29,090 [   1213]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 394 ms
+2020-02-29 18:54:29,090 [   1213]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:54:29,227 [   1350]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:54:29,939 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 18:54:29,940 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 18:54:30,360 [    421]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 380 ms
+2020-02-29 18:54:30,586 [    647]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 18:54:31,006 [   1067]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 420 ms
+2020-02-29 18:54:31,007 [   1068]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 18:54:31,150 [   1211]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 18:54:31,368 [   1429]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1430 ms
+2020-02-29 19:07:20,846 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 19:07:20,847 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 19:07:21,231 [    385]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 346 ms
+2020-02-29 19:07:21,530 [    684]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 19:07:21,966 [   1120]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 436 ms
+2020-02-29 19:07:21,966 [   1120]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 19:07:22,109 [   1263]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 19:07:22,790 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 19:07:22,791 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 19:07:23,164 [    374]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 337 ms
+2020-02-29 19:07:23,383 [    593]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 19:07:23,776 [    986]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 393 ms
+2020-02-29 19:07:23,776 [    986]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 19:07:23,927 [   1137]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 19:07:24,037 [   1247]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1248 ms
+2020-02-29 19:08:03,358 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 19:08:03,359 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 19:08:03,875 [    517]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 472 ms
+2020-02-29 19:08:04,219 [    861]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 19:08:04,654 [   1296]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 435 ms
+2020-02-29 19:08:04,654 [   1296]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 19:08:04,782 [   1424]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 19:08:05,477 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 19:08:05,478 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 19:08:05,900 [    423]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 383 ms
+2020-02-29 19:08:06,139 [    662]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 19:08:06,567 [   1090]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 428 ms
+2020-02-29 19:08:06,568 [   1091]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 19:08:06,704 [   1227]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 19:08:06,911 [   1434]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1436 ms
+2020-02-29 19:55:09,774 [2824297]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.
+2020-02-29 22:27:36,047 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 22:27:36,047 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 22:27:36,422 [    375]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 347 ms
+2020-02-29 22:27:36,774 [    727]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 22:27:37,215 [   1168]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 441 ms
+2020-02-29 22:27:37,215 [   1168]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 22:27:37,343 [   1296]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 22:27:37,983 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 22:27:37,986 [      3]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 22:27:38,334 [    351]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 314 ms
+2020-02-29 22:27:38,541 [    558]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 22:27:38,898 [    915]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 357 ms
+2020-02-29 22:27:38,899 [    916]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 22:27:39,048 [   1065]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 22:27:39,228 [   1245]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1247 ms
+2020-02-29 22:53:46,457 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 22:53:46,458 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 22:53:46,896 [    439]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 401 ms
+2020-02-29 22:53:47,226 [    769]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 22:53:47,645 [   1188]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 419 ms
+2020-02-29 22:53:47,645 [   1188]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 22:53:47,791 [   1334]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 22:53:48,491 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 22:53:48,492 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 22:53:48,907 [    416]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 372 ms
+2020-02-29 22:53:49,125 [    634]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 22:53:49,498 [   1007]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 373 ms
+2020-02-29 22:53:49,498 [   1007]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 22:53:49,644 [   1153]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 22:53:49,837 [   1346]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1348 ms
+2020-02-29 23:02:58,436 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:02:58,437 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:02:58,887 [    451]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 413 ms
+2020-02-29 23:02:59,213 [    777]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:02:59,618 [   1182]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 405 ms
+2020-02-29 23:02:59,618 [   1182]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:02:59,754 [   1318]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:03:00,451 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:03:00,451 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:03:00,853 [    402]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 363 ms
+2020-02-29 23:03:01,078 [    627]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:03:01,450 [    999]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 372 ms
+2020-02-29 23:03:01,450 [    999]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:03:01,597 [   1146]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:03:01,779 [   1328]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1330 ms
+2020-02-29 23:04:32,701 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:04:32,702 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:04:33,157 [    456]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 418 ms
+2020-02-29 23:04:33,507 [    806]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:04:33,953 [   1252]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 446 ms
+2020-02-29 23:04:33,953 [   1252]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:04:34,072 [   1371]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:04:34,798 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:04:34,799 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:04:35,201 [    403]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 365 ms
+2020-02-29 23:04:35,412 [    614]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:04:35,831 [   1033]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 419 ms
+2020-02-29 23:04:35,832 [   1034]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:04:35,964 [   1166]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:04:36,182 [   1384]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1386 ms
+2020-02-29 23:06:33,668 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:06:33,669 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:06:34,177 [    509]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 471 ms
+2020-02-29 23:06:34,489 [    821]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:06:34,918 [   1250]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 429 ms
+2020-02-29 23:06:34,919 [   1251]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:06:35,028 [   1360]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:06:35,708 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:06:35,709 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:06:36,104 [    396]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 357 ms
+2020-02-29 23:06:36,348 [    640]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:06:36,740 [   1032]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 392 ms
+2020-02-29 23:06:36,740 [   1032]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:06:36,877 [   1169]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:06:37,070 [   1362]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1364 ms
+2020-02-29 23:09:34,401 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:09:34,402 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:09:34,904 [    503]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 466 ms
+2020-02-29 23:09:35,235 [    834]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:09:35,681 [   1280]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 446 ms
+2020-02-29 23:09:35,682 [   1281]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:09:35,796 [   1395]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:09:36,470 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:09:36,470 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:09:36,914 [    444]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 404 ms
+2020-02-29 23:09:37,134 [    664]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:09:37,542 [   1072]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 408 ms
+2020-02-29 23:09:37,542 [   1072]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:09:37,687 [   1217]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:09:37,929 [   1459]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1461 ms
+2020-02-29 23:33:11,785 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:33:11,786 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:33:12,345 [    560]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 505 ms
+2020-02-29 23:33:12,680 [    895]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:33:13,133 [   1348]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 453 ms
+2020-02-29 23:33:13,133 [   1348]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:33:13,314 [   1529]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:33:14,055 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:33:14,055 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:33:14,521 [    466]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 421 ms
+2020-02-29 23:33:14,826 [    771]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:33:15,294 [   1239]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 468 ms
+2020-02-29 23:33:15,294 [   1239]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:33:15,380 [   1325]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:33:15,585 [   1530]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1532 ms
+2020-02-29 23:46:32,699 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:46:32,700 [      2]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:46:33,256 [    558]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 516 ms
+2020-02-29 23:46:33,593 [    895]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:46:34,029 [   1331]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 436 ms
+2020-02-29 23:46:34,029 [   1331]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:46:34,162 [   1464]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:46:34,866 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:46:34,867 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:46:35,311 [    445]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 407 ms
+2020-02-29 23:46:35,553 [    687]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:46:35,995 [   1129]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 442 ms
+2020-02-29 23:46:35,995 [   1129]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:46:36,154 [   1288]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:46:36,349 [   1483]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1485 ms
+2020-02-29 23:47:10,404 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:47:10,404 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:47:10,826 [    423]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 382 ms
+2020-02-29 23:47:11,198 [    795]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:47:11,589 [   1186]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 391 ms
+2020-02-29 23:47:11,589 [   1186]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:47:11,737 [   1334]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:47:12,438 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:47:12,439 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:47:12,937 [    499]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 449 ms
+2020-02-29 23:47:13,161 [    723]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:47:13,644 [   1206]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 483 ms
+2020-02-29 23:47:13,644 [   1206]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:47:13,796 [   1358]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:47:14,006 [   1568]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1570 ms
+2020-02-29 23:53:08,798 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:53:08,799 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:53:09,257 [    459]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 423 ms
+2020-02-29 23:53:09,619 [    821]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:53:10,004 [   1206]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 385 ms
+2020-02-29 23:53:10,004 [   1206]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:53:10,139 [   1341]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:53:10,797 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:53:10,797 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:53:11,217 [    420]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 364 ms
+2020-02-29 23:53:11,481 [    684]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:53:11,892 [   1095]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 411 ms
+2020-02-29 23:53:11,892 [   1095]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:53:12,060 [   1263]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:53:12,274 [   1477]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1480 ms
+2020-02-29 23:58:37,241 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:58:37,242 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:58:37,797 [    556]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 519 ms
+2020-02-29 23:58:38,123 [    882]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:58:38,646 [   1405]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 523 ms
+2020-02-29 23:58:38,646 [   1405]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:58:38,831 [   1590]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:58:39,574 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-02-29 23:58:39,575 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-02-29 23:58:39,998 [    424]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 380 ms
+2020-02-29 23:58:40,237 [    663]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-02-29 23:58:40,692 [   1118]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 455 ms
+2020-02-29 23:58:40,692 [   1118]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-02-29 23:58:40,916 [   1342]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-02-29 23:58:41,135 [   1561]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1563 ms
+2020-03-01 00:16:08,646 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:16:08,649 [      3]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:16:09,169 [    523]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 474 ms
+2020-03-01 00:16:09,502 [    856]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:16:09,954 [   1308]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 452 ms
+2020-03-01 00:16:09,954 [   1308]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:16:10,088 [   1442]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:16:10,818 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:16:10,819 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:16:11,221 [    403]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 365 ms
+2020-03-01 00:16:11,469 [    651]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:16:11,907 [   1089]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-03-01 00:16:11,907 [   1089]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:16:12,053 [   1235]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:16:12,253 [   1435]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1437 ms
+2020-03-01 00:21:05,805 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:21:05,806 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:21:06,281 [    476]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 438 ms
+2020-03-01 00:21:06,647 [    842]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:21:07,104 [   1299]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 457 ms
+2020-03-01 00:21:07,104 [   1299]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:21:07,232 [   1427]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:21:07,960 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:21:07,961 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:21:08,403 [    443]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 404 ms
+2020-03-01 00:21:08,636 [    676]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:21:09,074 [   1114]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-03-01 00:21:09,074 [   1114]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:21:09,220 [   1260]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:21:09,453 [   1493]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1495 ms
+2020-03-01 00:28:04,392 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:28:04,393 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:28:04,879 [    487]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 451 ms
+2020-03-01 00:28:05,219 [    827]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:28:05,669 [   1277]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 450 ms
+2020-03-01 00:28:05,669 [   1277]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:28:05,819 [   1427]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:28:06,515 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:28:06,515 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:28:06,954 [    440]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 403 ms
+2020-03-01 00:28:07,161 [    647]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:28:07,565 [   1051]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 404 ms
+2020-03-01 00:28:07,565 [   1051]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:28:07,702 [   1188]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:28:07,987 [   1473]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1474 ms
+2020-03-01 00:30:15,276 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:30:15,277 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:30:15,755 [    479]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 434 ms
+2020-03-01 00:30:16,112 [    836]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:30:16,550 [   1274]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-03-01 00:30:16,550 [   1274]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:30:16,685 [   1409]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:30:17,325 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:30:17,325 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:30:17,688 [    363]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 327 ms
+2020-03-01 00:30:17,906 [    581]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:30:18,311 [    986]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 404 ms
+2020-03-01 00:30:18,311 [    986]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:30:18,438 [   1113]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:30:18,637 [   1312]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1314 ms
+2020-03-01 00:31:14,991 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:31:14,992 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:31:15,481 [    490]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 451 ms
+2020-03-01 00:31:15,809 [    818]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:31:16,244 [   1253]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 435 ms
+2020-03-01 00:31:16,246 [   1255]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:31:16,384 [   1393]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:31:17,068 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:31:17,069 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:31:17,471 [    403]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 360 ms
+2020-03-01 00:31:17,705 [    637]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:31:18,105 [   1037]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 401 ms
+2020-03-01 00:31:18,106 [   1038]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:31:18,238 [   1170]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:31:18,427 [   1359]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1361 ms
+2020-03-01 00:44:26,270 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:44:26,270 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:44:26,721 [    451]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 416 ms
+2020-03-01 00:44:27,016 [    746]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:44:27,400 [   1130]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 384 ms
+2020-03-01 00:44:27,400 [   1130]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:44:27,552 [   1282]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:44:28,226 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:44:28,227 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:44:28,598 [    372]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 336 ms
+2020-03-01 00:44:28,853 [    627]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:44:29,240 [   1014]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 387 ms
+2020-03-01 00:44:29,240 [   1014]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:44:29,364 [   1138]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:44:29,549 [   1323]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1325 ms
+2020-03-01 00:47:14,683 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:47:14,684 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:47:15,220 [    537]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 499 ms
+2020-03-01 00:47:15,557 [    874]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:47:15,993 [   1310]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 436 ms
+2020-03-01 00:47:15,993 [   1310]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:47:16,118 [   1435]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:47:16,818 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:47:16,819 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:47:17,228 [    410]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 363 ms
+2020-03-01 00:47:17,459 [    641]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:47:17,938 [   1120]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 479 ms
+2020-03-01 00:47:17,939 [   1121]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:47:18,091 [   1273]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:47:18,300 [   1482]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1484 ms
+2020-03-01 00:48:33,791 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:48:33,791 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:48:34,233 [    442]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 403 ms
+2020-03-01 00:48:34,562 [    771]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:48:34,939 [   1148]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 377 ms
+2020-03-01 00:48:34,939 [   1148]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:48:35,084 [   1293]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:48:35,773 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:48:35,774 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:48:36,175 [    402]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 361 ms
+2020-03-01 00:48:36,402 [    629]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:48:36,799 [   1026]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 397 ms
+2020-03-01 00:48:36,800 [   1027]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:48:36,949 [   1176]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:48:37,143 [   1370]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1372 ms
+2020-03-01 00:52:45,751 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:52:45,752 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:52:46,249 [    498]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 457 ms
+2020-03-01 00:52:46,597 [    846]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:52:47,057 [   1306]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 460 ms
+2020-03-01 00:52:47,057 [   1306]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:52:47,209 [   1458]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:52:47,877 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:52:47,878 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:52:48,252 [    375]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 336 ms
+2020-03-01 00:52:48,466 [    589]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:52:48,850 [    973]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 384 ms
+2020-03-01 00:52:48,850 [    973]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:52:48,978 [   1101]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:52:49,167 [   1290]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1292 ms
+2020-03-01 00:55:19,500 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:55:19,501 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:55:20,064 [    564]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 524 ms
+2020-03-01 00:55:20,392 [    892]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:55:20,804 [   1304]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 412 ms
+2020-03-01 00:55:20,804 [   1304]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:55:20,919 [   1419]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:55:21,598 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:55:21,599 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:55:22,024 [    426]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 384 ms
+2020-03-01 00:55:22,259 [    661]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:55:22,666 [   1068]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 407 ms
+2020-03-01 00:55:22,667 [   1069]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:55:22,811 [   1213]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:55:23,024 [   1426]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1428 ms
+2020-03-01 00:58:25,026 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:58:25,027 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:58:25,570 [    544]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 508 ms
+2020-03-01 00:58:25,905 [    879]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:58:26,319 [   1293]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 414 ms
+2020-03-01 00:58:26,320 [   1294]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:58:26,455 [   1429]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:58:27,151 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 00:58:27,152 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 00:58:27,583 [    432]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 393 ms
+2020-03-01 00:58:27,834 [    683]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 00:58:28,274 [   1123]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 439 ms
+2020-03-01 00:58:28,274 [   1123]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 00:58:28,416 [   1265]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 00:58:28,604 [   1453]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1455 ms
+2020-03-01 01:01:27,118 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:01:27,119 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:01:27,634 [    516]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 479 ms
+2020-03-01 01:01:27,992 [    874]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:01:28,427 [   1309]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 435 ms
+2020-03-01 01:01:28,428 [   1310]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:01:28,580 [   1462]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:01:29,245 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:01:29,246 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:01:29,654 [    409]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 376 ms
+2020-03-01 01:01:29,876 [    631]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:01:30,317 [   1072]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 441 ms
+2020-03-01 01:01:30,317 [   1072]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:01:30,464 [   1219]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:01:30,661 [   1416]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1418 ms
+2020-03-01 01:02:12,381 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:02:12,382 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:02:13,124 [    743]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 702 ms
+2020-03-01 01:02:13,482 [   1101]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:02:14,034 [   1653]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 552 ms
+2020-03-01 01:02:14,034 [   1653]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:02:14,167 [   1786]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:02:14,929 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:02:14,929 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:02:15,351 [    422]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 379 ms
+2020-03-01 01:02:15,575 [    646]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:02:15,972 [   1043]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 397 ms
+2020-03-01 01:02:15,972 [   1043]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:02:16,125 [   1196]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:02:16,337 [   1408]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1411 ms
+2020-03-01 01:18:01,752 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:18:01,753 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:18:02,198 [    446]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 409 ms
+2020-03-01 01:18:02,531 [    779]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:18:02,922 [   1170]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 391 ms
+2020-03-01 01:18:02,922 [   1170]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:18:03,077 [   1325]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:18:03,709 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:18:03,710 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:18:04,043 [    334]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 298 ms
+2020-03-01 01:18:04,248 [    539]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:18:04,573 [    864]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 325 ms
+2020-03-01 01:18:04,574 [    865]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:18:04,710 [   1001]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:18:04,926 [   1217]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1219 ms
+2020-03-01 01:20:01,363 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:20:01,364 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:20:01,846 [    483]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 446 ms
+2020-03-01 01:20:02,147 [    784]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:20:02,563 [   1200]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 416 ms
+2020-03-01 01:20:02,564 [   1201]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:20:02,711 [   1348]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:20:03,416 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:20:03,416 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:20:03,845 [    430]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 386 ms
+2020-03-01 01:20:04,082 [    667]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:20:04,465 [   1050]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 383 ms
+2020-03-01 01:20:04,465 [   1050]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:20:04,609 [   1194]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:20:04,839 [   1424]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1425 ms
+2020-03-01 01:21:15,043 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:21:15,043 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:21:15,521 [    478]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 442 ms
+2020-03-01 01:21:15,846 [    803]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:21:16,229 [   1186]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 383 ms
+2020-03-01 01:21:16,229 [   1186]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:21:16,389 [   1346]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:21:17,082 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:21:17,082 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:21:17,498 [    416]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 374 ms
+2020-03-01 01:21:17,733 [    651]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:21:18,128 [   1046]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 394 ms
+2020-03-01 01:21:18,128 [   1046]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:21:18,286 [   1204]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:21:18,496 [   1414]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1416 ms
+2020-03-01 01:22:35,929 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:22:35,930 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:22:36,406 [    477]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 438 ms
+2020-03-01 01:22:36,747 [    818]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:22:37,184 [   1255]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 436 ms
+2020-03-01 01:22:37,184 [   1255]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:22:37,349 [   1420]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:22:38,038 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:22:38,039 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:22:38,442 [    404]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 351 ms
+2020-03-01 01:22:38,680 [    642]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:22:39,125 [   1087]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 445 ms
+2020-03-01 01:22:39,125 [   1087]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:22:39,262 [   1224]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:22:39,455 [   1417]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1418 ms
+2020-03-01 01:23:28,185 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:23:28,186 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:23:28,670 [    485]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 446 ms
+2020-03-01 01:23:28,994 [    809]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:23:29,405 [   1220]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 411 ms
+2020-03-01 01:23:29,405 [   1220]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:23:29,565 [   1380]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:23:30,256 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:23:30,257 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:23:30,664 [    408]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 362 ms
+2020-03-01 01:23:30,925 [    669]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:23:31,362 [   1106]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 438 ms
+2020-03-01 01:23:31,363 [   1107]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:23:31,521 [   1265]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:23:31,744 [   1488]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1492 ms
+2020-03-01 01:26:50,081 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:26:50,082 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:26:50,563 [    482]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 443 ms
+2020-03-01 01:26:50,884 [    803]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:26:51,305 [   1224]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 421 ms
+2020-03-01 01:26:51,305 [   1224]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:26:51,476 [   1395]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:26:52,160 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:26:52,161 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:26:52,558 [    398]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 358 ms
+2020-03-01 01:26:52,783 [    623]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:26:53,190 [   1030]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 407 ms
+2020-03-01 01:26:53,190 [   1030]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:26:53,336 [   1176]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:26:53,524 [   1364]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1366 ms
+2020-03-01 01:28:37,931 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:28:37,932 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:28:38,415 [    484]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 446 ms
+2020-03-01 01:28:38,746 [    815]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:28:39,171 [   1240]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 426 ms
+2020-03-01 01:28:39,172 [   1241]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:28:39,322 [   1391]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:28:40,003 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:28:40,004 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:28:40,389 [    386]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 347 ms
+2020-03-01 01:28:40,626 [    623]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:28:41,077 [   1074]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 451 ms
+2020-03-01 01:28:41,077 [   1074]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:28:41,221 [   1218]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:28:41,419 [   1416]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1418 ms
+2020-03-01 01:29:50,461 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:29:50,461 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:29:50,947 [    486]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 455 ms
+2020-03-01 01:29:51,467 [   1006]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:29:52,029 [   1568]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 562 ms
+2020-03-01 01:29:52,029 [   1568]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:29:52,216 [   1755]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:29:53,144 [      1]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:29:53,144 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:29:53,794 [    651]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 611 ms
+2020-03-01 01:29:54,103 [    960]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:29:54,617 [   1474]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 514 ms
+2020-03-01 01:29:54,618 [   1475]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:29:54,783 [   1640]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:29:55,190 [   2047]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 2048 ms
+2020-03-01 01:30:40,380 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:30:40,381 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:30:40,872 [    492]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 448 ms
+2020-03-01 01:30:41,209 [    829]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:30:41,630 [   1250]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 421 ms
+2020-03-01 01:30:41,630 [   1250]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:30:41,798 [   1418]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:30:42,488 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:30:42,489 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:30:42,986 [    498]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 415 ms
+2020-03-01 01:30:43,261 [    773]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:30:43,689 [   1201]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 429 ms
+2020-03-01 01:30:43,689 [   1201]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:30:43,835 [   1347]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:30:44,125 [   1637]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1640 ms
+2020-03-01 01:31:33,426 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:31:33,427 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:31:33,877 [    451]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 412 ms
+2020-03-01 01:31:34,224 [    798]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:31:34,661 [   1235]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 437 ms
+2020-03-01 01:31:34,661 [   1235]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:31:34,823 [   1397]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:31:35,501 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 01:31:35,502 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 01:31:35,913 [    412]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 372 ms
+2020-03-01 01:31:36,129 [    628]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 01:31:36,554 [   1053]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 425 ms
+2020-03-01 01:31:36,554 [   1053]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 01:31:36,702 [   1201]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 01:31:36,904 [   1403]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1405 ms
+2020-03-01 01:31:56,206 [  20705]   INFO - etbrains.jps.cmdline.BuildMain - Build canceled, but no build session is running. Exiting.
+2020-03-01 11:35:45,296 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 11:35:45,297 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 11:35:45,806 [    510]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 479 ms
+2020-03-01 11:35:46,173 [    877]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 11:35:46,620 [   1324]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 447 ms
+2020-03-01 11:35:46,621 [   1325]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 11:35:46,779 [   1483]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 11:35:47,536 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 11:35:47,537 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 11:35:48,044 [    508]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 448 ms
+2020-03-01 11:35:48,272 [    736]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 11:35:48,738 [   1202]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 466 ms
+2020-03-01 11:35:48,739 [   1203]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 11:35:48,892 [   1356]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 11:35:49,098 [   1562]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1564 ms
+2020-03-01 12:43:34,842 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:43:34,843 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:43:35,558 [    716]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 679 ms
+2020-03-01 12:43:35,970 [   1128]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:43:36,495 [   1653]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 525 ms
+2020-03-01 12:43:36,497 [   1655]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:43:36,692 [   1850]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:43:37,427 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:43:37,428 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:43:37,819 [    392]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 346 ms
+2020-03-01 12:43:38,455 [   1028]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:43:38,824 [   1397]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 369 ms
+2020-03-01 12:43:38,825 [   1398]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:43:38,943 [   1516]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:43:39,135 [   1708]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1710 ms
+2020-03-01 12:45:00,821 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:45:00,822 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:45:01,307 [    486]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 445 ms
+2020-03-01 12:45:01,610 [    789]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:45:02,060 [   1239]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 450 ms
+2020-03-01 12:45:02,060 [   1239]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:45:02,201 [   1380]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:45:02,939 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:45:02,940 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:45:03,363 [    424]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 374 ms
+2020-03-01 12:45:04,000 [   1061]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:45:04,404 [   1465]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 404 ms
+2020-03-01 12:45:04,404 [   1465]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:45:04,537 [   1598]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:45:04,790 [   1851]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1852 ms
+2020-03-01 12:46:16,894 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:46:16,895 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:46:17,356 [    462]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 424 ms
+2020-03-01 12:46:17,693 [    799]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:46:18,099 [   1205]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 406 ms
+2020-03-01 12:46:18,099 [   1205]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:46:18,251 [   1357]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:46:18,990 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 12:46:18,991 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 12:46:19,410 [    420]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 366 ms
+2020-03-01 12:46:20,062 [   1072]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 12:46:20,459 [   1469]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 397 ms
+2020-03-01 12:46:20,459 [   1469]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 12:46:20,584 [   1594]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 12:46:20,830 [   1840]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1842 ms
+2020-03-01 13:06:01,146 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:06:01,147 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:06:01,633 [    487]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 451 ms
+2020-03-01 13:06:01,982 [    836]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:06:02,438 [   1292]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 457 ms
+2020-03-01 13:06:02,438 [   1292]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:06:02,601 [   1455]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:06:03,341 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:06:03,346 [      5]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:06:03,774 [    433]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 389 ms
+2020-03-01 13:06:04,080 [    739]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:06:04,514 [   1173]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 434 ms
+2020-03-01 13:06:04,514 [   1173]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:06:04,647 [   1306]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:06:04,862 [   1521]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1523 ms
+2020-03-01 13:07:52,573 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:07:52,574 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:07:53,043 [    470]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 431 ms
+2020-03-01 13:07:53,391 [    818]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:07:53,917 [   1344]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 526 ms
+2020-03-01 13:07:53,917 [   1344]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:07:54,077 [   1504]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:07:54,790 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:07:54,791 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:07:55,212 [    422]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 380 ms
+2020-03-01 13:07:55,483 [    693]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:07:55,898 [   1108]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 415 ms
+2020-03-01 13:07:55,898 [   1108]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:07:56,047 [   1257]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:07:56,221 [   1431]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1433 ms
+2020-03-01 13:12:41,536 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:12:41,537 [      1]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:12:42,120 [    584]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 546 ms
+2020-03-01 13:12:42,543 [   1007]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:12:43,158 [   1622]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 615 ms
+2020-03-01 13:12:43,158 [   1622]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:12:43,350 [   1814]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:12:44,046 [      0]   INFO - etbrains.jps.cmdline.BuildMain - ==================================================
+2020-03-01 13:12:44,046 [      0]   INFO - etbrains.jps.cmdline.BuildMain - Build process started. Classpath: /Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/jps-launcher.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar:/Users/xinyuan/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/optimizedFileManager.jar
+2020-03-01 13:12:44,558 [    512]   INFO - etbrains.jps.cmdline.BuildMain - Connection to IDE established in 471 ms
+2020-03-01 13:12:44,888 [    842]   INFO - jps.cmdline.JpsModelLoaderImpl - Loading model: project path = /Users/xinyuan/Documents/ANU/ANU Honours Project/Code, global options path = /Users/xinyuan/IdeaProjects/my_gradle_plugin/build/idea-sandbox/config/options
+2020-03-01 13:12:45,323 [   1277]   INFO - jps.cmdline.JpsModelLoaderImpl - Model loaded in 436 ms
+2020-03-01 13:12:45,323 [   1277]   INFO - jps.cmdline.JpsModelLoaderImpl - Project has 1 modules, 1 libraries
+2020-03-01 13:12:45,469 [   1423]   INFO - ellij.util.io.PagedFileStorage - lower=100; upper=500; buffer=10; max=602
+2020-03-01 13:12:45,653 [   1607]   INFO - etbrains.jps.cmdline.BuildMain - Pre-loaded process ready in 1609 ms
