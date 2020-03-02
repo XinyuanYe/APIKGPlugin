@@ -9,16 +9,16 @@ public class ASTtriplet {
     private String name;
     private int id;
 
-    public Map<String, String> first_entity;
-    public ArrayList<Map<String, String>> second_entity;
-    public Map<String, String> third_entity;
+    public ArrayList<String> first_entity;
+    public ArrayList<String> second_entity;
+    public ArrayList<String> third_entity;
 
     public ASTtriplet(int id) {
         this.name = "triplet_" + id;
         this.id = id;
-        this.first_entity = new HashMap<>();
+        this.first_entity = new ArrayList<>();
         this.second_entity = new ArrayList<>();
-        this.third_entity = new HashMap<>();
+        this.third_entity = new ArrayList<>();
     }
 
     public String getName() {
@@ -31,45 +31,46 @@ public class ASTtriplet {
 
     public String toString() {
         String output = "";
-        for (String name: first_entity.keySet()){
-            String key = name;
-            String value =first_entity.get(name);
-            output += "{" + key + ":" + value + "}, ";
-        }
-        String tmp = "[";
-        int length = second_entity.size();
-        for (int i=0; i<length; i++) {
-            String tmp_1 = "";
-            for (String name: second_entity.get(i).keySet()) {
-                String key = name;
-                String value = second_entity.get(i).get(name);
-                if (i != length - 1) {
-                    if (key.contains(":")) {
-                        tmp_1 += "{" + key + ", " + value + "}, ";
-                    }
-                    else {
-                        tmp_1 += "{" + key + ": " + value + "}, ";
-                    }
-                }
-                else {
-                    if (key.contains(":")) {
-                        tmp_1 += "{" + key + ", " + value + "}], ";
-                    }
-                    else {
-                        tmp_1 += "{" + key + ": " + value + "}], ";
-                    }
-                }
+        // first entity
+        int first_entity_size = first_entity.size();
+        output += "{";
+        for (int i=0; i<first_entity_size; i++) {
+            if (i != first_entity_size - 1) {
+                output += first_entity.get(i) + ", ";
             }
-            tmp += tmp_1;
-        }
-        output += tmp;
+            else {
+                output += first_entity.get(i);
 
-        for (String name: third_entity.keySet()){
-            String key = name;
-            String value = third_entity.get(name);
-            output += "{" + key + ":" + value + "}";
+            }
         }
+        output += "}, ";
+        // second entity
+        int second_entity_size = second_entity.size();
+        output += "{";
+        for (int i=0; i<second_entity_size; i++) {
+            if (i != second_entity_size - 1) {
+                output += second_entity.get(i) + ", ";
+            }
+            else {
+                output += second_entity.get(i);
 
+            }
+        }
+        output += "}, ";
+        // third entity
+        int third_entity_size = third_entity.size();
+        output += "{";
+        for (int i=0; i<third_entity_size; i++) {
+            if (i != third_entity_size - 1) {
+                output += third_entity.get(i) + ", ";
+            }
+            else {
+                output += third_entity.get(i);
+
+            }
+        }
+        output += "}";
+        // final output string
         return name + ": <" + output + ">";
     }
 
