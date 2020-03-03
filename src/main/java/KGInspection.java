@@ -7,8 +7,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     private static final Logger LOG = Logger.getInstance(KGInspection.class);
@@ -26,8 +24,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     static final String METHODCALL_EXPRESSION = "MethodCallExpression";
     static final String EXPRESSION_STMT = "ExpressionStatement";
     static final String IF_STMT = "IfStatement";
-    static final String IF_BLOCK = "IfBlock";
-    static final String ELSE_BLOCK = "ElseBlock";
+    static final String THEN_BRANCH = "ThenBranch";
+    static final String ELSE_SECTION = "ElseSection";
     static final String BINARY_EXPRESSION = "BinaryExpression";
     static final String LITERAL_EXPRESSION = "LiteralExpression";
     static final String TRY_STATEMENT = "TryStatement";
@@ -35,15 +33,24 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     static final String REFERENCE_EXP = "ReferenceExpression";
     static final String REFERENCE_ELEMENT = "ReferenceElement";
     static final String ASSIGNMENT_EXP = "AssignmentExpression";
+    static final String ARRAY_INITIALIZER_EXP = "ArrayInitializerExpression";
+    static final String POST_FIX_EXP = "PostFixExpression";
+    static final String FOR_STATEMENT = "ForStatement";
+    static final String FOR_BODY = "ForBody";
 
 
     // triplet counting
     static int id = 0;
-    static int lowest_id = 0;
-    static int highest_id = 0;
+    static int lowest_root_id = 0;
+    static int next_available_id = 0;
 
-    static int try_lowest_id = 0;
-    static int try_highest_id = 0;
+    static int try_lowest_rootID = 0;
+    static int try_next_available_id = 0;
+
+    static int if_next_available_id;
+
+    static int rootID = -1;
+
 
     /**
      * This method is overridden to provide a custom visitor
@@ -127,10 +134,10 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     // get all the related_triplets
                     int bodyStatementCount = method.getBody().getStatementCount();
 
-                    lowest_id = id;
-                    highest_id = id + bodyStatementCount;
-
                     ASTtriplet body_astTriplet = new ASTtriplet(id++);
+
+                    lowest_root_id = id;
+                    next_available_id = id + bodyStatementCount;
 
                     // list that stores the related triplets
                     ArrayList<String> related_triplets = new ArrayList<>();
@@ -149,6 +156,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     PsiStatement[] statements = method.getBody().getStatements();
                     for (int i=0; i<statements.length; i++) {
                         PsiStatement statement = statements[i];
+                        // IMPORTANT: always keep track the root ID
+                        rootID = lowest_root_id + i;
                         whatStatement(astTriplets, statement);
                     }
                 }
@@ -163,6 +172,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
         };
     }
 
+    // this function will be ONLY used once in the iterate BODY statement part
+    // so the isRoot boolean must be set to true to ensure correct id being recorded
     private static void whatStatement(ArrayList<ASTtriplet> astTriplets, PsiStatement statement) {
         // check if the given statement is an Declaration statement
         if (statement instanceof PsiDeclarationStatement) {
@@ -173,42 +184,124 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             for (int i=0; i<declaredElements.length; i++) {
                 PsiElement declaredElement = declaredElements[i];
                 PsiElement[] children = declaredElement.getChildren();
-                whatElement(astTriplets, children, DECLARATION_STMT);
+                whatElement(astTriplets, children, DECLARATION_STMT, true);
             }
         }
         else if (statement instanceof PsiReturnStatement) {
             PsiReturnStatement returnStatement = (PsiReturnStatement) statement;
             PsiElement[] children = returnStatement.getChildren();
-            whatElement(astTriplets, children, RETURN_STMT);
+            whatElement(astTriplets, children, RETURN_STMT, true);
         }
         else if (statement instanceof PsiExpressionStatement) {
             PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) statement;
             PsiElement[] expressions = psiExpressionStatement.getChildren();
-            whatElement(astTriplets, expressions, EXPRESSION_STMT);
+            whatElement(astTriplets, expressions, EXPRESSION_STMT, true);
 
         }
-//        else if (statement instanceof PsiIfStatement) {
-//            // add if statement relation
-//            ASTtriplet asTtriplet = new ASTtriplet(id);
-//            asTtriplet.first_entity.put("special_entity", "if");
-//            Map<String, String> tmp = new HashMap<>();
-//            tmp.put("related_triplet", "triplet_" + (++id));
-//            asTtriplet.second_entity.add(tmp);
-//            asTtriplet.third_entity.put("relation", IF_STMT);
-//            astTriplets.add(asTtriplet);
-//
-//            PsiIfStatement psiIfStatement = (PsiIfStatement) statement;
-//            PsiElement[] children = psiIfStatement.getChildren();
-//            whatElement(astTriplets, children, IF_STMT);
-//
-//        }
+        else if (statement instanceof PsiIfStatement) {
+            // add if statement relation
+            PsiIfStatement psiIfStatement = (PsiIfStatement) statement;
+
+            // list that stores the related triplets
+            ArrayList<String> related_triplets = new ArrayList<>();
+
+            for (int i = 0; i < 3; i++) {
+                related_triplets.add("triplet_" + (next_available_id + i));
+            }
+
+            if_next_available_id = next_available_id + 3;
+
+            ASTtriplet astTriplet;
+            astTriplet = new ASTtriplet(rootID++);
+            astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+            astTriplet.second_entity.add("End_entity: " + ELSE_SECTION);
+            astTriplet.third_entity.add("Relation: " + IF_STMT);
+            astTriplets.add(astTriplet);
+
+            PsiExpression ifConditionStatement = psiIfStatement.getCondition();
+            if (ifConditionStatement instanceof PsiBinaryExpression) {
+                PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) ifConditionStatement;
+
+                String LOperand = psiBinaryExpression.getLOperand().getText();
+                String LOperand_type = psiBinaryExpression.getLOperand().getType().getPresentableText();
+                String operation = psiBinaryExpression.getOperationSign().getText();
+                String ROperand = psiBinaryExpression.getROperand().getText();
+                String ROperand_type = psiBinaryExpression.getROperand().getType().getPresentableText();
+
+                astTriplet = new ASTtriplet(rootID++);
+                astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
+                astTriplet.second_entity.add("LOperand: " + LOperand);
+                astTriplet.second_entity.add("Operation: " + operation);
+                astTriplet.second_entity.add("ROperand: " + ROperand);
+                astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+                astTriplets.add(astTriplet);
+
+                PsiExpression psiBinaryExpressionLOperand = psiBinaryExpression.getLOperand();
+                if (psiBinaryExpressionLOperand instanceof PsiMethodCallExpression) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiBinaryExpressionLOperand;
+                    PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                    String referenceExp = psiReferenceExpression.getCanonicalText();
+                    PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                    getArguments(astTriplets, psiExpressionList, referenceExp, IF_STMT, METHODCALL_EXPRESSION, false);
+                }
+            }
+
+            PsiStatement thenBranch = psiIfStatement.getThenBranch();
+            if (thenBranch instanceof PsiBlockStatement) {
+                PsiBlockStatement psiBlockStatement = (PsiBlockStatement) thenBranch;
+                // there is something in then branch
+                if (!psiBlockStatement.getCodeBlock().isEmpty()) {
+                    int blockStatementCount = psiBlockStatement.getCodeBlock().getStatementCount();
+                    // list that stores the related triplets
+                    related_triplets = new ArrayList<>();
+                    for (int i = 0; i < blockStatementCount; i++) {
+                        related_triplets.add("triplet_" + (if_next_available_id + i));
+                    }
+
+                    astTriplet = new ASTtriplet(rootID++);
+                    astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
+                    astTriplet.second_entity.add("End_entity: " + "UNK");
+
+                    astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+                    astTriplets.add(astTriplet);
+
+                    PsiStatement[] psiStatements = psiBlockStatement.getCodeBlock().getStatements();
+                    for (PsiStatement psiStatement : psiStatements) {
+                        if (psiStatement instanceof PsiExpressionStatement) {
+                            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
+                            PsiExpression psiExpression = psiExpressionStatement.getExpression();
+                            if (psiExpression instanceof PsiMethodCallExpression) {
+                                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
+                                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                                String referenceExp = psiReferenceExpression.getCanonicalText();
+                                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                                getArguments(astTriplets, psiExpressionList, referenceExp, THEN_BRANCH, METHODCALL_EXPRESSION, false);
+                            }
+                        }
+                    }
+                }
+            }
+            PsiStatement elseBranch = psiIfStatement.getElseBranch();
+            if (elseBranch instanceof PsiBlockStatement) {
+                if (!((PsiBlockStatement) elseBranch).getCodeBlock().isEmpty()) {
+                    // TODO
+                }
+                else {
+                    astTriplet = new ASTtriplet(rootID++);
+                    astTriplet.first_entity.add("UNK");
+                    astTriplet.second_entity.add("UNK");
+                    astTriplet.third_entity.add("Relation: " + ELSE_SECTION);
+                    astTriplets.add(astTriplet);
+                }
+            }
+        }
         else if (statement instanceof PsiTryStatement) {
 
             PsiTryStatement psiTryStatement = (PsiTryStatement) statement;
             int statementCount = psiTryStatement.getTryBlock().getStatementCount();
 
-            try_lowest_id = id;
-            try_highest_id = id + statementCount;
+            try_lowest_rootID = lowest_root_id;
+            try_next_available_id = next_available_id + statementCount;
 
             ASTtriplet try_astTriplet = new ASTtriplet(id++);
 
@@ -226,21 +319,145 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
             // get try block directly
             PsiElement[] statements = psiTryStatement.getTryBlock().getChildren();
-            whatElement(astTriplets, statements, TRY_STATEMENT);
+            whatElement(astTriplets, statements, TRY_STATEMENT, false);
 
-            id = try_highest_id;
+            id = try_next_available_id;
 
             PsiElement[] catchStmts = psiTryStatement.getChildren();
-            whatElement(astTriplets, catchStmts, CATCH_SECTION);
+            whatElement(astTriplets, catchStmts, CATCH_SECTION, false);
+        }
+        else if (statement instanceof PsiForStatement) {
+
+            PsiForStatement psiForStatement = (PsiForStatement) statement;
+
+            // list that stores the related triplets
+            ArrayList<String> related_triplets = new ArrayList<>();
+
+            for (int i = 0; i < 4; i++) {
+                related_triplets.add("triplet_" + (next_available_id + i));
+            }
+
+            ASTtriplet astTriplet;
+            astTriplet = new ASTtriplet(rootID++);
+            astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+            astTriplet.second_entity.add("End_entity: " + "UNK");
+            astTriplet.third_entity.add("Relation: " + FOR_STATEMENT);
+            astTriplets.add(astTriplet);
+
+            PsiStatement forStatementInitialization = psiForStatement.getInitialization();
+
+            if (forStatementInitialization instanceof PsiDeclarationStatement) {
+                PsiDeclarationStatement psiDeclarationStatement = (PsiDeclarationStatement) forStatementInitialization;
+                PsiElement[] declaredElements = psiDeclarationStatement.getDeclaredElements();
+                String identifierName = "UNK";
+                String type = "UNK";
+                String literalExp = "UNK";
+
+                for (PsiElement element : declaredElements) {
+                    if (element instanceof PsiTypeElement) {
+                        PsiTypeElement psiTypeElement = (PsiTypeElement) element;
+                        type = psiTypeElement.getType().getPresentableText();
+                    } else if (element instanceof PsiIdentifier) {
+                        PsiIdentifier psiIdentifier = (PsiIdentifier) element;
+                        identifierName = psiIdentifier.getText();
+                    } else if (element instanceof PsiLiteralExpression) {
+                        PsiLiteralExpression psiLiteralExpression = (PsiLiteralExpression) element;
+                        literalExp = psiLiteralExpression.getText();
+                    }
+                }
+                astTriplet = new ASTtriplet(next_available_id++);
+                astTriplet.first_entity.add(LITERAL_EXPRESSION + ": " + literalExp);
+                astTriplet.second_entity.add("Argument: " + identifierName);
+                astTriplet.second_entity.add("Type: " + type);
+                astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                astTriplets.add(astTriplet);
+            }
+
+            PsiExpression forStatementCondition = psiForStatement.getCondition();
+            if (forStatementCondition instanceof PsiBinaryExpression) {
+                PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) forStatementCondition;
+                String expression = psiBinaryExpression.getText();
+                String LOperand = psiBinaryExpression.getLOperand().getText();
+                String LOperand_type = psiBinaryExpression.getLOperand().getType().getPresentableText();
+                String ROperand = psiBinaryExpression.getROperand().getText();
+                String ROperand_type = psiBinaryExpression.getROperand().getType().getPresentableText();
+                String operation = psiBinaryExpression.getOperationSign().getText();
+
+                astTriplet = new ASTtriplet(next_available_id++);
+                astTriplet.first_entity.add(BINARY_EXPRESSION + ": " + expression);
+                astTriplet.second_entity.add("LOperand: " + LOperand);
+                astTriplet.second_entity.add("Operation: " + operation);
+                astTriplet.second_entity.add("ROperand: " + ROperand);
+                astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+                astTriplets.add(astTriplet);
+            }
+
+
+            PsiStatement forStatementUpdate = psiForStatement.getUpdate();
+            if (forStatementUpdate instanceof PsiExpressionStatement) {
+                PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) forStatementUpdate;
+                PsiExpression expression = psiExpressionStatement.getExpression();
+                if (expression instanceof PsiPostfixExpression) {
+                    PsiPostfixExpression psiPostfixExpression = (PsiPostfixExpression) expression;
+                    String operand = psiPostfixExpression.getOperand().getText();
+                    String operand_type = psiPostfixExpression.getOperand().getType().getPresentableText();
+                    String operation = psiPostfixExpression.getOperationSign().getText();
+                    astTriplet = new ASTtriplet(next_available_id++);
+                    astTriplet.first_entity.add(POST_FIX_EXP + ": " + psiPostfixExpression.getText());
+                    astTriplet.second_entity.add("Lperand: " + operand);
+                    astTriplet.second_entity.add("Operation: " + operation);
+                    astTriplet.third_entity.add("Relation: " + POST_FIX_EXP);
+                    astTriplets.add(astTriplet);
+                }
+            }
+
+            // this will be block statement
+            PsiStatement blockStatement = psiForStatement.getBody();
+            PsiElement[] codeBlock = blockStatement.getChildren();
+            for (PsiElement element : codeBlock) {
+                if (element instanceof PsiCodeBlock) {
+                    PsiCodeBlock forBody = (PsiCodeBlock) element;
+                    int forBodyCount = forBody.getStatementCount();
+
+                    // list that stores the related triplets
+                    related_triplets = new ArrayList<>();
+
+                    for (int i = 0; i < forBodyCount; i++) {
+                        related_triplets.add("triplet_" + (next_available_id + i + 1));
+                    }
+
+                    astTriplet = new ASTtriplet(next_available_id++);
+                    astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+                    astTriplet.second_entity.add("End_entity: " + "UNK");
+                    astTriplet.third_entity.add("Relation: " + FOR_BODY);
+                    astTriplets.add(astTriplet);
+
+                    PsiStatement[] statements = forBody.getStatements();
+                    for (PsiStatement psiStatement : statements) {
+                        if (psiStatement instanceof PsiExpressionStatement) {
+                            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
+                            PsiExpression psiExpression = psiExpressionStatement.getExpression();
+                            System.out.println(psiExpression.toString());
+                            if (psiExpression instanceof PsiMethodCallExpression) {
+                                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
+                                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                                String referenceExp = psiReferenceExpression.getCanonicalText();
+                                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                                getArguments(astTriplets, psiExpressionList, referenceExp, FOR_STATEMENT, METHODCALL_EXPRESSION, false);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
-    private static void whatElement(ArrayList<ASTtriplet> astTriplets, PsiElement[] psiElements, String relationType) {
+    private static void whatElement(ArrayList<ASTtriplet> astTriplets, PsiElement[] psiElements, String relationType, boolean isRoot) {
 
         String psiType = "UNK";
         String psiIdentName = "UNK";
         String referenceElement_name = "UNK";
-        String methodCall_name = "UNK";
+        String referenceExp = "UNK";
 
         Boolean elseSection = false;
         String classType = null;
@@ -267,7 +484,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 for (int i=0; i<declaredElements.length; i++) {
                     PsiElement declaredElement = declaredElements[i];
                     PsiElement[] children = declaredElement.getChildren();
-                    whatElement(astTriplets, children, TRY_STATEMENT);
+                    whatElement(astTriplets, children, TRY_STATEMENT, isRoot);
                 }
             }
             // EXPRESSION STATEMENT
@@ -275,24 +492,23 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 if (relationType.equals(TRY_STATEMENT)) {
                     PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
                     PsiElement[] expressions = psiExpressionStatement.getChildren();
-                    whatElement(astTriplets, expressions, TRY_STATEMENT);
+                    whatElement(astTriplets, expressions, TRY_STATEMENT, isRoot);
                 }
                 else if (relationType.equals(CATCH_SECTION)) {
                     PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiElement;
                     PsiElement[] expressions = psiExpressionStatement.getChildren();
-                    whatElement(astTriplets, expressions, CATCH_SECTION);
+                    whatElement(astTriplets, expressions, CATCH_SECTION, isRoot);
                 }
             }
             // REFERENCE EXPRESSION
             else if (psiElement instanceof PsiReferenceExpression) {
                 PsiReferenceExpression psiReferenceExpression = (PsiReferenceExpression) psiElement;
-                methodCall_name = psiReferenceExpression.getCanonicalText();
+                referenceExp = psiReferenceExpression.getCanonicalText();
                 classType = "reference_expression";
 
             }
             // CODE REFERENCE
             else if (psiElement instanceof PsiJavaCodeReferenceElement) {
-
                 PsiJavaCodeReferenceElement psiJavaCodeReferenceElement = (PsiJavaCodeReferenceElement) psiElement;
                 referenceElement_name = psiJavaCodeReferenceElement.getText();
                 classType = "reference_element";
@@ -303,39 +519,90 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 PsiExpressionList psiExpressionList = (PsiExpressionList) psiElement;
                 PsiExpression[] psiExpressions = psiExpressionList.getExpressions();
                 if (relationType.equals(METHODCALL_EXPRESSION)) {
-                    getArguments(astTriplets, psiExpressions, methodCall_name, relationType, classType);
+                    getArguments(astTriplets, psiExpressions, referenceExp, relationType, classType, isRoot);
                 }
                 else if (relationType.equals(TRY_STATEMENT)) {
                     if (classType.equals("reference_element")) {
-                        getArguments(astTriplets, psiExpressions, referenceElement_name, relationType, classType);
+                        getArguments(astTriplets, psiExpressions, referenceElement_name, relationType, classType, isRoot);
                     }
                     else {
-                        getArguments(astTriplets, psiExpressions, methodCall_name, relationType, classType);
+                        getArguments(astTriplets, psiExpressions, referenceExp, relationType, classType, isRoot);
 
                     }
                 }
                 else if (relationType.equals(CATCH_SECTION)) {
-                    getArguments(astTriplets, psiExpressions, methodCall_name, relationType, classType);
+                    getArguments(astTriplets, psiExpressions, referenceExp, relationType, classType, isRoot);
+                }
+                else if (relationType.equals(NEW_EXPRESSION)) {
+                    if (classType.equals("reference_element")) {
+                        getArguments(astTriplets, psiExpressions, referenceElement_name, relationType, classType, isRoot);
+                    }
+                    else {
+                        getArguments(astTriplets, psiExpressions, referenceExp, relationType, classType, isRoot);
+                    }
                 }
             }
             // METHOD CALL EXPRESSION
             else if (psiElement instanceof PsiMethodCallExpression) {
-                if (relationType.equals(RETURN_STMT)) {
+                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
 
-                } else if (relationType.equals(EXPRESSION_STMT)) {
-                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                if (relationType.equals(RETURN_STMT)) {
+                    ASTtriplet astTriplet;
+                    if (isRoot) {
+                        astTriplet = new ASTtriplet(rootID++);
+                        astTriplet.first_entity.add("Related_triplet: " + "triplet_" + (next_available_id));
+                        astTriplet.second_entity.add("End_entity: " + "UNK");
+                        astTriplet.third_entity.add("Relation: " + RETURN_STMT);
+                        astTriplets.add(astTriplet);
+                        isRoot = false;
+                    }
+                    else {
+                        astTriplet = new ASTtriplet(next_available_id++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id + 1));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                    }
+
                     PsiElement[] children = psiMethodCallExpression.getChildren();
-                    whatElement(astTriplets, children, METHODCALL_EXPRESSION);
+
+                    whatElement(astTriplets, children, METHODCALL_EXPRESSION, isRoot);
+                } else if (relationType.equals(EXPRESSION_STMT)) {
+                    PsiElement[] children = psiMethodCallExpression.getChildren();
+                    whatElement(astTriplets, children, METHODCALL_EXPRESSION, isRoot);
                 }
                 else if (relationType.equals(TRY_STATEMENT)) {
-                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
                     PsiElement[] children = psiMethodCallExpression.getChildren();
-                    whatElement(astTriplets, children, TRY_STATEMENT);
+                    whatElement(astTriplets, children, TRY_STATEMENT, isRoot);
                 }
                 else if (relationType.equals(CATCH_SECTION)) {
-                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
                     PsiElement[] children = psiMethodCallExpression.getChildren();
-                    whatElement(astTriplets, children, CATCH_SECTION);
+                    whatElement(astTriplets, children, CATCH_SECTION, isRoot);
+                }
+                else if (relationType.equals(DECLARATION_STMT)) {
+                    ASTtriplet astTriplet;
+                    if (isRoot) {
+                        astTriplet = new ASTtriplet(rootID++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                        isRoot = false;
+                    }
+                    else {
+                        astTriplet = new ASTtriplet(next_available_id++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (id + 1));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                    }
+
+                    PsiElement[] newExpressionChildren = psiMethodCallExpression.getChildren();
+
+                    whatElement(astTriplets, newExpressionChildren, METHODCALL_EXPRESSION, isRoot);
                 }
             }
             // LITERAL
@@ -356,52 +623,112 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             else if (psiElement instanceof PsiNewExpression) {
                 PsiNewExpression psiNewExpression = (PsiNewExpression) psiElement;
                 if (relationType.equals(DECLARATION_STMT)) {
-                    ASTtriplet astTriplet = new ASTtriplet(id);
-                    astTriplet.first_entity.add("Type: " + psiType);
-                    astTriplet.first_entity.add("Name: " + psiIdentName);
-
-                    astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (++try_highest_id));
-
-                    astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
-                    astTriplets.add(astTriplet);
+                    ASTtriplet astTriplet;
+                    if (isRoot) {
+                        astTriplet = new ASTtriplet(rootID++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                        isRoot = false;
+                    }
+                    else {
+                        astTriplet = new ASTtriplet(next_available_id++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id + 1));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                    }
 
                     PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
 
-                    whatElement(astTriplets, newExpressionChildren, NEW_EXPRESSION);
+                    whatElement(astTriplets, newExpressionChildren, NEW_EXPRESSION, isRoot);
                 }
                 else if (relationType.equals(TRY_STATEMENT)) {
-                    ASTtriplet astTriplet = new ASTtriplet(id);
-                    astTriplet.first_entity.add("Type: " + psiType);
-                    astTriplet.first_entity.add("Name: " + psiIdentName);
-
-                    astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (++try_highest_id));
-
-                    astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
-                    astTriplets.add(astTriplet);
+                    ASTtriplet astTriplet;
+                    if (isRoot) {
+                        astTriplet = new ASTtriplet(try_lowest_rootID);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (try_next_available_id));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                        isRoot = false;
+                    }
+                    else {
+                        astTriplet = new ASTtriplet(id++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (try_next_available_id));
+                        astTriplet.third_entity.add("Relation: " + DECLARATION_STMT);
+                        astTriplets.add(astTriplet);
+                    }
 
                     PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
 
-                    whatElement(astTriplets, newExpressionChildren, TRY_STATEMENT);
+                    whatElement(astTriplets, newExpressionChildren, TRY_STATEMENT, isRoot);
                 }
                 else if (relationType.equals(ASSIGNMENT_EXP)) {
-                    ASTtriplet astTriplet = new ASTtriplet(++highest_id);
-                    astTriplet.first_entity.add(REFERENCE_EXP + ": " + methodCall_name);
-                    astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (++highest_id));
-                    astTriplet.third_entity.add("Relation: " + ASSIGNMENT_EXP);
-                    astTriplets.add(astTriplet);
+                    ASTtriplet astTriplet;
+                    if (isRoot) {
+                        astTriplet = new ASTtriplet(rootID++);
+                        astTriplet.first_entity.add(REFERENCE_EXP + ": "+ referenceExp);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id));
+                        astTriplet.third_entity.add("Relation: " + ASSIGNMENT_EXP);
+                        astTriplets.add(astTriplet);
+                        isRoot = false;
+                    }
+                    else {
+                        astTriplet = new ASTtriplet(next_available_id++);
+                        astTriplet.first_entity.add("Type: " + psiType);
+                        astTriplet.first_entity.add("Name: " + psiIdentName);
+                        astTriplet.second_entity.add("Related_triplets: " + "triplet_" + (next_available_id));
+                        astTriplet.third_entity.add("Relation: " + ASSIGNMENT_EXP);
+                        astTriplets.add(astTriplet);
+                    }
 
                     PsiElement[] newExpressionChildren = psiNewExpression.getChildren();
-
-                    whatElement(astTriplets, newExpressionChildren, ASSIGNMENT_EXP);
+                    whatElement(astTriplets, newExpressionChildren, NEW_EXPRESSION, isRoot);
                 }
             }
             // ASSIGNMENT EXPRESSION
             else if (psiElement instanceof PsiAssignmentExpression) {
                 PsiAssignmentExpression psiAssignmentExpression = (PsiAssignmentExpression) psiElement;
                 PsiElement[] children = psiAssignmentExpression.getChildren();
-                // may need to change id
-                whatElement(astTriplets, children, ASSIGNMENT_EXP);
-                // change back id
+                whatElement(astTriplets, children, ASSIGNMENT_EXP, isRoot);
+            }
+            else if (psiElement instanceof PsiArrayInitializerExpression) {
+                PsiArrayInitializerExpression psiArrayInitializerExpression = (PsiArrayInitializerExpression) psiElement;
+                PsiExpression[] psiExpressions = psiArrayInitializerExpression.getInitializers();
+
+                ArrayList<String> arrayInitializer = new ArrayList<>();
+                ArrayList<String> arrayInitializerType = new ArrayList<>();
+
+                getArrayInitializer(arrayInitializer, arrayInitializerType, psiExpressions);
+
+                String arrayInitializerExp = psiArrayInitializerExpression.getText();
+
+                ASTtriplet astTriplet;
+                if (isRoot) {
+                    astTriplet = new ASTtriplet(rootID++);
+                    astTriplet.first_entity.add(ARRAY_INITIALIZER_EXP + ": "+ arrayInitializerExp);
+                    astTriplet.second_entity.add("Arguments :" + arrayInitializer.toString());
+                    astTriplet.second_entity.add("Types :" + arrayInitializerType.toString());
+                    astTriplet.third_entity.add("Relation: " + ARRAY_INITIALIZER_EXP);
+                    astTriplets.add(astTriplet);
+                    isRoot = false;
+                }
+                else {
+                    astTriplet = new ASTtriplet(next_available_id++);
+                    astTriplet.first_entity.add(ARRAY_INITIALIZER_EXP + ": "+ arrayInitializerExp);
+                    astTriplet.second_entity.add("Arguments :" + arrayInitializer.toString());
+                    astTriplet.second_entity.add("Types :" + arrayInitializerType.toString());
+                    astTriplet.third_entity.add("Relation: " + ARRAY_INITIALIZER_EXP);
+                    astTriplets.add(astTriplet);
+                }
+
             }
             // CATCH SECTION
             else if (psiElement instanceof PsiCatchSection) {
@@ -417,7 +744,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 astTriplets.add(asTtriplet);
 
                 PsiElement[] children = psiCatchSection.getCatchBlock().getChildren();
-                whatElement(astTriplets, children, CATCH_SECTION);
+                whatElement(astTriplets, children, CATCH_SECTION, isRoot);
 
             }
             else if (psiElement instanceof PsiKeyword) {
@@ -432,12 +759,12 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
 
     // GET ARGUMENTS
-    private static void getArguments(ArrayList<ASTtriplet> astTriplets, PsiExpression[] psiExpressions, String first_Entity, String relationType, String classType) {
+    private static void getArguments(ArrayList<ASTtriplet> astTriplets, PsiExpression[] psiExpressions, String first_Entity, String relationType, String classType, boolean isRoot) {
         // no arguments
         if (psiExpressions.length == 0) {
             // assume it always follow a methodcallexpression
             if (relationType.equals(TRY_STATEMENT)) {
-                ASTtriplet astTriplet = new ASTtriplet(++id);
+                ASTtriplet astTriplet = new ASTtriplet(id++);
                 if (classType.equals("reference_expression")) {
                     astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
                 }
@@ -456,83 +783,137 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
                 astTriplets.add(astTriplet);
             }
+            else if (relationType.equals(NEW_EXPRESSION)) {
+                ASTtriplet astTriplet = new ASTtriplet(next_available_id++);
+                if (classType.equals("reference_expression")) {
+                    astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
+                }
+                else if (classType.equals("reference_element"))
+                    astTriplet.first_entity.add(REFERENCE_ELEMENT + ": " + first_Entity);
+                    astTriplet.second_entity.add("Arguments: " + "UNK");
+                    astTriplet.second_entity.add("Types: " + "UNK");
+                    astTriplet.third_entity.add("Relation: " + NEW_EXPRESSION);
+                    astTriplets.add(astTriplet);
+            }
+            else if (relationType.equals(METHODCALL_EXPRESSION)) {
+                ASTtriplet astTriplet;
+                if (isRoot) {
+                    astTriplet = new ASTtriplet(rootID++);
+
+                }
+                else {
+                    astTriplet = new ASTtriplet(next_available_id++);
+
+                }
+                if (classType.equals("reference_expression")) {
+                    astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
+                }
+                astTriplet.second_entity.add("Arguments: " + "UNK");
+                astTriplet.second_entity.add("Types: " + "UNK");
+                astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
+                astTriplets.add(astTriplet);
+            }
         }
         else {
             // create a triplet first
             ASTtriplet astTriplet;
             if (relationType.equals(TRY_STATEMENT)) {
-                astTriplet = new ASTtriplet(try_highest_id++);
+                astTriplet = new ASTtriplet(try_next_available_id++);
+            }
+            else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
+                astTriplet = new ASTtriplet(if_next_available_id++);
             }
             else {
-                astTriplet = new ASTtriplet(id++);
+                if (isRoot) {
+                    astTriplet = new ASTtriplet(rootID++);
+                    isRoot = false;
+                }
+                else {
+                    astTriplet = new ASTtriplet(next_available_id++);
+                }
             }
+
+            ArrayList<String> argumentsList = new ArrayList<>();
+            ArrayList<String> argumentsTypeList = new ArrayList<>();
+
             for (int i=0; i<psiExpressions.length; i++) {
                 PsiExpression psiExpression = psiExpressions[i];
                 if (psiExpression instanceof PsiMethodCallExpression) {
                     if (classType.equals("reference_expression")) {
                         astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
                     }
-                    astTriplet.second_entity.add("Arguments: " + "triplet_" + (id));
+                    astTriplet.second_entity.add("Arguments: " + "triplet_" + (next_available_id));
                     astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
                     astTriplets.add(astTriplet);
 
                     PsiElement[] children = ((PsiMethodCallExpression)psiExpression).getChildren();
-                    whatElement(astTriplets, children, METHODCALL_EXPRESSION);
+                    whatElement(astTriplets, children, METHODCALL_EXPRESSION, isRoot);
                 }
                 else if (psiExpression instanceof PsiLiteralExpression) {
                     String argument = ((PsiLiteralExpression) psiExpression).getText();
                     String type = ((PsiLiteralExpression) psiExpression).getType().getPresentableText();
 
-                    if (classType.equals("reference_element")) {
-                        astTriplet.first_entity.add(REFERENCE_ELEMENT + ": " + first_Entity);
-                    }
-                    else if (classType.equals("reference_expression")) {
-                        astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
-                    }
-                    astTriplet.second_entity.add("Arguments: " + argument);
-                    astTriplet.second_entity.add("Types: " + type);
-                    astTriplet.third_entity.add("Relation: " + NEW_EXPRESSION);
-                    astTriplets.add(astTriplet);
+                    argumentsList.add(argument);
+                    argumentsTypeList.add(type);
                 }
+                else if (psiExpression instanceof PsiReferenceExpression) {
+                    String argument = ((PsiReferenceExpression) psiExpression).getText();
+                    String type = ((PsiReferenceExpression) psiExpression).getType().getPresentableText();
 
+                    argumentsList.add(argument);
+                    argumentsTypeList.add(type);
+                }
+                else if (psiExpression instanceof PsiArrayAccessExpression) {
+                    String argument = ((PsiArrayAccessExpression) psiExpression).getText();
+                    String type = ((PsiArrayAccessExpression) psiExpression).getType().getPresentableText();
+                    argumentsList.add(argument);
+                    argumentsTypeList.add(type);
+                }
+                else if (psiExpression instanceof PsiNewExpression) {
+                    String argument = ((PsiNewExpression) psiExpression).getText();
+                    String type = ((PsiNewExpression) psiExpression).getType().getPresentableText();
+                    argumentsList.add(argument);
+                    argumentsTypeList.add(type);
+                }
+            }
+            if (classType.equals("reference_element")) {
+                astTriplet.first_entity.add(REFERENCE_ELEMENT + ": " + first_Entity);
+            }
+            else if (classType.equals("reference_expression")) {
+                astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
             }
 
-        }
+            astTriplet.second_entity.add("Arguments: " + argumentsList.toString());
+            astTriplet.second_entity.add("Types: " + argumentsTypeList.toString());
+
+            if (relationType.equals(METHODCALL_EXPRESSION)) {
+                astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
+
+            }
+            else if (relationType.equals(FOR_STATEMENT)) {
+                astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
+                astTriplet.third_entity.add("Relation: " + classType);
+            }
+            else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
+                astTriplet.first_entity.add(classType + ": " + first_Entity);
+                astTriplet.third_entity.add("Relation: " + classType);
+            }
+            else {
+                astTriplet.third_entity.add("Relation: " + NEW_EXPRESSION);
+            }
+            astTriplets.add(astTriplet);
+            }
     }
 
-//    private static void addEntities(ASTtriplet asTtriplet, String firstEntityKey, String firstEntityValue,
-//                                    String thirdEntityKey,String thirdEntityValue) {
-//
-//        if (asTtriplet.first_entity.isEmpty()) {
-//            asTtriplet.first_entity.put(firstEntityKey, firstEntityValue);
-//        }
-//
-//        if (asTtriplet.third_entity.isEmpty()) {
-//            asTtriplet.third_entity.put(thirdEntityKey, thirdEntityValue);
-//        }
-//    }
-
-    private static String transformOPToken(String operation) {
-        if (operation.equals("NE")) {
-            return "!=";
-        }
-        else if (operation.equals("EQEQ")) {
-            return "==";
-        }
-        else if (operation.equals("LT")) {
-            return "<";
-        }
-        else if (operation.equals("LE")) {
-            return "<=";
-        }
-        else if (operation.equals("GT")) {
-            return ">";
-        }
-        else if (operation.equals("GE")) {
-            return ">=";
-        }
-        else {
-            return operation;
+    private static void getArrayInitializer(ArrayList<String> arrayInitializer, ArrayList<String> arrayInitializerType, PsiExpression[] psiExpressions) {
+        for (PsiExpression psiExpression : psiExpressions) {
+            if (psiExpression instanceof PsiLiteralExpression) {
+                PsiLiteralExpression psiLiteralExpression = (PsiLiteralExpression) psiExpression;
+                String name = psiLiteralExpression.getText();
+                String type = psiLiteralExpression.getType().getPresentableText();
+                arrayInitializer.add(name);
+                arrayInitializerType.add(type);
+            }
         }
     }
 
