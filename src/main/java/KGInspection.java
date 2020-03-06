@@ -168,6 +168,14 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     System.out.println(t.toString());
                 }
                 System.out.println();
+
+                // this will register a problem, and display warning (perhaps suggests quickFix)
+                // the boolean variable should be set to true if a problem is detected, it should always be false otherwise
+                // change the variable to true if want to display the warning for testing
+                boolean thereIsAProblem = false;
+                if (thereIsAProblem) {
+                    holder.registerProblem(method, DESCRIPTION_TEMPLATE, myQuickFix);
+                }
             }
         };
     }
@@ -437,7 +445,6 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                         if (psiStatement instanceof PsiExpressionStatement) {
                             PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
                             PsiExpression psiExpression = psiExpressionStatement.getExpression();
-                            System.out.println(psiExpression.toString());
                             if (psiExpression instanceof PsiMethodCallExpression) {
                                 PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
                                 PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
@@ -936,14 +943,14 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
 
         /**
-         * This method manipulates the PSI tree to replace 'a==b' with 'a.equals(b)
-         * or 'a!=b' with '!a.equals(b)'
+         * This method manipulates the PSI tree to resolve the problem
+         *
          *
          * @param project    The project that contains the file being edited.
          * @param descriptor A problem found by this inspection.
          */
         public void applyFix(@NotNull Project project, @NotNull ProblemDescriptor descriptor) {
-
+            // TODO
         }
 
         @NotNull
