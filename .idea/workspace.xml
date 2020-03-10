@@ -36,31 +36,6 @@
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/vfs_enum_attrib.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/vfs_enum_attrib.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/ast_1abd2520/stale_outputs_checked" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/ast_1abd2520/ustamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/0a64415c-8acb-4787-8a84-325de527f7c2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/1357d7d8-5dfd-4d46-b59e-353bb9090ec8.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/1933ebbe-2f07-47db-a134-555de182760b.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/1cdb586c-a0a4-4fbd-9afb-82d782d33fbb.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/1f026e48-ce48-46f5-b0a6-429444ec5209.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/31bf901e-0faf-450c-b712-243a2b450c97.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/34c692cf-4fae-4eca-aaa2-0203870dcf21.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/399af41b-bb54-408d-9777-f892104d650f.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/4128b848-56b5-4075-bea0-3d2e4332eb2d.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/53b3872d-4b7e-4dd1-a055-ab575908e731.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/5b40c804-9978-4432-8c40-4a081799d459.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/6e3446cb-404c-4989-90cf-ed8bbe4c435a.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/6f982fc7-1c3c-416c-9d99-9fdfcb9492e1.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/72af2f72-ddf1-4b11-96da-a03dec4bd1c2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/84115cbf-213a-4998-afe9-d18029bfa595.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/9ec2db86-ef62-49da-ba80-4a4c2e207269.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/a7ed4922-e3c7-4812-9f12-567fb841d431.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/abf74d8e-04c2-4a7b-bbac-ee5d0af32723.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/c6e70762-dd60-4a5d-b2ec-d66ccae278d2.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/d3b3ced0-7a7e-448a-822b-33f5b3da4cec.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/d63c94ca-90a3-4471-8080-303f2f7cbf3e.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/d7c01e0d-fec3-4087-8eee-5787a68d3443.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/event-log/e4f4c536-4cfd-46b0-a7e2-950bff6ecfb7.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" afterDir="false" />
@@ -162,9 +137,6 @@
       <change beforePath="$PROJECT_DIR$/build/libs/my_gradle_plugin-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/my_gradle_plugin-1.0-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KGInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/KGInspection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KGtree/KGnode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -205,7 +177,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/KGInspection.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="806">
-              <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6262#6274#0" expanded="true" />
@@ -457,12 +429,18 @@
       <option name="project" value="LOCAL" />
       <updated>1583454608032</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Clean unnecessary codes">
+      <created>1583822957017</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1583822957018</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="967" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23199023" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -501,7 +479,8 @@
     <MESSAGE value="added ASTtriplets structure&#10;changed the storing of AST information" />
     <MESSAGE value="changed triplet format" />
     <MESSAGE value="Added If-Else case&#10;Added For case&#10;Added Try-Else case&#10;triplet_number might still get messed up if different codes are given&#10;more tests need to be done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added If-Else case&#10;Added For case&#10;Added Try-Else case&#10;triplet_number might still get messed up if different codes are given&#10;more tests need to be done" />
+    <MESSAGE value="Clean unnecessary codes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean unnecessary codes" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/test.java" />
@@ -575,7 +554,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/KGInspection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="806">
-          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6262#6274#0" expanded="true" />

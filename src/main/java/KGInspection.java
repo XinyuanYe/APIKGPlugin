@@ -86,7 +86,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             @NonNls
             private final String DESCRIPTION_TEMPLATE = "SDK inspection using KG!";
 
-            
+
             // this is written for showing warning display example purpose
             // should be deleted
 //
