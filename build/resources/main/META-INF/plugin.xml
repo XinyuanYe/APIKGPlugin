@@ -8,8 +8,7 @@
   <name>Plugin display name here</name>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
   <description>
-    Enter short description for your plugin here.&lt;br&gt;
-    &lt;em&gt;most HTML tags may be used&lt;/em&gt;
+    "This is a plugin driven by KG".&lt;br&gt;
     </description>
   <extensions defaultExtensionNs="com.intellij">
     <localInspection language="JAVA" displayName="SDK: using KG inspection" groupPath="Java" groupBundle="messages.InspectionsBundle" groupKey="group.names.probable.bugs" enabledByDefault="true" level="WARNING" implementationClass="KGInspection"/>

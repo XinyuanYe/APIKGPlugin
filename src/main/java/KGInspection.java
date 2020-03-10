@@ -52,6 +52,17 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     static int rootID = -1;
 
 
+    public static final String NEW_FILE_WARNING_1 = "1）Missing state checking: file.isDirectory() = true;\nif violated, " +
+            "throws FileNotFoundException;";
+
+    public static final String NEW_FILE_WARNING_2 = "2) Missing exception handling: FileNotFoundException \n" +
+            "[trigger - the named file for some reason cannot be opened]";
+    boolean show_New_File_Warning = false;
+
+    public static final String READ_WARNING = "Missing exception handling: IOException \n [trigger - an IO error occurs]";
+    boolean show_Read_Warning = false;
+
+
     /**
      * This method is overridden to provide a custom visitor
      * that inspects AST/PSI Tree from Method
@@ -71,8 +82,61 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
              * This string defines the short message shown to a user signaling the inspection
              * found a problem. It reuses a string from the inspections bundle.
              */
+
             @NonNls
             private final String DESCRIPTION_TEMPLATE = "SDK inspection using KG!";
+
+            
+            // this is written for showing warning display example purpose
+            // should be deleted
+//
+//            // just for warning display example
+//            @Override
+//            public void visitDeclarationStatement(PsiDeclarationStatement declarationStatement) {
+//                super.visitDeclarationStatement(declarationStatement);
+//                PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
+//
+//                for (int i=0; i<declaredElements.length; i++) {
+//                    PsiElement declaredElement = declaredElements[i];
+//                    PsiElement[] children = declaredElement.getChildren();
+//                    for (PsiElement child : children) {
+//                        if (child instanceof PsiIdentifier) {
+//                            PsiIdentifier identifier = (PsiIdentifier) child;
+//                            String name = identifier.getText();
+//                            if (name.equals("reader")) {
+//                                show_New_File_Warning = true;
+//                            }
+//                        }
+//                    }
+//                }
+//
+//                if (show_New_File_Warning) {
+//                    holder.registerProblem(declarationStatement, NEW_FILE_WARNING_1, myQuickFix);
+//                    holder.registerProblem(declarationStatement, NEW_FILE_WARNING_2, myQuickFix);
+//                }
+//                show_New_File_Warning = false;
+//            }
+
+            // this is written for showing warning display example purpose
+            // should be deleted
+//            @Override
+//            public void visitExpressionStatement(PsiExpressionStatement expressionStatement) {
+//                super.visitExpressionStatement(expressionStatement);
+//                PsiElement[] expressions = expressionStatement.getChildren();
+//                for (PsiElement expression : expressions) {
+//                    if (expression instanceof PsiMethodCallExpression) {
+//                        PsiReferenceExpression referenceExpression = ((PsiMethodCallExpression) expression).getMethodExpression();
+//                        if (referenceExpression.getReferenceName().equals("read")) {
+//                            show_Read_Warning = true;
+//                        }
+//                    }
+//                }
+//                if (show_Read_Warning) {
+//                    holder.registerProblem(expressionStatement, READ_WARNING, myQuickFix);
+//                }
+//                show_Read_Warning = false;
+//            }
+
 
 
             // evaluate from method

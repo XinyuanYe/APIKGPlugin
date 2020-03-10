@@ -3,9 +3,12 @@
     <name>Plugin display name here</name>
     <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
+    <!--<description><![CDATA[-->
+    <!--Enter short description for your plugin here.<br>-->
+    <!--<em>most HTML tags may be used</em>-->
+    <!--]]></description>-->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    "This is a plugin driven by KG".<br>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html

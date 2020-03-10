@@ -3,8 +3,9 @@
     <location key="new project wizard.0.0.3360.2100@192dpi" x="948" y="80" />
     <location key="WELCOME_SCREEN.0.0.3360.2100@192dpi" x="1678" y="868" />
     <location key="com.intellij.ide.util.TipDialog.0.0.3360.2100@192dpi" x="884" y="686" />
-    <location key="SettingsEditor.0.0.3360.2100@192dpi" x="652" y="324" />
+    <location key="SettingsEditor.0.0.3360.2100@192dpi" x="608" y="126" />
     <location key="IDE.errors.dialog.0.0.3360.2100@192dpi" x="824" y="500" />
+    <location key="#Inspections.0.0.3360.2100@192dpi" x="968" y="386" />
     <size key="IDE.errors.dialog.0.0.3360.2100@192dpi" width="2154" height="1368" />
   </component>
 </application>

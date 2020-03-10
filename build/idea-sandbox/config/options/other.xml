@@ -1,11 +1,12 @@
 <application>
   <component name="PropertiesComponent">
+    <property name="INSPECTION_FILTER_HISTORY" value="SDK&#10;handle&#10;exception&#10;IOExc" />
     <property name="defaultJdkConfigured" value="true" />
-    <property name="file.gist.reindex.count" value="105" />
+    <property name="file.gist.reindex.count" value="132" />
     <property name="fileTypeChangedCounter" value="1" />
     <property name="installed.kotlin.plugin.version" value="1.3.11-release-IJ2018.3-1" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
-    <property name="lastTip" value="27" />
+    <property name="lastTip" value="42" />
     <property name="project.wizard.group" value="JAVA_MODULE" />
     <property name="project.wizard.template" value="Java" />
   </component>
