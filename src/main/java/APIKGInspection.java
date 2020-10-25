@@ -117,6 +117,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         };
     }
 
+    // perform detection, bless us!
     private void detectAPIMisuse(MethodCallExp target, ProblemsHolder holder) {
 
         PsiElement psiElement = target.getElement();
@@ -165,7 +166,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                         }
                     }
                 }
-                // the required start method is not presented
+                // the required start method is not present
                 generateAPICaveatReport(psiElement, desc, violation, holder);
             }
 
@@ -188,7 +189,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                         }
                     }
                 }
-                // the required end method is not presented
+                // the required end method is not present
                 generateAPICaveatReport(psiElement, desc, violation, holder);
             }
 
@@ -218,6 +219,8 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                                 generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
+                        // check if the correct condition-checking is present and is in the correct state
+                        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
                         else if (psiCondition instanceof PsiPrefixExpression) {
                             PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiCondition;
                             String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
@@ -241,6 +244,8 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                                 generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
+                        // check if the correct condition-checking is present and is in the correct state
+                        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
                         else if (psiCondition instanceof PsiPrefixExpression) {
                             PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiCondition;
                             String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
@@ -260,6 +265,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
             if (targetName.equals(start) && check.equals("within try-catch")) {
                 Boolean withinTryCatch = checkTryCatchPresence(psiElement);
                 if (!withinTryCatch) {
+                    // it is not within a try-catch
                     generateAPICaveatReport(psiElement, desc, violation, holder);
                 }
             }
