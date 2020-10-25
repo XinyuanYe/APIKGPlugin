@@ -14,6 +14,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import java.io.*;
+import java.util.List;
 
 public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
 
@@ -56,6 +57,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
             public void visitMethod(PsiMethod psiMethod) {
                 super.visitMethod(psiMethod);
                 for (MethodCallExp m : methodCallExpMap.values()) {
+//                    System.out.println("Checking " + m.toString());
                     detectAPIMisuse(m, holder);
                 }
                 System.out.println();
@@ -115,7 +117,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
 
         String targetName = target.getName();
         // remove qualifier
-        targetName = targetName.split("\\.")[1];
+        targetName = targetName.split("\\.")[targetName.split("\\.").length - 1];
 
         int target_at_line = target.getLineNumber();
 
@@ -156,7 +158,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                     }
                 }
                 // the required start method is not presented
-                holder.registerProblem(psiElement, desc, myQuickFix);
+                generateAPICaveatReport(psiElement, desc, violation, holder);
             }
 
             // check follow call-order i.e. start is our target and end must be called after it
@@ -179,14 +181,11 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                     }
                 }
                 // the required end method is not presented
-                holder.registerProblem(psiElement, desc, myQuickFix);
+                generateAPICaveatReport(psiElement, desc, violation, holder);
             }
 
             // check condition-checking i.e. if a value-checking or state-checking is present before start
             if (targetName.equals(start) && conditionOperator != null) {
-
-                System.out.println("Checking " + targetName + " in line " + target.getLineNumber());
-                System.out.println(constraint.toString());
 
                 String conditionToBeCheck = check.split(conditionOperator)[0];
                 String stateToBe = check.split(conditionOperator)[1];
@@ -196,7 +195,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                 // no condition-checking present
                 if (result == null || result instanceof PsiMethod) {
                     // the required end method is not presented
-                    holder.registerProblem(psiElement, desc, myQuickFix);
+                    generateAPICaveatReport(psiElement, desc, violation, holder);
                 }
                 // condition-checking present, check if it is the correct condition checking required
                 else {
@@ -208,7 +207,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                             condition = condition.replace("()", "");
                             condition = condition.split("\\.")[condition.split("\\.").length - 1];
                             if (!condition.equals(conditionToBeCheck)) {
-                                holder.registerProblem(psiElement, desc, myQuickFix);
+                                generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
                         else if (psiCondition instanceof PsiPrefixExpression) {
@@ -219,7 +218,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                             condition = condition.replace("()", "");
                             condition = condition.split("\\.")[condition.split("\\.").length - 1];
                             if (!condition.equals(conditionToBeCheck) || !state.equals(stateToBe)) {
-                                holder.registerProblem(psiElement, desc, myQuickFix);
+                                generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
                     }
@@ -231,7 +230,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                             condition = condition.replace("()", "");
                             condition = condition.split("\\.")[condition.split("\\.").length - 1];
                             if (!condition.equals(conditionToBeCheck)) {
-                                holder.registerProblem(psiElement, desc, myQuickFix);
+                                generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
                         else if (psiCondition instanceof PsiPrefixExpression) {
@@ -242,14 +241,68 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                             condition = condition.replace("()", "");
                             condition = condition.split("\\.")[condition.split("\\.").length - 1];
                             if (!condition.equals(conditionToBeCheck) || !state.equals(stateToBe)) {
-                                holder.registerProblem(psiElement, desc, myQuickFix);
+                                generateAPICaveatReport(psiElement, desc, violation, holder);
                             }
                         }
                     }
                 }
             }
+
+            // check if try-catch condition
+            if (targetName.equals(start) && check.equals("within try-catch")) {
+                Boolean withinTryCatch = checkTryCatchPresence(psiElement);
+                if (!withinTryCatch) {
+                    generateAPICaveatReport(psiElement, desc, violation, holder);
+                }
+            }
         }
     }
+
+    private void generateAPICaveatReport(PsiElement psiElement, String desc, String violation, ProblemsHolder holder) {
+
+        // prevents generating duplicate API misuse report
+        if (checkIfReportExisted(psiElement, desc, violation, holder)) {
+            return;
+        }
+
+        if (violation == null) {
+            holder.registerProblem(psiElement, desc, myQuickFix);
+        }
+        else {
+            holder.registerProblem(psiElement, desc + ";\n if violated, throws " + violation, myQuickFix);
+        }
+    }
+
+    // check if a API misuse report has already been generated for the PsiElement to prevent duplicate reports
+    private boolean checkIfReportExisted(PsiElement psiElement, String desc, String violation, ProblemsHolder holder) {
+        List<ProblemDescriptor> registeredProblems = holder.getResults();
+        String description = (violation == null) ? desc : desc + ";\n if violated, throws " + violation;
+        if (!registeredProblems.isEmpty()) {
+            for (ProblemDescriptor pd : registeredProblems) {
+                PsiElement existedPsiElement = pd.getPsiElement();
+                String existedDescription = pd.toString();
+                if (psiElement.isEquivalentTo(existedPsiElement) && description.equals(existedDescription)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // Given a methodcall that needs to be within a TRY-CATCH, check if it is within
+    private boolean checkTryCatchPresence(PsiElement psiElement) {
+        PsiElement context = psiElement.getContext();
+        if (context instanceof PsiTryStatement) {
+            return true;
+        }
+        else if (context == null || (context instanceof PsiMethod)) {
+            return false;
+        }
+        else {
+            return checkTryCatchPresence(context);
+        }
+    }
+
 
     // Given a methodcall that needs a condition-checking, check if it is in a IF/WHILE STMT
     private PsiElement checkConditionCheckingPresence(PsiElement psiElement) {
