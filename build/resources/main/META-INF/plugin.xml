@@ -13,9 +13,4 @@
   <extensions defaultExtensionNs="com.intellij">
     <localInspection language="JAVA" displayName="SDK: using KG inspection" groupPath="Java" groupBundle="messages.InspectionsBundle" groupKey="group.names.probable.bugs" enabledByDefault="true" level="WARNING" implementationClass="APIKGInspection"/>
   </extensions>
-  <actions>
-    <action id="HelloAction" class="HelloAction" text="HelloAction" description="HelloAction">
-      <add-to-group group-id="GenerateGroup" anchor="first"/>
-    </action>
-  </actions>
 </idea-plugin>
