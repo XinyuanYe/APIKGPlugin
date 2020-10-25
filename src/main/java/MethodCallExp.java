@@ -1,5 +1,9 @@
 import com.intellij.psi.PsiElement;
 
+/*
+This class holds the essential information of a methodCall
+ */
+
 public class MethodCallExp {
 
     PsiElement element;
