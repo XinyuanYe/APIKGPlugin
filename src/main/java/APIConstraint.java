@@ -1,3 +1,7 @@
+/*
+This class holds the essential information of a API constraint obtained from KG
+ */
+
 public class APIConstraint {
     String start, end, check, violation, desc;
 
