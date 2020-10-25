@@ -1,11 +1,14 @@
 <idea-plugin>
     <id>com.your.company.my_gradle_plugin</id>
-    <name>Plugin display name here</name>
+    <name>myPlugin</name>
     <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
+    <!--<description><![CDATA[-->
+    <!--Enter short description for your plugin here.<br>-->
+    <!--<em>most HTML tags may be used</em>-->
+    <!--]]></description>-->
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
+    "This is a plugin driven by KG".<br>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -13,6 +16,19 @@
     <!-- uncomment to enable plugin in all products
     <depends>com.intellij.modules.lang</depends>
     -->
+
+    <!--<extensions defaultExtensionNs="com.intellij">-->
+        <!--&lt;!&ndash; Add your extensions here &ndash;&gt;-->
+        <!--<localInspection language="JAVA"-->
+                         <!--displayName="SDK: using KG inspection"-->
+                         <!--groupPath="Java"-->
+                         <!--groupBundle="messages.InspectionsBundle"-->
+                         <!--groupKey="group.names.probable.bugs"-->
+                         <!--enabledByDefault="true"-->
+                         <!--level="WARNING"-->
+                         <!--implementationClass="KGInspection"/>-->
+    <!--&lt;!&ndash;</extensions>&ndash;&gt;-->
+
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -23,10 +39,15 @@
                          groupKey="group.names.probable.bugs"
                          enabledByDefault="true"
                          level="WARNING"
-                         implementationClass="KGInspection"/>
+                         implementationClass="APIKGInspection"/>
     </extensions>
+
+
 
     <actions>
         <!-- Add your actions here -->
+        <action id="HelloAction" class="HelloAction" text="HelloAction" description="HelloAction">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+        </action>
     </actions>
 </idea-plugin>

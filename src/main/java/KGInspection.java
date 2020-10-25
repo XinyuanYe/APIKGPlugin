@@ -15,7 +15,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     // Defines the text of the quick fix intention
     public static final String QUICK_FIX_NAME = "SDK: This is a warning! Use KG to fix this!";
 
-    // fixed name
+    // fixed condition
     static final String METHOD_DEFINITION = "MethodDefinition";
     static final String METHOD_BODY = "MethodBody";
     static final String DECLARATION_STMT = "DeclarationStatement";
@@ -37,6 +37,9 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     static final String POST_FIX_EXP = "PostFixExpression";
     static final String FOR_STATEMENT = "ForStatement";
     static final String FOR_BODY = "ForBody";
+    static final String WHILE_STATEMENT = "WhileStatement";
+    static final String WHILE_BODY = "WhileBody";
+    static final String WHILE_CONDITION = "WhileCondition";
 
 
     // triplet counting
@@ -51,6 +54,29 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
     static int rootID = -1;
 
+//    static PsiReferenceExpressionStatement potential_bad_line = null;
+    static PsiExpressionStatement potential_bad_line;
+    static PsiReferenceExpression jpanel_add_bad_line;
+    static PsiReferenceExpression jpanel_remove_bad_line;
+    static PsiReferenceExpression iterator_next_bad_line;
+    static PsiReferenceExpression iterator_remove_bad_line;
+    static PsiReferenceExpression charAt_bad_line;
+    static PsiReferenceExpression char_At_indexOf_bad_line;
+    static PsiReferenceExpression char_At_substring_indexOf_bad_line;
+    static PsiReferenceExpression char_At_substring_larger_bad_line;
+    static PsiReferenceExpression char_At_substring_negative_bad_line;
+    static PsiReferenceExpression char_At_substring_negative_complex_bad_line;
+
+
+    static PsiDeclarationStatement filereader_exist_bad_line;
+    static PsiDeclarationStatement filereader_directory_badline;
+    static PsiDeclarationStatement potential_filereader_try_bad_line;
+    static PsiDeclarationStatement filereader_try_bad_line;
+
+
+    static PsiReferenceExpression read_bad_line;
+
+
 
     public static final String NEW_FILE_WARNING_1 = "1）Missing state checking: file.isDirectory() = true;\nif violated, " +
             "throws FileNotFoundException;";
@@ -62,6 +88,18 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
     public static final String READ_WARNING = "Missing exception handling: IOException \n [trigger - an IO error occurs]";
     boolean show_Read_Warning = false;
 
+    public static final String JPANEL_WARNING_ADD = "Missing call: validate() should be called after add()";
+    public static final String JPANEL_WARNING_REMOVE = "Missing call: validate() should be called after remove()";
+    public static final String ITERATORPATTERN_WARNING_HASNEXT = "Missing state checking: hasNext() should be true; \n [if violated, throw NoSuchElementException]";
+    public static final String ITERATORPATTERN_WARNING_REMOVE = "Missing call: next() should precede remove(); ";
+    public static final String INDEXOF_CONSTRAINT_WARNING = "Return -1;\n [trigger - the character does not occur]";
+    public static final String SUBSTRING_INDEXOF_WARNING = "Missing state checking: indexOf should not be -1;  \n [if violated, throw IndexOutOfBoundsException]";
+    public static final String SUBSTRING_LARGER_WARNING = "Missing state checking: index should not be larger than the length of this String object;  \n [if violated, throw IndexOutOfBoundsException]";
+    public static final String SUBSTRING_NEGATIVE_WARNING = "Missing state checking: index should not be negative; \n [if violated, throw IndexOutOfBoundsException]";
+    public static final String FILE_CHECK_WARNING = "Missing state checking: exists() should be true; \n [if violated, throw FileNotFoundException]";
+    public static final String DIRECTORY_CHECK_WARNING = "Missing state checking: isDirectory should not be true; \n [if violated, throw FileNotFoundException]";
+    public static final String FILEREADER_TRY_WARNING = "Missing exception handling: FileNotFoundException; \n [trigger - the named file for some reason cannot be opened";
+    public static final String READ_TRY_WARNING = "Missing exception handling: IOException; \n [trigger - an IO error occurs]";
 
     /**
      * This method is overridden to provide a custom visitor
@@ -87,58 +125,6 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             private final String DESCRIPTION_TEMPLATE = "SDK inspection using KG!";
 
 
-            // this is written for showing warning display example purpose
-            // should be deleted
-//
-//            // just for warning display example
-//            @Override
-//            public void visitDeclarationStatement(PsiDeclarationStatement declarationStatement) {
-//                super.visitDeclarationStatement(declarationStatement);
-//                PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
-//
-//                for (int i=0; i<declaredElements.length; i++) {
-//                    PsiElement declaredElement = declaredElements[i];
-//                    PsiElement[] children = declaredElement.getChildren();
-//                    for (PsiElement child : children) {
-//                        if (child instanceof PsiIdentifier) {
-//                            PsiIdentifier identifier = (PsiIdentifier) child;
-//                            String name = identifier.getText();
-//                            if (name.equals("reader")) {
-//                                show_New_File_Warning = true;
-//                            }
-//                        }
-//                    }
-//                }
-//
-//                if (show_New_File_Warning) {
-//                    holder.registerProblem(declarationStatement, NEW_FILE_WARNING_1, myQuickFix);
-//                    holder.registerProblem(declarationStatement, NEW_FILE_WARNING_2, myQuickFix);
-//                }
-//                show_New_File_Warning = false;
-//            }
-
-            // this is written for showing warning display example purpose
-            // should be deleted
-//            @Override
-//            public void visitExpressionStatement(PsiExpressionStatement expressionStatement) {
-//                super.visitExpressionStatement(expressionStatement);
-//                PsiElement[] expressions = expressionStatement.getChildren();
-//                for (PsiElement expression : expressions) {
-//                    if (expression instanceof PsiMethodCallExpression) {
-//                        PsiReferenceExpression referenceExpression = ((PsiMethodCallExpression) expression).getMethodExpression();
-//                        if (referenceExpression.getReferenceName().equals("read")) {
-//                            show_Read_Warning = true;
-//                        }
-//                    }
-//                }
-//                if (show_Read_Warning) {
-//                    holder.registerProblem(expressionStatement, READ_WARNING, myQuickFix);
-//                }
-//                show_Read_Warning = false;
-//            }
-
-
-
             // evaluate from method
             @Override
             public void visitMethod(PsiMethod method) {
@@ -147,7 +133,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 // create a list to store all the triplets in this METHOD
                 ArrayList<ASTtriplet> astTriplets = new ArrayList<ASTtriplet>();
 
-                // GET method name
+                // GET method condition
                 String methodName = method.getName();
 
                 // GET method return type
@@ -176,7 +162,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 }
 
 
-                // Triplet format: <{Name:methodName, Return_Type:void, parameter:[], parameter_Type:[]},
+                // Triplet format: <{Name:condition, Return_Type:void, parameter:[], parameter_Type:[]},
                 // {Body: next_triplet},
                 // {relation:StatementType}>
                 ASTtriplet method_astTriplet = new ASTtriplet(id++);
@@ -206,7 +192,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     // list that stores the related triplets
                     ArrayList<String> related_triplets = new ArrayList<>();
 
-                    for (int i=0; i<bodyStatementCount; i++) {
+                    for (int i = 0; i < bodyStatementCount; i++) {
                         related_triplets.add("triplet_" + (id + i));
                     }
 
@@ -218,7 +204,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
                     // iterate the body statement
                     PsiStatement[] statements = method.getBody().getStatements();
-                    for (int i=0; i<statements.length; i++) {
+                    for (int i = 0; i < statements.length; i++) {
                         PsiStatement statement = statements[i];
                         // IMPORTANT: always keep track the root ID
                         rootID = lowest_root_id + i;
@@ -232,16 +218,125 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     System.out.println(t.toString());
                 }
                 System.out.println();
+                String case_name = getCase(astTriplets);
+                System.out.println("case is " + case_name);
+
+                boolean thereIsAProblem = checkConstraint(astTriplets, case_name);
+                System.out.println("there is a problem " + thereIsAProblem);
 
                 // this will register a problem, and display warning (perhaps suggests quickFix)
                 // the boolean variable should be set to true if a problem is detected, it should always be false otherwise
                 // change the variable to true if want to display the warning for testing
-                boolean thereIsAProblem = false;
+//                boolean thereIsAProblem = false;
                 if (thereIsAProblem) {
-                    holder.registerProblem(method, DESCRIPTION_TEMPLATE, myQuickFix);
+                    if (case_name.equals("jpanelWarning")) {
+                        ArrayList<String> jpanel_cases = checkJPanel(astTriplets, case_name);
+                        String problems = "";
+                        for (String c : jpanel_cases) {
+                            problems += c + " ";
+                        }
+                        System.out.println("problem(s) is " + problems);
+                        if (!jpanel_cases.isEmpty()) {
+                            for (String p : jpanel_cases) {
+                                if (p.equals("add")) {
+                                    holder.registerProblem(jpanel_add_bad_line, JPANEL_WARNING_ADD, myQuickFix);
+                                }
+                                else if (p.equals("remove")) {
+                                    holder.registerProblem(jpanel_remove_bad_line, JPANEL_WARNING_REMOVE, myQuickFix);
+                                }
+                            }
+                        }
+                    }
+                    else if (case_name.equals("iteratorWarning")) {
+                        ArrayList<String> iterator_cases = checkiteratorPattern(astTriplets, case_name);
+                        String problems = "";
+                        for (String c : iterator_cases) {
+                            problems += c + " ";
+                        }
+                        System.out.println("problem(s) is " + problems);
+                        if (!problems.isEmpty()) {
+                            for (String p : iterator_cases) {
+                                if (p.equals("hasnext")) {
+                                    holder.registerProblem(iterator_next_bad_line, ITERATORPATTERN_WARNING_HASNEXT, myQuickFix);
+                                }
+                                else if (p.equals("remove")) {
+                                    holder.registerProblem(iterator_remove_bad_line, ITERATORPATTERN_WARNING_REMOVE, myQuickFix);
+
+                                }
+                            }
+                        }
+                    }
+                    else if (case_name.equals("stringWarning")) {
+                        ArrayList<String> charAt_cases = checkcharAt(astTriplets, case_name);
+                        String problems = "";
+                        for (String c : charAt_cases) {
+                            problems += c + " ";
+                        }
+                        System.out.println("problem(s) is " + problems);
+                        if (!problems.isEmpty()) {
+                            for (String p : charAt_cases) {
+                                if (p.equals("indexOf_constraint")) {
+                                    holder.registerProblem(char_At_indexOf_bad_line, INDEXOF_CONSTRAINT_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("substring_negative")) {
+                                    holder.registerProblem(char_At_substring_negative_bad_line, SUBSTRING_NEGATIVE_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("substring_indexOf_negative")) {
+                                    holder.registerProblem(char_At_substring_indexOf_bad_line, SUBSTRING_INDEXOF_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("substring_larger")) {
+                                    holder.registerProblem(char_At_substring_larger_bad_line, SUBSTRING_LARGER_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("substring_negative_complex")) {
+                                    holder.registerProblem(char_At_substring_negative_complex_bad_line, SUBSTRING_NEGATIVE_WARNING, myQuickFix);
+
+                                }
+                            }
+
+                        }
+                    }
+                    else if (case_name.equals("filereaderWarning")) {
+                        ArrayList<String> cap_cases = checkCapability(astTriplets, case_name);
+                        String problems = "";
+                        for (String c : cap_cases) {
+                            problems += c + " ";
+                        }
+                        System.out.println("problem(s) is " + problems);
+                        if (!problems.isEmpty()) {
+                            for (String p : cap_cases) {
+                                if (p.equals("file")) {
+                                    holder.registerProblem(filereader_exist_bad_line, FILE_CHECK_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("directory")) {
+                                    holder.registerProblem(filereader_directory_badline, DIRECTORY_CHECK_WARNING, myQuickFix);
+                                }
+                                else if (p.equals("filereader_try")) {
+                                    holder.registerProblem(filereader_try_bad_line, FILEREADER_TRY_WARNING , myQuickFix);
+                                }
+                                else if (p.equals("read_try")) {
+                                    holder.registerProblem(read_bad_line, READ_TRY_WARNING, myQuickFix);
+                                }
+                            }
+                        }
+                    }
+                    else if (case_name.equals("IGNROE THIS")) {
+                        String filetry_case = checkfiletry(astTriplets, case_name);
+                        if (filetry_case.equals("file")) {
+                            holder.registerProblem(filereader_exist_bad_line, FILE_CHECK_WARNING, myQuickFix);
+                        } else if (filetry_case.equals("directory")) {
+                            holder.registerProblem(filereader_directory_badline, DIRECTORY_CHECK_WARNING, myQuickFix);
+                        } else if (filetry_case.equals("filereader_try")) {
+                            holder.registerProblem(filereader_try_bad_line, FILEREADER_TRY_WARNING, myQuickFix);
+                        } else if (filetry_case.equals("read_try")) {
+                            holder.registerProblem(read_bad_line, READ_TRY_WARNING, myQuickFix);
+                        }
+                    }
                 }
+
             }
+
         };
+
     }
 
     // this function will be ONLY used once in the iterate BODY statement part
@@ -252,6 +347,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
 
             PsiDeclarationStatement declarationStatement = (PsiDeclarationStatement) statement;
             PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
+
+            potential_filereader_try_bad_line = declarationStatement;
 
             for (int i=0; i<declaredElements.length; i++) {
                 PsiElement declaredElement = declaredElements[i];
@@ -269,6 +366,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             PsiElement[] expressions = psiExpressionStatement.getChildren();
             whatElement(astTriplets, expressions, EXPRESSION_STMT, true);
 
+            potential_bad_line = psiExpressionStatement;
         }
         else if (statement instanceof PsiIfStatement) {
             // add if statement relation
@@ -277,11 +375,11 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             // list that stores the related triplets
             ArrayList<String> related_triplets = new ArrayList<>();
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 1; i++) {
                 related_triplets.add("triplet_" + (next_available_id + i));
             }
 
-            if_next_available_id = next_available_id + 3;
+            if_next_available_id = next_available_id + 1;
 
             ASTtriplet astTriplet;
             astTriplet = new ASTtriplet(rootID++);
@@ -317,6 +415,20 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     getArguments(astTriplets, psiExpressionList, referenceExp, IF_STMT, METHODCALL_EXPRESSION, false);
                 }
             }
+            else if (ifConditionStatement instanceof PsiMethodCallExpression) {
+                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) ifConditionStatement;
+
+                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                String referenceExp = psiReferenceExpression.getCanonicalText();
+                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                astTriplet = new ASTtriplet(rootID++);
+                astTriplet.first_entity.add("ReferenceExpression: "+ referenceExp);
+                astTriplet.second_entity.add("Argument: " + "[]");
+                astTriplet.second_entity.add("Type: " + "[]");
+                astTriplet.third_entity.add("Relation: " + "IfCondition");
+                astTriplets.add(astTriplet);
+
+            }
 
             PsiStatement thenBranch = psiIfStatement.getThenBranch();
             if (thenBranch instanceof PsiBlockStatement) {
@@ -330,26 +442,38 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                         related_triplets.add("triplet_" + (if_next_available_id + i));
                     }
 
+//                    astTriplet = new ASTtriplet(rootID++);
+//                    astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
+//                    astTriplet.second_entity.add("End_entity: " + "UNK");
+//
+//                    astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+//                    astTriplets.add(astTriplet);
+
                     astTriplet = new ASTtriplet(rootID++);
                     astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
                     astTriplet.second_entity.add("End_entity: " + "UNK");
 
-                    astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+                    astTriplet.third_entity.add("Relation: " + "IfBody");
                     astTriplets.add(astTriplet);
 
                     PsiStatement[] psiStatements = psiBlockStatement.getCodeBlock().getStatements();
                     for (PsiStatement psiStatement : psiStatements) {
-                        if (psiStatement instanceof PsiExpressionStatement) {
-                            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
-                            PsiExpression psiExpression = psiExpressionStatement.getExpression();
-                            if (psiExpression instanceof PsiMethodCallExpression) {
-                                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
-                                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
-                                String referenceExp = psiReferenceExpression.getCanonicalText();
-                                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
-                                getArguments(astTriplets, psiExpressionList, referenceExp, THEN_BRANCH, METHODCALL_EXPRESSION, false);
-                            }
+//                        if (psiStatement instanceof PsiExpressionStatement) {
+//                            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
+//                            PsiExpression psiExpression = psiExpressionStatement.getExpression();
+//                            if (psiExpression instanceof PsiMethodCallExpression) {
+//                                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
+//                                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+//                                String referenceExp = psiReferenceExpression.getCanonicalText();
+//                                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+//                                getArguments(astTriplets, psiExpressionList, referenceExp, THEN_BRANCH, METHODCALL_EXPRESSION, false);
+//                            }
+//                        }
+                        if (psiStatement instanceof PsiDeclarationStatement) {
+                            whatStatement(astTriplets, psiStatement);
                         }
+                        else if (psiStatement instanceof PsiExpressionStatement)
+                            whatStatement(astTriplets, psiStatement);
                     }
                 }
             }
@@ -521,6 +645,74 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 }
             }
         }
+        else if (statement instanceof PsiWhileStatement) {
+
+            PsiWhileStatement psiWhileStatement = (PsiWhileStatement) statement;
+
+            // list that stores the related triplets
+            ArrayList<String> related_triplets = new ArrayList<>();
+
+            for (int i = 0; i < 2; i++) {
+                related_triplets.add("triplet_" + (next_available_id + i));
+            }
+
+            ASTtriplet astTriplet;
+            astTriplet = new ASTtriplet(rootID++);
+            astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+            astTriplet.second_entity.add("End_entity: " + "UNK");
+            astTriplet.third_entity.add("Relation: " + WHILE_STATEMENT);
+            astTriplets.add(astTriplet);
+
+            // get while conditions
+            PsiExpression whileCondition = psiWhileStatement.getCondition();
+            String condition = whileCondition.getText();
+
+            astTriplet = new ASTtriplet(next_available_id++);
+            astTriplet.first_entity.add(METHODCALL_EXPRESSION + ": " + condition);
+            astTriplet.second_entity.add("Argument: " + "UNK");
+            astTriplet.second_entity.add("Type: " + "UNK");
+            astTriplet.third_entity.add("Relation: " + WHILE_CONDITION);
+            astTriplets.add(astTriplet);
+
+            // this will be block statement
+            PsiStatement blockStatement = psiWhileStatement.getBody();
+            PsiElement[] codeBlock = blockStatement.getChildren();
+            for (PsiElement element : codeBlock) {
+                if (element instanceof PsiCodeBlock) {
+                    PsiCodeBlock whileBody = (PsiCodeBlock) element;
+                    int forBodyCount = whileBody.getStatementCount();
+
+                    // list that stores the related triplets
+                    related_triplets = new ArrayList<>();
+
+                    for (int i = 0; i < forBodyCount; i++) {
+                        related_triplets.add("triplet_" + (next_available_id + i + 1));
+                    }
+
+                    astTriplet = new ASTtriplet(next_available_id++);
+                    astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+                    astTriplet.second_entity.add("End_entity: " + "UNK");
+                    astTriplet.third_entity.add("Relation: " + WHILE_BODY);
+                    astTriplets.add(astTriplet);
+
+                    PsiStatement[] statements = whileBody.getStatements();
+                    for (PsiStatement psiStatement : statements) {
+                        if (psiStatement instanceof PsiExpressionStatement) {
+                            PsiExpressionStatement psiExpressionStatement = (PsiExpressionStatement) psiStatement;
+                            PsiExpression psiExpression = psiExpressionStatement.getExpression();
+                            potential_bad_line = psiExpressionStatement;
+                            if (psiExpression instanceof PsiMethodCallExpression) {
+                                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiExpression;
+                                PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                                String referenceExp = psiReferenceExpression.getCanonicalText();
+                                PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                                getArguments(astTriplets, psiExpressionList, referenceExp, WHILE_STATEMENT, METHODCALL_EXPRESSION, false);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     private static void whatElement(ArrayList<ASTtriplet> astTriplets, PsiElement[] psiElements, String relationType, boolean isRoot) {
@@ -551,6 +743,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 PsiDeclarationStatement declarationStatement = (PsiDeclarationStatement) psiElement;
                 PsiElement[] declaredElements = declarationStatement.getDeclaredElements();
 
+                potential_filereader_try_bad_line = declarationStatement;
+
                 // normally this would be in a try block
                 for (int i=0; i<declaredElements.length; i++) {
                     PsiElement declaredElement = declaredElements[i];
@@ -576,6 +770,33 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 PsiReferenceExpression psiReferenceExpression = (PsiReferenceExpression) psiElement;
                 referenceExp = psiReferenceExpression.getCanonicalText();
                 classType = "reference_expression";
+                if (referenceExp.equals("panel.add")) {
+//                    potential_bad_line = psiReferenceExpression;
+
+//                    jpanel_bad_line = potential_bad_line;
+                    jpanel_add_bad_line = psiReferenceExpression;
+                }
+                else if (referenceExp.equals("panel.remove")) {
+                    jpanel_remove_bad_line = psiReferenceExpression;
+
+                }
+                else if (referenceExp.equals("string.substring")) {
+                    char_At_substring_indexOf_bad_line = psiReferenceExpression;
+                    char_At_substring_larger_bad_line = psiReferenceExpression;
+                    char_At_substring_negative_bad_line = psiReferenceExpression;
+                }
+                else if (referenceExp.equals("string.indexOf")) {
+                    char_At_indexOf_bad_line = psiReferenceExpression;
+                }
+                else if (referenceExp.equals("iterator.next")) {
+                    iterator_next_bad_line = psiReferenceExpression;
+                }
+                else if (referenceExp.equals("iterator.remove")) {
+                    iterator_remove_bad_line = psiReferenceExpression;
+                }
+                else if (referenceExp.equals("reader.read")) {
+                    read_bad_line = psiReferenceExpression;
+                }
 
             }
             // CODE REFERENCE
@@ -583,6 +804,11 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 PsiJavaCodeReferenceElement psiJavaCodeReferenceElement = (PsiJavaCodeReferenceElement) psiElement;
                 referenceElement_name = psiJavaCodeReferenceElement.getText();
                 classType = "reference_element";
+                if (referenceElement_name.equals("FileReader")) {
+                    filereader_try_bad_line = potential_filereader_try_bad_line;
+                    filereader_directory_badline = potential_filereader_try_bad_line;
+                    filereader_exist_bad_line = potential_filereader_try_bad_line;
+                }
 
             }
             // all the arguments are in EXPRESSION LIST
@@ -642,6 +868,8 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 } else if (relationType.equals(EXPRESSION_STMT)) {
                     PsiElement[] children = psiMethodCallExpression.getChildren();
                     whatElement(astTriplets, children, METHODCALL_EXPRESSION, isRoot);
+
+
                 }
                 else if (relationType.equals(TRY_STATEMENT)) {
                     PsiElement[] children = psiMethodCallExpression.getChildren();
@@ -825,6 +1053,96 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     elseSection = true;
                 }
             }
+            else if (psiElement instanceof PsiIfStatement) {
+                // add if statement relation
+                PsiIfStatement psiIfStatement = (PsiIfStatement) psiElement;
+
+                // list that stores the related triplets
+                ArrayList<String> related_triplets = new ArrayList<>();
+
+                for (int i = 0; i < 1; i++) {
+                    related_triplets.add("triplet_" + (next_available_id + i));
+                }
+
+                if_next_available_id = next_available_id + 1;
+
+                ASTtriplet astTriplet;
+                astTriplet = new ASTtriplet(rootID++);
+                astTriplet.first_entity.add("Related_triplets: " + related_triplets.toString());
+                astTriplet.second_entity.add("End_entity: " + ELSE_SECTION);
+                astTriplet.third_entity.add("Relation: " + IF_STMT);
+                astTriplets.add(astTriplet);
+
+                PsiExpression ifConditionStatement = psiIfStatement.getCondition();
+                if (ifConditionStatement instanceof PsiBinaryExpression) {
+                    PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) ifConditionStatement;
+
+                    String LOperand = psiBinaryExpression.getLOperand().getText();
+                    String LOperand_type = psiBinaryExpression.getLOperand().getType().getPresentableText();
+                    String operation = psiBinaryExpression.getOperationSign().getText();
+                    String ROperand = psiBinaryExpression.getROperand().getText();
+                    String ROperand_type = psiBinaryExpression.getROperand().getType().getPresentableText();
+
+                    astTriplet = new ASTtriplet(rootID++);
+                    astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
+                    astTriplet.second_entity.add("LOperand: " + LOperand);
+                    astTriplet.second_entity.add("Operation: " + operation);
+                    astTriplet.second_entity.add("ROperand: " + ROperand);
+                    astTriplet.third_entity.add("Relation: " + BINARY_EXPRESSION);
+                    astTriplets.add(astTriplet);
+
+                    PsiExpression psiBinaryExpressionLOperand = psiBinaryExpression.getLOperand();
+                    if (psiBinaryExpressionLOperand instanceof PsiMethodCallExpression) {
+                        PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiBinaryExpressionLOperand;
+                        PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                        String referenceExpressionCanonicalText = psiReferenceExpression.getCanonicalText();
+                        PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                        getArguments(astTriplets, psiExpressionList, referenceExpressionCanonicalText, IF_STMT, METHODCALL_EXPRESSION, false);
+                    }
+                }
+                else if (ifConditionStatement instanceof PsiMethodCallExpression) {
+                    PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) ifConditionStatement;
+
+                    PsiReferenceExpression psiReferenceExpression = psiMethodCallExpression.getMethodExpression();
+                    String referenceExpressionCanonicalText = psiReferenceExpression.getCanonicalText();
+                    PsiExpression[] psiExpressionList = psiMethodCallExpression.getArgumentList().getExpressions();
+                    astTriplet = new ASTtriplet(rootID++);
+                    astTriplet.first_entity.add("ReferenceExpression: "+ referenceExpressionCanonicalText);
+                    astTriplet.second_entity.add("Argument: " + "[]");
+                    astTriplet.second_entity.add("Type: " + "[]");
+                    astTriplet.third_entity.add("Relation: " + "IfCondition");
+                    astTriplets.add(astTriplet);
+
+                    PsiStatement thenBranch = psiIfStatement.getThenBranch();
+                    if (thenBranch instanceof PsiBlockStatement) {
+                        PsiBlockStatement psiBlockStatement = (PsiBlockStatement) thenBranch;
+                        // there is something in then branch
+                        if (!psiBlockStatement.getCodeBlock().isEmpty()) {
+                            int blockStatementCount = psiBlockStatement.getCodeBlock().getStatementCount();
+                            // list that stores the related triplets
+                            related_triplets = new ArrayList<>();
+                            for (int i = 0; i < blockStatementCount; i++) {
+                                related_triplets.add("triplet_" + (if_next_available_id + i));
+                            }
+
+                            astTriplet = new ASTtriplet(rootID++);
+                            astTriplet.first_entity.add("Related_triplets: " + "triplet_" + if_next_available_id);
+                            astTriplet.second_entity.add("End_entity: " + "UNK");
+
+                            astTriplet.third_entity.add("Relation: " + "IfBody");
+                            astTriplets.add(astTriplet);
+
+                            PsiStatement[] psiStatements = psiBlockStatement.getCodeBlock().getStatements();
+                            for (PsiStatement psiStatement : psiStatements) {
+                                if (psiStatement instanceof PsiDeclarationStatement) {
+                                    whatStatement(astTriplets, psiStatement);
+                                } else if (psiStatement instanceof PsiExpressionStatement)
+                                    whatStatement(astTriplets, psiStatement);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -884,22 +1202,36 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                 astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
                 astTriplets.add(astTriplet);
             }
+            else if (relationType.equals(WHILE_STATEMENT)) {
+                ASTtriplet astTriplet;
+                if (isRoot) {
+                    astTriplet = new ASTtriplet(rootID++);
+
+                }
+                else {
+                    astTriplet = new ASTtriplet(next_available_id++);
+
+                }
+
+                astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
+                astTriplet.second_entity.add("Arguments: " + "UNK");
+                astTriplet.second_entity.add("Types: " + "UNK");
+                astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
+                astTriplets.add(astTriplet);
+            }
         }
         else {
             // create a triplet first
             ASTtriplet astTriplet;
             if (relationType.equals(TRY_STATEMENT)) {
                 astTriplet = new ASTtriplet(try_next_available_id++);
-            }
-            else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
+            } else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
                 astTriplet = new ASTtriplet(if_next_available_id++);
-            }
-            else {
+            } else {
                 if (isRoot) {
                     astTriplet = new ASTtriplet(rootID++);
                     isRoot = false;
-                }
-                else {
+                } else {
                     astTriplet = new ASTtriplet(next_available_id++);
                 }
             }
@@ -907,7 +1239,9 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             ArrayList<String> argumentsList = new ArrayList<>();
             ArrayList<String> argumentsTypeList = new ArrayList<>();
 
-            for (int i=0; i<psiExpressions.length; i++) {
+            boolean stop = false;
+
+            for (int i = 0; i < psiExpressions.length; i++) {
                 PsiExpression psiExpression = psiExpressions[i];
                 if (psiExpression instanceof PsiMethodCallExpression) {
                     if (classType.equals("reference_expression")) {
@@ -916,41 +1250,43 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
                     astTriplet.second_entity.add("Arguments: " + "triplet_" + (next_available_id));
                     astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
                     astTriplets.add(astTriplet);
+                    char_At_substring_negative_complex_bad_line = char_At_substring_negative_bad_line;
 
-                    PsiElement[] children = ((PsiMethodCallExpression)psiExpression).getChildren();
+                    PsiElement[] children = ((PsiMethodCallExpression) psiExpression).getChildren();
                     whatElement(astTriplets, children, METHODCALL_EXPRESSION, isRoot);
-                }
-                else if (psiExpression instanceof PsiLiteralExpression) {
+                    stop = true;
+                } else if (psiExpression instanceof PsiLiteralExpression) {
                     String argument = ((PsiLiteralExpression) psiExpression).getText();
                     String type = ((PsiLiteralExpression) psiExpression).getType().getPresentableText();
 
                     argumentsList.add(argument);
                     argumentsTypeList.add(type);
-                }
-                else if (psiExpression instanceof PsiReferenceExpression) {
+                } else if (psiExpression instanceof PsiReferenceExpression) {
                     String argument = ((PsiReferenceExpression) psiExpression).getText();
                     String type = ((PsiReferenceExpression) psiExpression).getType().getPresentableText();
 
                     argumentsList.add(argument);
                     argumentsTypeList.add(type);
-                }
-                else if (psiExpression instanceof PsiArrayAccessExpression) {
+                } else if (psiExpression instanceof PsiArrayAccessExpression) {
                     String argument = ((PsiArrayAccessExpression) psiExpression).getText();
                     String type = ((PsiArrayAccessExpression) psiExpression).getType().getPresentableText();
                     argumentsList.add(argument);
                     argumentsTypeList.add(type);
-                }
-                else if (psiExpression instanceof PsiNewExpression) {
+                } else if (psiExpression instanceof PsiNewExpression) {
                     String argument = ((PsiNewExpression) psiExpression).getText();
                     String type = ((PsiNewExpression) psiExpression).getType().getPresentableText();
+                    argumentsList.add(argument);
+                    argumentsTypeList.add(type);
+                } else if (psiExpression instanceof PsiPrefixExpression) {
+                    String argument = ((PsiPrefixExpression) psiExpression).getText();
+                    String type = ((PsiPrefixExpression) psiExpression).getType().getPresentableText();
                     argumentsList.add(argument);
                     argumentsTypeList.add(type);
                 }
             }
             if (classType.equals("reference_element")) {
                 astTriplet.first_entity.add(REFERENCE_ELEMENT + ": " + first_Entity);
-            }
-            else if (classType.equals("reference_expression")) {
+            } else if (classType.equals("reference_expression")) {
                 astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
             }
 
@@ -960,20 +1296,19 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             if (relationType.equals(METHODCALL_EXPRESSION)) {
                 astTriplet.third_entity.add("Relation: " + METHODCALL_EXPRESSION);
 
-            }
-            else if (relationType.equals(FOR_STATEMENT)) {
+            } else if (relationType.equals(FOR_STATEMENT)) {
                 astTriplet.first_entity.add(REFERENCE_EXP + ": " + first_Entity);
                 astTriplet.third_entity.add("Relation: " + classType);
-            }
-            else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
+            } else if (relationType.equals(IF_STMT) || relationType.equals(THEN_BRANCH)) {
                 astTriplet.first_entity.add(classType + ": " + first_Entity);
                 astTriplet.third_entity.add("Relation: " + classType);
-            }
-            else {
+            } else {
                 astTriplet.third_entity.add("Relation: " + NEW_EXPRESSION);
             }
-            astTriplets.add(astTriplet);
+            if (!stop) {
+                astTriplets.add(astTriplet);
             }
+        }
     }
 
     private static void getArrayInitializer(ArrayList<String> arrayInitializer, ArrayList<String> arrayInitializerType, PsiExpression[] psiExpressions) {
@@ -998,7 +1333,7 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
          * Returns a partially localized string for the quick fix intention.
          * Used by the test code for this plugin.
          *
-         * @return Quick fix short name.
+         * @return Quick fix short condition.
          */
         @NotNull
         @Override
@@ -1022,4 +1357,456 @@ public class KGInspection extends AbstractBaseJavaLocalInspectionTool {
             return getName();
         }
     }
+
+    private static boolean checkConstraint(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        String mark = "validate";
+        if (case_name.equals("jpanelWarning")) {
+            int test_id = 0;
+            boolean test = false;
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: panel.add") | t.first_entity.get(0).equals("ReferenceExpression: panel.remove")) {
+                        test_id = triplet_id;
+                        mark = "add/remove";
+                        for (ASTtriplet t1 : astTriplets) {
+                            int id = t1.getID();
+                            if (id > test_id) {
+                                if (t1.first_entity.get(0).equals("ReferenceExpression: panel.validate")) {
+                                    mark = "validate";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (mark.equals("validate")) {
+                return false;
+            }
+            return true;
+        }
+        else if (case_name.equals("iteratorWarning")) {
+            int test_id = 0;
+            boolean next_test = false;
+            boolean remove_test = false;
+            int total_len = astTriplets.size();
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: iterator.next")) {
+                        next_test = true;
+                        test_id = triplet_id;
+                    }
+                }
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: iterator.remove")) {
+                        remove_test = true;
+                        test_id = triplet_id;
+                    }
+                }
+            }
+            if (next_test) {
+                for (ASTtriplet t : astTriplets) {
+                    int triplet_id = t.getID();
+                    if (triplet_id < test_id) {
+                        if (t.first_entity.get(0).equals("MethodCallExpression: iterator.hasNext()") | t.first_entity.get(0).equals("ReferenceExpression: iterator.hasNext")) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            else if (remove_test) {
+                for (ASTtriplet t: astTriplets) {
+                    int triplet_id = t.getID();
+                    if (triplet_id < test_id) {
+                        if (t.first_entity.get(0).equals("ReferenceExpression: iterator.next")) {
+                            return false;
+                        }
+                    }
+                }
+            }
+            if (!remove_test && !next_test) {
+                return false;
+            }
+            return true;
+        }
+        else if (case_name.equals("stringWarning")) {
+            int test_id = 0;
+            boolean test = false;
+            String literalExpression = "";
+            int idxOf_value = -1;
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: DeclarationStatement")) {
+                    String type = t.first_entity.get(0).split(",", 2)[0];
+                    literalExpression = t.second_entity.get(0).split(":", 2)[1];
+                    literalExpression = literalExpression.replace(" ", "");
+                    literalExpression = literalExpression.replace("\"", "");
+                }
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: string.indexOf")) {
+                        String argument = t.second_entity.get(0).split(",", 2)[0];
+                        argument = argument.split(":", 2)[1];
+                        argument = argument.replace(" ", "");
+                        argument = argument.replace("[", "");
+                        argument = argument.replace("]", "");
+                        argument = argument.replace("\'", "");
+                        if (!literalExpression.contains(argument)) {
+                            return true;
+
+                        } else {
+                            idxOf_value = literalExpression.indexOf(argument);
+                        }
+                    }
+                }
+
+                if (t.third_entity.get(0).split(",", 2)[0].equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).split(",", 2)[0].equals("ReferenceExpression: string.substring")) {
+                        String substring_arg = t.second_entity.get(0);
+                        substring_arg = substring_arg.split(":", 2)[1];
+                        String substring_type = t.second_entity.get(1);
+                        substring_type = substring_type.replace(" ", "");
+                        if (substring_type.equals("Types:[int]")) {
+                            substring_arg = substring_arg.replace(" ", "");
+                            substring_arg = substring_arg.replace("[", "");
+                            substring_arg = substring_arg.replace("]", "");
+                            int substring_arg_value = Integer.parseInt(substring_arg);
+                            if (substring_arg_value <= 0) {
+                                return true;
+                            } else if (substring_arg_value >= literalExpression.length()) {
+                                return true;
+                            }
+                        }
+                        else if (substring_type.equals("Arguments:[]")) {
+                            continue;
+                        }
+                        else if (substring_arg.contains("triplet")){
+                            substring_arg = substring_arg.split("_",2)[1];
+                            int related_triplet_id = Integer.parseInt(substring_arg);
+                            for (ASTtriplet related_t : astTriplets) {
+                                if (related_t.getID() == related_triplet_id && related_t.first_entity.equals("ReferenceExpression: string.indexOf")) {
+                                    String argument = t.second_entity.get(0).split(",", 2)[0];
+                                    argument = argument.split(":", 2)[1];
+                                    argument = argument.replace(" ", "");
+                                    argument = argument.replace("[", "");
+                                    argument = argument.replace("]", "");
+                                    argument = argument.replace("\'", "");
+                                    if (!literalExpression.contains(argument)) {
+                                        return true;
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            if (idxOf_value < 0) {
+                                return true;
+                            } else if (idxOf_value >= literalExpression.length()) {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
+        }
+        else if (case_name.equals("filereaderWarning")) {
+            boolean fileExist = false;
+            boolean directoryExist = false;
+            boolean tryExist = false;
+            for (ASTtriplet t : astTriplets) {
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.exists")) {
+                    fileExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.isDirectory")) {
+                    directoryExist = true;
+                }
+                if (t.third_entity.get(0).equals("Relation: TryStatement")) {
+                    tryExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceElement: FileReader")) {
+                    if (!tryExist) {
+                        return true;
+                    }
+                    if (!fileExist) {
+                        return true;
+                    }
+                    if (!directoryExist) {
+                        return true;
+                    }
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: reader.read")) {
+                    if (!tryExist) {
+                        return true;
+                    }
+                }
+
+            }
+            return false;
+        }
+        return false;
+    }
+
+    private static String checkfiletry(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        if (case_name.equals("fileReaderTryCatch")) {
+            boolean fileExist = false;
+            boolean directoryExist = false;
+            boolean tryExist = false;
+            for (ASTtriplet t : astTriplets) {
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.exists")) {
+                    fileExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.isDirectory")) {
+                    directoryExist = true;
+                }
+                if (t.third_entity.get(0).equals("Relation: TryStatement")){
+                    tryExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceElement: FileReader")) {
+                    if (!tryExist) {
+                        return "filereader_try";
+                    }
+                    if (!fileExist) {
+                        return "file";
+                    }
+                    if (!directoryExist) {
+                        return "directory";
+                    }
+
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: reader.read")) {
+                    if (!tryExist) {
+                        return "read_try";
+                    }
+                }
+            }
+        }
+        return "end";
+    }
+
+    private static ArrayList<String> checkCapability(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        ArrayList<String> problems = new ArrayList<>();
+        if (case_name.equals("filereaderWarning")) {
+            boolean fileExist = false;
+            boolean directoryExist = false;
+            boolean tryExist = false;
+            for (ASTtriplet t : astTriplets) {
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.exists")) {
+                    fileExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: file.isDirectory")) {
+                    directoryExist = true;
+                }
+                if (t.third_entity.get(0).equals("Relation: TryStatement")){
+                    tryExist = true;
+                }
+                if (t.first_entity.get(0).equals("ReferenceElement: FileReader")) {
+                    if (!tryExist) {
+                        problems.add("filereader_try");
+                    }
+                    if (!fileExist) {
+                        problems.add("file");
+                    }
+                    if (!directoryExist) {
+                        problems.add("directory");
+                    }
+
+                }
+                if (t.first_entity.get(0).equals("ReferenceExpression: reader.read")) {
+                    if (!tryExist) {
+                        problems.add("read_try");
+                    }
+                }
+            }
+        }
+        return problems;
+    }
+
+    private static ArrayList<String> checkJPanel(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        ArrayList<String> marks = new ArrayList<>();
+        if (case_name.equals("jpanelWarning")) {
+            int test_id = 0;
+            boolean test = false;
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: panel.add")) {
+                        marks.add("add");
+                    }
+                    else if (t.first_entity.get(0).equals("ReferenceExpression: panel.remove")) {
+                        marks.add("remove");
+                    }
+                    test_id = triplet_id;
+                    for (ASTtriplet t1 : astTriplets) {
+                        int id = t1.getID();
+                        if (id > test_id) {
+                            if (t1.first_entity.get(0).equals("ReferenceExpression: panel.validate")) {
+                                marks.clear();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return marks;
+    }
+
+    private static ArrayList<String> checkcharAt(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        ArrayList<String> problems = new ArrayList<>();
+        if (case_name.equals("stringWarning")) {
+            int test_id = 0;
+            boolean test = false;
+            String s = "";
+            int idxOf_value = -1;
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: DeclarationStatement") && t.second_entity.get(0).split(":",2)[0].equals("LiteralExpression")) {
+                    String type = t.first_entity.get(0).split(",", 2)[0];
+                    s = t.second_entity.get(0).split(":", 2)[1];
+                    s = s.replace(" ", "");
+                    s = s.replace("\"", "");
+
+                }
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: string.indexOf")) {
+                        String argument = t.second_entity.get(0).split(",", 2)[0];
+                        argument = argument.split(":", 2)[1];
+                        argument = argument.replace(" ", "");
+                        argument = argument.replace("[", "");
+                        argument = argument.replace("]", "");
+                        argument = argument.replace("\'", "");
+
+                        if (!s.contains(argument)) {
+                            problems.add("indexOf_constraint");
+                        } else {
+                            idxOf_value = s.indexOf(argument);
+                        }
+
+                    }
+                }
+
+                if (t.third_entity.get(0).split(",", 2)[0].equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).split(",", 2)[0].equals("ReferenceExpression: string.substring")) {
+                        String substring_arg = t.second_entity.get(0);
+                        substring_arg = substring_arg.split(":", 2)[1];
+                        String substring_type = t.second_entity.get(1);
+                        substring_type = substring_type.replace(" ", "");
+                        if (substring_type.equals("Types:[int]")) {
+                            substring_arg = substring_arg.replace(" ", "");
+                            substring_arg = substring_arg.replace("[", "");
+                            substring_arg = substring_arg.replace("]", "");
+                            int substring_arg_value = Integer.parseInt(substring_arg);
+                            if (substring_arg_value <= 0) {
+                                problems.add("substring_negative");
+                            } else if (substring_arg_value >= s.length()) {
+                                problems.add("substring_larger");
+                            }
+                        }
+                        else if (substring_arg.contains("triplet")) {
+                            substring_arg = substring_arg.split("_", 2)[1];
+                            int related_triplet_id = Integer.parseInt(substring_arg);
+                            for (ASTtriplet related_t : astTriplets) {
+                                if (related_t.getID() == related_triplet_id && related_t.first_entity.get(0).equals("ReferenceExpression: string.indexOf")) {
+                                    String argument = related_t.second_entity.get(0).split(",", 2)[0];
+                                    argument = argument.split(":", 2)[1];
+                                    argument = argument.replace(" ", "");
+                                    argument = argument.replace("[", "");
+                                    argument = argument.replace("]", "");
+                                    argument = argument.replace("\'", "");
+                                    if (!s.contains(argument)) {
+                                        problems.add("substring_negative_complex");
+                                    }
+                                }
+                            }
+                        }
+                        else if (substring_type.equals("Arguments:[]")) {
+                            continue;
+                        }
+
+                        else {
+                            if (idxOf_value < 0) {
+                                problems.add("substring_indexOf_negative");
+                            }
+                            else if (idxOf_value >= s.length()) {
+                                problems.add("substring_larger");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return problems;
+    }
+
+    private static ArrayList<String> checkiteratorPattern(ArrayList<ASTtriplet> astTriplets, String case_name) {
+        ArrayList<String> problems = new ArrayList<>();
+        boolean hasnext_b = false;
+        boolean remove_b = false;
+        boolean next_test = false;
+        boolean remove_test = false;
+        if (case_name.equals("iteratorWarning")) {
+            int total_len = astTriplets.size();
+            int test_id = 0;
+            for (ASTtriplet t : astTriplets) {
+                int triplet_id = t.getID();
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: iterator.next")) {
+                        next_test = true;
+                        test_id = triplet_id;
+                    }
+                }
+                if (t.third_entity.get(0).equals("Relation: MethodCallExpression")) {
+                    if (t.first_entity.get(0).equals("ReferenceExpression: iterator.remove")) {
+                        remove_test = true;
+                        test_id = triplet_id;
+                    }
+                }
+            }
+            if (next_test) {
+                for (ASTtriplet t : astTriplets) {
+                    int triplet_id = t.getID();
+                    if (triplet_id < test_id) {
+                        if (t.first_entity.get(0).equals("MethodCallExpression: iterator.hasNext()") | t.first_entity.get(0).equals("ReferenceExpression: iterator.hasNext")) {
+                            hasnext_b = true;
+                        }
+                    }
+                }
+            }
+            if (remove_test) {
+                for (ASTtriplet t : astTriplets) {
+                    int triplet_id = t.getID();
+                    if (triplet_id < test_id) {
+                        if (t.first_entity.get(0).equals("ReferenceExpression: iterator.next")) {
+                            remove_b = true;
+                        }
+                    }
+                }
+            }
+        }
+        if (!hasnext_b && next_test) {
+            problems.add("hasnext");
+        }
+        if (!remove_b) {
+            problems.add("remove");
+        }
+        return problems;
+    }
+
+
+    private static String getCase(ArrayList<ASTtriplet> astTriplets) {
+        for (ASTtriplet t : astTriplets) {
+            if (t.getID() == 0) {
+                String first_entity = t.first_entity.get(0);
+                String name = first_entity.split(",", 2)[0];
+                String case_name = name.split(":", 2)[1];
+                case_name = case_name.replace(" ", "");
+                return case_name;
+            }
+        }
+        return "error";
+    }
+
 }
+
+
+
+

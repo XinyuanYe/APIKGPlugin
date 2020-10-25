@@ -146,7 +146,7 @@ public class ComparingReferencesInspection extends AbstractBaseJavaLocalInspecti
          * Returns a partially localized string for the quick fix intention.
          * Used by the test code for this plugin.
          *
-         * @return Quick fix short name.
+         * @return Quick fix short condition.
          */
         @NotNull
         @Override

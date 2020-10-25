@@ -2,19 +2,316 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0811a509-5b0c-4d70-af73-108195553145" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/my_gradle_plugin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/APIChainInspection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/APIConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/APIKGInspection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ConditionStmt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HelloAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/classNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/constructorNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/fieldNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/methodNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/modified_methodNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/node_relation.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/KGdata/parametersNode.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MethodCallExp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constraint.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/constraint.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/readJSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/KGInspection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/KGInspection$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/KGInspection.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main-instrumented/KGInspection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main-instrumented/KGtree/KGnode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/KGtree/KGnode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/dimensions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/dimensions.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/ide.general.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/ide.general.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/recentProjects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/recentProjects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/usage.statistics.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/usage.statistics.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/config/options/window.manager.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/config/options/window.manager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/plugins/my_gradle_plugin/lib/my_gradle_plugin-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/LocalHistory/changes.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/attrib.dat.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/content.dat.storageData" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/content.dat.storageData" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/content.dat.storageRecordIndex" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/content.dat.storageRecordIndex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/contentHashes.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/names.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/records.dat.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/caches/vfs_enum_attrib.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/caches/vfs_enum_attrib.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/xyxy_ca6f9d17/ustamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/compile-server/xyxy_ca6f9d17/ustamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/conversion/XYXYe1b18481.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/conversion/XYXYe1b18481.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/bytecodeanalysis/values_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/hashesWithFileType_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/idindex/values_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/todoindex/values_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/.persistent/trigram.index/values_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/ant-imports/ant-imports.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/ant-imports/ant-imports.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/ant-imports/ant-imports_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/ant-imports/ant-imports_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/bytecodeAnalysis.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/fileIdToHashId" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/bytecodeanalysis/fileIdToHashId_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/domfileindex/DomFileIndex_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.project.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filenameindex/FilenameIndex_inputs_i.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/filetypes/filetypes_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage_i.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/IdIndex.storage_i.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/fileIdToHashId" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/idindex/fileIdToHashId_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/imagefileinfoindex/ImageFileInfoIndex_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.auto.module.name/java.auto.module.name_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.binary.plus.expression/java.binary.plus.expression_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.fun.expression/java.fun.expression_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.null.method.argument/java.null.method.argument_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/java.simple.property/java.simple.property_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/json.file.root.values/json.file.root.values_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/Stubs_inputs_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.class/gr.script.class.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.class/gr.script.class.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.class/gr.script.class.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.class/gr.script.class.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.fqn/gr.script.fqn.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/gr.script.fqn/gr.script.fqn.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.annotations/java.annotations.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.anonymous.baseref/java.anonymous.baseref.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.extlist/java.class.extlist.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.fqn/java.class.fqn.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.project.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.class.shortname/java.class.shortname.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.field.name/java.field.name.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.name/java.method.name.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/java.method.parameter.types/java.method.parameter.types.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.name/jvm.static.member.name.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/jvm.static.member.type/jvm.static.member.type.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/stubs/properties.index/properties.index.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/TodoIndex.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/TodoIndex.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/TodoIndex.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/TodoIndex.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/todoindex/fileIdToHashId_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/Trigram.Index.storage_i.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/trigram.index/fileIdToHashId_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name.storage" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name.storage" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name.storage.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name.storage.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name_inputs" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/index/yaml.keys.name/yaml.keys.name_inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/log/idea.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/resource_folder_cache/project_lru_list.dat" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/resource_folder_cache/project_lru_list.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/stat/unit.888" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/stat/unit.888" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/idea-sandbox/system/workspace/xyxy.e1b18481.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/idea-sandbox/system/workspace/xyxy.e1b18481.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/my_gradle_plugin-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/my_gradle_plugin-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/patchedPluginXmlFiles/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/ComparingReferencesInspection$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/ComparingReferencesInspection$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/ComparingReferencesInspection$CriQuickFix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/ComparingReferencesInspection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/KGInspection$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/KGInspection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/KGtree/KGnode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/META-INF/plugin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ComparingReferencesInspection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ComparingReferencesInspection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KGInspection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/my_gradle_plugin$Plugin.ic" NAME="Plugin Coverage Results" MODIFIED="1583226802017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/my_gradle_plugin$Plugin.ic" NAME="Plugin Coverage Results" MODIFIED="1592894697316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -23,41 +320,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ComparingReferencesInspection.java">
+      <file leaf-file-name="APIKGInspection.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/APIKGInspection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="74" column="123" selection-start-line="74" selection-start-column="123" selection-end-line="74" selection-end-column="123" />
+            <state relative-caret-position="438">
+              <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6533#6534#0" expanded="true" />
-                <element signature="e#6578#6579#0" expanded="true" />
-                <element signature="e#8368#8369#0" expanded="true" />
-                <element signature="e#8408#8409#0" expanded="true" />
+                <element signature="e#2140#2219#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/KGInspection.java">
+      <file leaf-file-name="ConditionStmt.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ConditionStmt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="345">
+              <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#452#453#0" expanded="true" />
+                <element signature="e#486#487#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ASTtriplet/ASTtriplet.java">
+      <file leaf-file-name="constraint.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/constraint.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+            <state relative-caret-position="510">
+              <caret line="34" column="25" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APIConstraint.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/APIConstraint.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#798#799#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodCallExp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/MethodCallExp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#444#445#0" expanded="true" />
+                <element signature="e#479#480#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,44 +386,569 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Action" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>panel.add</find>
+      <find>panel</find>
+      <find>try</find>
+      <find>createOPtionsPanel</find>
+      <find>hi</find>
+      <find>HI</find>
+      <find>print</find>
+      <find>println</find>
+      <find>getArgu</find>
+      <find>geta</find>
+      <find>get</find>
+      <find>substring_negative_complex</find>
+      <find>jpanel</find>
+      <find>block</find>
+      <find>catch</find>
+      <find>new</find>
+      <find>newExp</find>
+      <find>PsiNewExpression</find>
+      <find>PsiReferenceExpression</find>
+      <find>next</find>
+      <find>iterator.next</find>
+      <find>java.util.Iterator.next()</find>
+      <find>next()</find>
+      <find>8736</find>
+      <find>8724</find>
+      <find>remove()</find>
+      <find>java.util.Iterator</find>
+      <find>41886</find>
+      <find>41888</find>
+      <find>41889</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="myGradleHomes">
+      <map>
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10" />
+      </map>
+    </option>
+    <option name="myGradleVersions">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4.10" />
+      </map>
+    </option>
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="my_gradle_plugin" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="my_gradle_plugin" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="availableTasks">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <list>
+              <ExternalTaskPojo>
+                <option name="description" value="Builds searchable options for plugin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildSearchableOptions" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the sub-projects of root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Bundles the project as a distribution." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildPlugin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Gradle wrapper files." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="wrapper" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Validates completeness and contents of plugin.xml descriptors as well as plugin’s archive structure." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="verifyPlugin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles a jar archive containing the main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jar" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the configuration model of root project 'my_gradle_plugin'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="model" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes main resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the tasks runnable from root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="tasks" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Initializes a new Gradle build." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="init" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs the unit tests." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="test" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare sandbox directory with installed plugin and its dependencies." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareTestingSandbox" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles main Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs all checks." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="check" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all dependencies declared in root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencies" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Patch plugin xml files with corresponding since/until build numbers and version attributes" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="patchPluginXml" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Processes test resources." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="processTestResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Runs Intellij IDEA with installed plugin." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="runIde" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="postInstrumentTestCode" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects it depends on." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildNeeded" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the components produced by root project 'my_gradle_plugin'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="components" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project and all projects that depend on it." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildDependents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles main classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="classes" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the dependent components of components in root project 'my_gradle_plugin'. [incubating]" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependentComponents" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="buildEnvironment" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles test classes." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="testClasses" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Generates Javadoc API documentation for the main source code." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="javadoc" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare sandbox directory with installed plugin and its dependencies." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareSandbox" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Publish plugin distribution on plugins.jetbrains.com." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="publishPlugin" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the insight into a specific dependency in root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="dependencyInsight" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles the outputs of this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="assemble" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Deletes the build directory." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="clean" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Compiles test Java source." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="compileTestJava" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="instrumentCode" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays a help message." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="help" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="instrumentTestCode" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Assembles and tests this project." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="build" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="postInstrumentCode" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Jars searchable options." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="jarSearchableOptions" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Displays the properties of root project 'my_gradle_plugin'." />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="properties" />
+              </ExternalTaskPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="6363898880000" />
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="4060425826" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2696189834" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="2898693843" />
+      </map>
+    </option>
+    <option name="projectBuildClasspath">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <ExternalProjectBuildClasspathPojo>
+              <option name="modulesBuildClasspath">
+                <map>
+                  <entry key="$PROJECT_DIR$">
+                    <value>
+                      <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/gradle.plugin.org.jetbrains.intellij.plugins/gradle-intellij-plugin/0.4.15/f0afd2e501bdcd677e0bae5a0a3361498329c126/gradle-intellij-plugin-0.4.15.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij/plugin-repository-rest-client/0.6.5/2d6dd1d33cbaabb242fce4167595052292b495d6/plugin-repository-rest-client-0.6.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.plugins/structure-base/3.46/a2c5dae1f4a14cd9e08fc2672783dc3762502ac1/structure-base-3.46.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.intellij.plugins/structure-intellij/3.46/84a146587404bcd71f146d8fa93c0152a2328327/structure-intellij-3.46.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/de.undercouch/gradle-download-task/4.0.2/2aaf2b081cd0dd5b3cf25fde69a20b043dd46fbd/gradle-download-task-4.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.50/66d47b004c5b8a1d2d1df9e463187390ed741316/kotlin-stdlib-1.2.50.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.26/77100a62c2e6f04b53977b9f541044d7d722693d/slf4j-api-1.7.26.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/converter-simplexml/1.9.0/9c00647c949b9c521ca62390159b37adfc31c50a/converter-simplexml-1.9.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.2.50/9fab8887f91c8e17cce1a7522f45dc25976e57b9/kotlin-reflect-1.2.50.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.intellij/annotations/12.0/bbcf6448f6d40abe506e2c83b70a3e8bfd2b4539/annotations-12.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/24.1-jre/96c528475465aeb22cce60605d230a7e67cebd7b/guava-24.1-jre.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.6/815893df5f31da2ece4040fe0a12fd44b577afaf/commons-io-2.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-archiver/3.6.0/1b74dd2c2f4209d227673c2a233a1db60956b8ab/plexus-archiver-3.6.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-container-default/1.7.1/c10eaacd916f4ae5f1741d04e5841e854d6f7a1e/plexus-container-default-1.7.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jdom/jdom/2.0.2/d06c71e0df0ac4b94deb737718580ccce22d92e8/jdom-2.0.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.9.2/5e3bda828a80c7a21dfbe2308d1755759c2fd7b4/jsoup-1.9.2.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.xml.bind/jaxb-api/2.3.1/8531ad5ac454cc2deb9d4d32c40c4d7451939b5d/jaxb-api-2.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-impl/2.3.1/a1a12b85ba1435b4189e065f7dafcc3fb9410d38/jaxb-impl-2.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-core/2.3.0.1/23574ca124d0a694721ce3ef13cd720095f18fdd/jaxb-core-2.3.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.50/6b19a2fcc29d34878b3aab33fd5fcf70458a73df/kotlin-stdlib-common-1.2.50.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.simpleframework/simple-xml/2.7.1/dd91fb744c2ff921407475cb29a1e3fee397d411/simple-xml-2.7.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/1.3.9/40719ea6961c0cb6afaeb6a921eaa1f6afd4cfdf/jsr305-1.3.9.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-compat-qual/2.0.0/fc89b03860d11d6213d0154a62bcd1c2f69b9efa/checker-compat-qual-2.0.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.1.3/39b109f2cd352b2d71b52a3b5a1a9850e1dc304b/error_prone_annotations-2.1.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/ed28ded51a8b1c6b112568def5f4b455e6809019/j2objc-annotations-1.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-utils/3.1.0/60eecb6f15abdb1c653ad80abaac6fe188b3feaa/plexus-utils-3.1.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-io/3.0.1/f80682b2005e1274b5f50704ccb34bcf144fbda2/plexus-io-3.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.16.1/7b5cdabadb4cf12f5ee0f801399e70635583193f/commons-compress-1.16.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.iq80.snappy/snappy/0.4/a42b2d92a89efd35bb14738000dabcac6bd07a8d/snappy-0.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.tukaani/xz/1.8/c4f7d054303948eb6a4066194253886c8af07128/xz-1.8.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.plexus/plexus-classworlds/2.5.1/98fea8e8c3fb0e8670a69ad6ea445872c9972910/plexus-classworlds-2.5.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.xbean/xbean-reflect/3.7/6072a967ec936b3bb25b421d8eca07dd750219fd/xbean-reflect-3.7.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.activation/javax.activation-api/1.2.0/85262acf3ca9816f9537ca47d5adeabaead7cb16/javax.activation-api-1.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/stax/stax-api/1.0.1/49c100caf72d658aca8e58bd74a4ba90fa2b0d70/stax-api-1.0.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/stax/stax/1.2.0/c434800de5e4bbe1822805be5fb1c32d6834f830/stax-1.2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/xpp3/xpp3/1.1.3.3/64f9d2bb88f58ad2a15a4301487d977ee9b4294/xpp3-1.1.3.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/2.6/639033469776fd37c08358c6b92a4761feb2af4b/objenesis-2.6.jar" />
+                          </list>
+                        </option>
+                        <option name="path" value="$PROJECT_DIR$" />
+                      </ExternalModuleBuildClasspathPojo>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="name" value="my_gradle_plugin" />
+              <option name="projectBuildClasspath">
+                <list>
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/ide" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/build-option" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/tooling-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/ivy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/wrapper" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/version-control" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/testing-junit-platform" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/composite-builds" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/docs" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/cli" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/ear" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/persistent-cache" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/code-quality" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/build-cache" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/core-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/resources-gcs" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/ide-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/base-services-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/tooling-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/tooling-api-builders" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/build-cache-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-model-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-persistent-cache-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-kotlin-dsl-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-process-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-cli-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-core-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/ant-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/groovy-all-2.4.15.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-runtime-api-info-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-base-services-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-jvm-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-base-services-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/ant-launcher-1.9.11.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-logging-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-messaging-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-docs-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-kotlin-dsl-tooling-builders-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-resources-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-kotlin-dsl-provider-plugins-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-kotlin-dsl-tooling-models-1.0-rc-3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-model-core-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-api-metadata-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-tooling-api-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-launcher-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-wrapper-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-build-option-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-core-api-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-build-cache-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/gradle-installation-beacon-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-testing-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-composite-builds-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-ear-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-build-cache-http-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-publish-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-testing-base-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-signing-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-resources-s3-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-ivy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-language-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-announce-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-ide-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-diagnostics-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-resources-gcs-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-osgi-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-language-java-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-build-comparison-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-tooling-api-builders-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-testing-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-platform-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-language-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-code-quality-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-platform-jvm-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-version-control-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-ide-play-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-javascript-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-platform-play-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-jacoco-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-test-kit-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-testing-junit-platform-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-dependency-management-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-plugin-development-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-antlr-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-scala-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-maven-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-language-scala-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-tooling-native-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-platform-base-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-resources-http-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-ide-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-reporting-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-plugin-use-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-build-init-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-resources-sftp-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-plugins-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-workers-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/gradle-language-groovy-4.10.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
+                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
+                </list>
+              </option>
+            </ExternalProjectBuildClasspathPojo>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/main/java/demoExamples.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TXTParseUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/myKGInspection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/methodNode.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/test.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_methodNode.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_classNode.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_constructorNode.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_fieldNode.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_node_relation.json" />
+        <option value="$PROJECT_DIR$/src/main/java/KGdata/modified_parametersNode.json" />
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/EqualInspection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ComparingReferencesInspection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/KGnode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/KGtree/KGnode.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ASTtriplet/ASTtriplet.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/main/java/KGInspection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/APIChainInspection.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/IfStmt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constraint.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/constraint.json" />
+        <option value="$PROJECT_DIR$/src/main/java/readJSON.java" />
+        <option value="$PROJECT_DIR$/.idea/libraries/lib.xml" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/MethodCallExp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/APIConstraint.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ConditionStmt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/APIKGInspection.java" />
       </list>
     </option>
-  </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand />
-      <select />
-    </treeState>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="967" />
+    <option name="height" value="972" />
   </component>
+  <component name="ProjectId" id="1dXY06ocU32g6TsDhWwm1MdB91A" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -133,86 +976,54 @@
             </path>
             <path>
               <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_gradle_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ASTtriplet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_gradle_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my_gradle_plugin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.6" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="java-api.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="java-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my_gradle_plugin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: com.jetbrains:ideaIC:2018.3.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="java-api.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="intellij" type="462c0819:PsiDirectoryNode" />
-              <item name="codeInspection" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1583286978621" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/xinyuan/IdeaProjects/my_gradle_plugin/src/main/java/ConditionStmt.java" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1592569106336" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15332031" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="PsiViewer.ProjectComponent">
     <option name="HIGHLIGHT" value="false" />
     <option name="FILTER_WHITESPACE" value="false" />
     <option name="SHOW_PROPERTIES" value="true" />
-    <option name="SPLIT_DIVIDER_POSITION" value="300" />
+    <option name="SPLIT_DIVIDER_POSITION" value="85" />
     <option name="AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="/Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/lib/tools.jar" />
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src/main/java/KGdata" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ASTtriplet" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/Report/Employee" />
+      <recent name="$PROJECT_DIR$/src/main/java/Report/BankingSystem" />
+      <recent name="$PROJECT_DIR$/src/test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -227,7 +1038,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.Plugin">
+    <configuration name="TXTParseUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TXTParseUtils" />
+      <module name="com.your.company.my_gradle_plugin.main" />
+    </configuration>
+    <configuration name="readJSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="readJSON" />
+      <module name="com.your.company.my_gradle_plugin.main" />
+    </configuration>
     <configuration name="Plugin" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -244,9 +1063,18 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Gradle.Plugin" />
+      <item itemvalue="Application.TXTParseUtils" />
+      <item itemvalue="Application.readJSON" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.readJSON" />
+        <item itemvalue="Application.TXTParseUtils" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -308,43 +1136,54 @@
       <option name="project" value="LOCAL" />
       <updated>1583823840170</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Clean unnecessary codes">
+      <created>1583824261580</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583824261580</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="967" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="972" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23199023" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31314287" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3993135" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.24685714" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50061053" side_tool="true" weight="0.3977143" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Build" order="10" sideWeight="0.4993895" weight="0.3977143" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.3299428" />
-      <window_info anchor="right" id="Gradle" order="5" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="PsiViewer" order="9" weight="0.32967034" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="PsiViewer" order="11" weight="0.20296465" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.304" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.110857144" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24603175" />
+      <window_info anchor="bottom" id="Build" order="0" weight="0.32914287" />
+      <window_info anchor="right" id="Gradle" order="7" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32914287" />
+      <window_info anchor="bottom" id="Messages" order="9" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.328" />
+      <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.32920793" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed previous bugs&#10;Added warning display&#10;Needs to work on code fix and more test cases" />
@@ -354,75 +1193,310 @@
     <MESSAGE value="Clean unnecessary codes" />
     <option name="LAST_COMMIT_MESSAGE" value="Clean unnecessary codes" />
   </component>
+  <component name="WindowStateProjectService">
+    <state width="1601" height="176" key="GridCell.Tab.0.bottom" timestamp="1592667943167">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state width="1601" height="247" key="GridCell.Tab.0.bottom/0.23.1680.972@0.23.1680.972" timestamp="1592618165336" />
+    <state width="1601" height="176" key="GridCell.Tab.0.bottom/0.23.1680.973@0.23.1680.973" timestamp="1592667943167" />
+    <state width="1601" height="176" key="GridCell.Tab.0.center" timestamp="1592667943167">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state width="1601" height="247" key="GridCell.Tab.0.center/0.23.1680.972@0.23.1680.972" timestamp="1592618165335" />
+    <state width="1601" height="176" key="GridCell.Tab.0.center/0.23.1680.973@0.23.1680.973" timestamp="1592667943167" />
+    <state width="1601" height="176" key="GridCell.Tab.0.left" timestamp="1592667943166">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state width="1601" height="247" key="GridCell.Tab.0.left/0.23.1680.972@0.23.1680.972" timestamp="1592618165334" />
+    <state width="1601" height="176" key="GridCell.Tab.0.left/0.23.1680.973@0.23.1680.973" timestamp="1592667943166" />
+    <state width="1601" height="176" key="GridCell.Tab.0.right" timestamp="1592667943167">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state width="1601" height="247" key="GridCell.Tab.0.right/0.23.1680.972@0.23.1680.972" timestamp="1592618165335" />
+    <state width="1601" height="176" key="GridCell.Tab.0.right/0.23.1680.973@0.23.1680.973" timestamp="1592667943167" />
+    <state x="374" y="87" key="SettingsEditor" timestamp="1592667870660">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state x="420" y="148" key="SettingsEditor/0.23.1680.972@0.23.1680.972" timestamp="1592578617405" />
+    <state x="374" y="87" key="SettingsEditor/0.23.1680.973@0.23.1680.973" timestamp="1592667870660" />
+    <state x="629" y="466" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1592667230999">
+      <screen x="0" y="23" width="1680" height="973" />
+    </state>
+    <state x="629" y="466" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.23.1680.973@0.23.1680.973" timestamp="1592667230999" />
+    <state x="108" y="119" key="new project wizard" timestamp="1592618158098">
+      <screen x="0" y="23" width="1680" height="972" />
+    </state>
+    <state x="108" y="119" key="new project wizard/0.23.1680.972@0.23.1680.972" timestamp="1592618158098" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/EqualInspection.java" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/b17b6fc76300642c265b6697b8617abf4c0aa5d/ideaIC-2018.3.6-sources.jar!/com/intellij/psi/PsiElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/b17b6fc76300642c265b6697b8617abf4c0aa5d/ideaIC-2018.3.6-sources.jar!/com/intellij/psi/PsiStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/b17b6fc76300642c265b6697b8617abf4c0aa5d/ideaIC-2018.3.6-sources.jar!/com/intellij/psi/JavaElementVisitor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="176" column="14" selection-start-line="176" selection-start-column="14" selection-end-line="176" selection-end-column="14" />
-          <folding>
-            <element signature="e#4676#4677#0" expanded="true" />
-            <element signature="e#4706#4707#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KGtree/KGnode.java" />
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/Services.java.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/RVariableProcessor.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/BankingSystem.java.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="45">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ComparingReferencesInspection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/ScrollEventHandler.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/UserPreferences.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/ReplacedElementAdapter.java.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="74" column="123" selection-start-line="74" selection-start-column="123" selection-end-line="74" selection-end-column="123" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6533#6534#0" expanded="true" />
-            <element signature="e#6578#6579#0" expanded="true" />
-            <element signature="e#8368#8369#0" expanded="true" />
-            <element signature="e#8408#8409#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="75" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="3" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/SvgRasterizer.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/TreeAdapter.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/Utils.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/RSigilOperator.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/ProcessorFactory.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/ProcessorContext.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/PredicateFactory.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/MissingFileException.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/Messages.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/MapInterpolator.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/ImageDialog.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/FocusAwareTextFieldTreeCell.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Report/RenderingSettings.java.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGInspection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="1361" column="29" selection-start-line="1361" selection-start-column="29" selection-end-line="1361" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ASTtriplet/ASTtriplet.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/platform-api.jar!/com/intellij/psi/PsiElementVisitor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/java-api.jar!/com/intellij/codeInspection/AbstractBaseJavaLocalInspectionTool.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-620">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIC/2018.3.6/be4a083c7dca1159d340fd6dcacc4a78646acfb4/ideaIC-2018.3.6/lib/java-api.jar!/com/intellij/psi/JavaElementVisitor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2781">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_classNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="2" column="2260493" selection-start-line="2" selection-start-column="2260475" selection-end-line="2" selection-end-column="2260493" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_constructorNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="2" column="191" selection-start-line="2" selection-start-column="191" selection-end-line="2" selection-end-column="191" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_node_relation.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-233233">
+          <caret line="2" column="2512582" selection-start-line="2" selection-start-column="2512577" selection-end-line="2" selection-end-column="2512582" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_fieldNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3037">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_methodNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="2" column="498" lean-forward="true" selection-start-line="2" selection-start-column="498" selection-end-line="2" selection-end-column="498" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constraint.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/methodNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="96" lean-forward="true" selection-start-column="96" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/KGdata/modified_parametersNode.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403755">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fastjson-1.2.151.jar!/com/alibaba/fastjson/JSON.class" />
+    <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/my_gradle_plugin.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/libraries/lib.xml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/readJSON.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="181" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#8037#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/jarRepositories.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/gradle.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/MethodCallExp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#444#445#0" expanded="true" />
+            <element signature="e#479#480#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/APIChainInspection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="109" column="146" selection-start-line="108" selection-start-column="32" selection-end-line="109" selection-end-column="146" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/KGInspection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/APIConstraint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="345">
+          <caret line="33" column="94" selection-start-line="33" selection-start-column="94" selection-end-line="33" selection-end-column="94" />
+          <folding>
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#798#799#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ConditionStmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+          <folding>
+            <element signature="e#452#453#0" expanded="true" />
+            <element signature="e#486#487#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constraint.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/APIKGInspection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="290" column="5" selection-start-line="290" selection-start-column="5" selection-end-line="290" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2140#2219#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -456,7 +1530,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>json-simple-1.1.1</last-edited>
+          <last-edited>fastjson-1.2.74</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -480,19 +1554,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>com.your.company.my_gradle_plugin</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
+          <last-edited>main|com.your.company.my_gradle_plugin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

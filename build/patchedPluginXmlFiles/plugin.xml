@@ -5,13 +5,17 @@
       &lt;em&gt;most HTML tags may be used&lt;/em&gt;</change-notes>
   <idea-version since-build="183.6156" until-build="183.*"/>
   <id>com.your.company.my_gradle_plugin</id>
-  <name>Plugin display name here</name>
+  <name>myPlugin</name>
   <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
   <description>
     "This is a plugin driven by KG".&lt;br&gt;
     </description>
   <extensions defaultExtensionNs="com.intellij">
-    <localInspection language="JAVA" displayName="SDK: using KG inspection" groupPath="Java" groupBundle="messages.InspectionsBundle" groupKey="group.names.probable.bugs" enabledByDefault="true" level="WARNING" implementationClass="KGInspection"/>
+    <localInspection language="JAVA" displayName="SDK: using KG inspection" groupPath="Java" groupBundle="messages.InspectionsBundle" groupKey="group.names.probable.bugs" enabledByDefault="true" level="WARNING" implementationClass="APIKGInspection"/>
   </extensions>
-  <actions/>
+  <actions>
+    <action id="HelloAction" class="HelloAction" text="HelloAction" description="HelloAction">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+    </action>
+  </actions>
 </idea-plugin>

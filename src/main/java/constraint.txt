@@ -1,0 +1,22 @@
+start:add, end: validate, constraint: {"check": "follow", "Desc": "Missing call: the container has already been displayed, the hierarchy must be validated thereafter in order to display the added component"}
+start:remove, end: validate, constraint: {"check": "follow", "Desc": "Missing call: the container has already been displayed, the hierarchy must be validated thereafter in order to reflect the changes"}
+
+start: next, end: hasNext, constraint: {"check": "hasNext==true", "Violation": "NoSuchElementException", "Desc": "Missing state checking: the iteration has no more element"}
+start: next, end: remove, constraint: {"check": "precede", "Violation": "IllegalStateException", "Desc": "Missing call: the next method has not yet been called, or the remove method has already been called after the last call to the next method"}
+
+
+
+start: indexOf, constraint: {"check": "char in String","Violation": "-1", "Desc": "trigger - the character does not occur"}
+start: substring, end: indexOf, constraint: {"check": "indexOf>=0","Violation": "IndexOutOfBoundsException", "Desc": "Missing state checking: indexOf is negative"}
+start: substring, constraint: {"check": "int<length(String)","Violation": "IndexOutOfBoundsException", "Desc": "Missing state checking: index is larger than the length of this String object"}
+start: substring, constraint: {"check": "0<=int","Violation": "IndexOutOfBoundsException", "Desc": "Missing state checking: index is negative"}
+
+
+
+
+start: FileReader, end: exists, constraint: {"check": "exists==true", "Violation": "FileNotFoundException", "Desc": "the file does not exist"}
+start: FileReader, end: isDirectory, constraint: {"check": "isDirectory==true", "Violation": "FileNotFoundException", "Desc": "the file is a directory rather than a regular file"}
+
+start: FileReader, constraint: {"check": "within try-catch", "Violation": "FileNotFoundException", "Desc": "trigger - the named file for some reason cannot be opened"}
+
+start: read, constraint: {"check": "within try-catch", "Violation": "IOException", "Desc": "trigger - an IO error occurs"}
