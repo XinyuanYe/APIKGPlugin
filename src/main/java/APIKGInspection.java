@@ -25,12 +25,10 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
     public static final String QUICK_FIX_NAME = "SDK: " + InspectionsBundle.message("inspection.comparing.references.use.quickfix");
 
     private HashMap<Integer, MethodCallExp> methodCallExpMap = new HashMap<>();
-    
-    private static String fileName;
 
     /**
      * This method is overridden to provide a custom visitor
-     * that inspects expressions with relational operators '==' and '!='
+     * that inspects methodCall with knowledge graph
      * The visitor must not be recursive and must be thread-safe.
      *
      * @param holder     object for visitor to register problems found.
