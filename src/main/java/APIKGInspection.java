@@ -15,6 +15,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.io.*;
 import java.util.List;
+import java.util.Map;
 
 public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
 
@@ -25,7 +26,8 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
     // Defines the text of the quick fix intention
     public static final String QUICK_FIX_NAME = "SDK: " + InspectionsBundle.message("inspection.comparing.references.use.quickfix");
 
-    private HashMap<Integer, MethodCallExp> methodCallExpMap = new HashMap<>();
+    private HashMap<String, MethodCallExp> methodCallExpMap = new HashMap<>();
+    private HashMap<String, String> literalExpMap = new HashMap<>();
 
     /**
      * This method is overridden to provide a custom visitor
@@ -89,7 +91,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                 int lineNumber = getLineNumber(psiMethodCallExpression);
 
                 MethodCallExp methodCallExp = new MethodCallExp(psiMethodCallExpression, methodName, lineNumber, functionBelong);
-                methodCallExpMap.put(lineNumber, methodCallExp);
+                methodCallExpMap.put(lineNumber+"-"+methodName, methodCallExp);
 
             }
 
@@ -111,7 +113,18 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                 String functionBelong = rootFunction.getName();
 
                 MethodCallExp methodCallExp = new MethodCallExp(psiNewExpression, name, lineNumber, functionBelong);
-                methodCallExpMap.put(lineNumber, methodCallExp);
+                methodCallExpMap.put(lineNumber+"-"+name, methodCallExp);
+            }
+
+            @Override
+            public void visitLiteralExpression(PsiLiteralExpression psiLiteralExpression) {
+                super.visitLiteralExpression(psiLiteralExpression);
+
+                if (psiLiteralExpression.getParent() instanceof PsiLocalVariable) {
+                    String str = psiLiteralExpression.getText();
+                    String parent = ((PsiLocalVariable) psiLiteralExpression.getParent()).getName();
+                    literalExpMap.put(parent, str);
+                }
             }
 
         };
@@ -196,6 +209,9 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
             // check condition-checking i.e. if a value-checking or state-checking is present before start
             if (targetName.equals(start) && conditionOperator != null) {
 
+                System.out.println(target.getName());
+                System.out.println(constraint.toString());
+
                 String conditionToBeCheck = check.split(conditionOperator)[0];
                 String stateToBe = check.split(conditionOperator)[1];
 
@@ -211,52 +227,12 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                     if (result instanceof PsiIfStatement) {
                         PsiIfStatement ifStatement = (PsiIfStatement) result;
                         PsiElement psiCondition = ifStatement.getCondition();
-                        if (psiCondition instanceof PsiMethodCallExpression) {
-                            String condition = psiCondition.getText();
-                            condition = condition.replace("()", "");
-                            condition = condition.split("\\.")[condition.split("\\.").length - 1];
-                            if (!condition.equals(conditionToBeCheck)) {
-                                generateAPICaveatReport(psiElement, desc, violation, holder);
-                            }
-                        }
-                        // check if the correct condition-checking is present and is in the correct state
-                        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
-                        else if (psiCondition instanceof PsiPrefixExpression) {
-                            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiCondition;
-                            String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
-                            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiPrefixExpression.getOperand();
-                            String condition = psiMethodCallExpression.getText();
-                            condition = condition.replace("()", "");
-                            condition = condition.split("\\.")[condition.split("\\.").length - 1];
-                            if (!condition.equals(conditionToBeCheck) || !state.equals(stateToBe)) {
-                                generateAPICaveatReport(psiElement, desc, violation, holder);
-                            }
-                        }
+                        evaluateCondition(psiCondition, conditionToBeCheck, stateToBe, psiElement, desc, violation, holder);
                     }
                     else {
                         PsiWhileStatement whileStatement = (PsiWhileStatement) result;
                         PsiElement psiCondition = whileStatement.getCondition();
-                        if (psiCondition instanceof PsiMethodCallExpression) {
-                            String condition = psiCondition.getText();
-                            condition = condition.replace("()", "");
-                            condition = condition.split("\\.")[condition.split("\\.").length - 1];
-                            if (!condition.equals(conditionToBeCheck)) {
-                                generateAPICaveatReport(psiElement, desc, violation, holder);
-                            }
-                        }
-                        // check if the correct condition-checking is present and is in the correct state
-                        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
-                        else if (psiCondition instanceof PsiPrefixExpression) {
-                            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiCondition;
-                            String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
-                            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiPrefixExpression.getOperand();
-                            String condition = psiMethodCallExpression.getText();
-                            condition = condition.replace("()", "");
-                            condition = condition.split("\\.")[condition.split("\\.").length - 1];
-                            if (!condition.equals(conditionToBeCheck) || !state.equals(stateToBe)) {
-                                generateAPICaveatReport(psiElement, desc, violation, holder);
-                            }
-                        }
+                        evaluateCondition(psiCondition, conditionToBeCheck, stateToBe, psiElement, desc, violation, holder);
                     }
                 }
             }
@@ -269,6 +245,114 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                     generateAPICaveatReport(psiElement, desc, violation, holder);
                 }
             }
+
+            if (targetName.equals(start) && check.equals("char in String")) {
+                PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiElement;
+                String qualifer = psiMethodCallExpression.getMethodExpression().getQualifierExpression().getText();
+                for (Map.Entry entry : literalExpMap.entrySet()) {
+                    String parent = (String) entry.getKey();
+                    String string = (String) entry.getValue();
+
+                    if (parent.equals(qualifer)) {
+                        if (psiMethodCallExpression.getArgumentList().isEmpty()) {
+                            return;
+                        }
+                        String arg = psiMethodCallExpression.getArgumentList().getExpressions()[0].getText();
+                        if (!string.contains(arg)) {
+                            generateAPICaveatReport(psiElement, desc, violation, holder);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void evaluateCondition(PsiElement psiCondition, String conditionToBeCheck, String stateToBe, PsiElement psiElement, String desc, String violation, ProblemsHolder holder) {
+        if (psiCondition instanceof PsiMethodCallExpression) {
+            String condition = psiCondition.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (!condition.equals(conditionToBeCheck)) {
+                generateAPICaveatReport(psiElement, desc, violation, holder);
+            }
+            else if (condition.equals(conditionToBeCheck) && stateToBe.equals("false")) {
+                generateAPICaveatReport(psiElement, desc, violation, holder);
+
+            }
+        }
+        // check if the correct condition-checking is present and is in the correct state
+        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
+        else if (psiCondition instanceof PsiPrefixExpression) {
+            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) psiCondition;
+            String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
+            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiPrefixExpression.getOperand();
+            String condition = psiMethodCallExpression.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (!condition.equals(conditionToBeCheck) || !state.equals(stateToBe)) {
+                generateAPICaveatReport(psiElement, desc, violation, holder);
+            }
+        }
+        else if (psiCondition instanceof PsiBinaryExpression) {
+            PsiBinaryExpression psiBinaryExpression = (PsiBinaryExpression) psiCondition;
+            PsiExpression L = psiBinaryExpression.getLOperand();
+            PsiExpression R = psiBinaryExpression.getROperand();
+            if ((L instanceof PsiMethodCallExpression || L instanceof PsiPrefixExpression) && (R instanceof PsiMethodCallExpression || R instanceof PsiPrefixExpression)) {
+                evaluateBinaryCondition(L, R, conditionToBeCheck, stateToBe, psiElement, desc, violation, holder);
+            }
+
+        }
+    }
+
+    private void evaluateBinaryCondition(PsiElement L, PsiElement R, String conditionToBeCheck, String stateToBe, PsiElement psiElement, String desc, String violation, ProblemsHolder holder) {
+        boolean problem_detected = true;
+
+        if (L instanceof PsiMethodCallExpression) {
+            String condition = L.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (condition.equals(conditionToBeCheck) && stateToBe.equals("true")) {
+                problem_detected = false;
+            }
+        }
+        // check if the correct condition-checking is present and is in the correct state
+        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
+        else if (L instanceof PsiPrefixExpression) {
+            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) L;
+            String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
+            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiPrefixExpression.getOperand();
+            String condition = psiMethodCallExpression.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (condition.equals(conditionToBeCheck) && state.equals(stateToBe)) {
+                problem_detected = false;
+            }
+        }
+
+        if (R instanceof PsiMethodCallExpression) {
+            String condition = R.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (condition.equals(conditionToBeCheck) && stateToBe.equals("true")) {
+                problem_detected = false;
+            }
+        }
+        // check if the correct condition-checking is present and is in the correct state
+        // e.g. required checking file.exists(), !file.exists() is incorrect even though exists is present
+        else if (R instanceof PsiPrefixExpression) {
+            PsiPrefixExpression psiPrefixExpression = (PsiPrefixExpression) R;
+            String state = (psiPrefixExpression.getText().charAt(0) == '!') ? "false" : "true";
+            PsiMethodCallExpression psiMethodCallExpression = (PsiMethodCallExpression) psiPrefixExpression.getOperand();
+            String condition = psiMethodCallExpression.getText();
+            condition = condition.replace("()", "");
+            condition = condition.split("\\.")[condition.split("\\.").length - 1];
+            if (condition.equals(conditionToBeCheck) && state.equals(stateToBe)) {
+                problem_detected = false;
+            }
+        }
+
+        if (problem_detected) {
+            generateAPICaveatReport(psiElement, desc, violation, holder);
         }
     }
 
