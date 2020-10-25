@@ -41,8 +41,8 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
     @Override
     public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
 
+        // clear the hashmap before run the visitor so that hashmap is always updated
         methodCallExpMap.clear();
-
         return new JavaElementVisitor() {
 
             /**
@@ -53,6 +53,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
             private final String DESCRIPTION_TEMPLATE = "SDK " + InspectionsBundle.message("inspection.comparing.references.problem.descriptor");
 
 
+            // we do detection in this method
             @Override
             public void visitMethod(PsiMethod psiMethod) {
                 super.visitMethod(psiMethod);
@@ -92,6 +93,11 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
 
             }
 
+            /**
+             * Evaluate new expression for possible API misuse.
+             *
+             * @param psiNewExpression The expression to be evaluated.
+             */
             @Override
             public void visitNewExpression(PsiNewExpression psiNewExpression) {
                 super.visitNewExpression(psiNewExpression);
@@ -125,10 +131,12 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
 
         ArrayList<APIConstraint> constraints = checkConstraint(targetName);
 
+        // it has no API constraints, Hooray!
         if (constraints.isEmpty()) {
             return;
         }
 
+        // iterate through the constraints and check if any is violated
         for (APIConstraint constraint : constraints) {
             String start = constraint.getStart();
             String end = constraint.getEnd();
@@ -258,6 +266,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
+    // generate API misuse warning report and display it
     private void generateAPICaveatReport(PsiElement psiElement, String desc, String violation, ProblemsHolder holder) {
 
         // prevents generating duplicate API misuse report
@@ -303,7 +312,6 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
-
     // Given a methodcall that needs a condition-checking, check if it is in a IF/WHILE STMT
     private PsiElement checkConditionCheckingPresence(PsiElement psiElement) {
         PsiElement context = psiElement.getContext();
@@ -318,6 +326,8 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
+    // see if the check component of the constraint is a condition-checking and return corresponding operator
+    // otherwise, return null which means that it is not a condition checking
     private String conditionChecking(String check) {
         if (check.contains("<=")) {
             return "<=";
@@ -337,15 +347,17 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         return null;
     }
 
+    // get the line number of the code in the inspecting Java file
     private int getLineNumber(PsiElement psiElement) {
         int offset = psiElement.getTextOffset();
         return StringUtil.offsetToLineNumber(psiElement.getContainingFile().getText(), offset) + 1;
     }
 
+    // finds the root function of a method so that we know which function does it belongs to
     private PsiMethod findRootFunction(PsiElement psiElement) {
         PsiElement context = psiElement.getContext();
         if (context == null) {
-            System.out.println("HIT NULL: " + psiElement.getText());
+            System.out.println("NULL found: " + psiElement.getText());
         }
         if (context != null && !(context instanceof PsiMethod)) {
             return findRootFunction(context);
@@ -355,6 +367,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
+    // read JSON file
     public static String readJsonFile(String fileName) {
         String jsonStr = "";
         try {
@@ -376,6 +389,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
         }
     }
 
+    // Given a method element, find all the API constraints associated to it
     public static ArrayList<APIConstraint> checkConstraint(String target) {
         String path = "/Users/xinyuan/IdeaProjects/my_gradle_plugin/src/main/java/constraint.json";
         String s = readJsonFile(path);
