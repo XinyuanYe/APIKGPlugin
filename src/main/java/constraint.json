@@ -89,7 +89,7 @@
       "start": "FileReader",
       "end": "isDirectory",
       "constraint": {
-        "check": "isDirectory==true",
+        "check": "isDirectory==false",
         "Violation": "FileNotFoundException",
         "Desc": "the file is a directory rather than a regular file"
       }
