@@ -25,8 +25,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
     public static final String QUICK_FIX_NAME = "SDK: " + InspectionsBundle.message("inspection.comparing.references.use.quickfix");
 
     private HashMap<Integer, MethodCallExp> methodCallExpMap = new HashMap<>();
-    private HashMap<Integer, ConditionStmt> conditionStmtMap = new HashMap<>();
-
+    
     private static String fileName;
 
     /**
@@ -44,7 +43,7 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
     public PsiElementVisitor buildVisitor(@NotNull final ProblemsHolder holder, boolean isOnTheFly) {
 
         methodCallExpMap.clear();
-        conditionStmtMap.clear();
+
         return new JavaElementVisitor() {
 
             /**
@@ -92,42 +91,6 @@ public class APIKGInspection extends AbstractBaseJavaLocalInspectionTool {
                 methodCallExpMap.put(lineNumber, methodCallExp);
 
             }
-            /*
-            @Override
-            public void visitIfStatement(PsiIfStatement psiIfStatement) {
-                super.visitIfStatement(psiIfStatement);
-
-                String condition = psiIfStatement.getCondition().getText();
-
-                int lineNumber = getLineNumber(psiIfStatement);
-
-                PsiElement context = psiIfStatement.getContext();
-                PsiMethod rootFunction = findRootFunction(context);
-                String functionBelong = rootFunction.getName();
-
-                ConditionStmt conditionStmt = new ConditionStmt(psiIfStatement, condition, lineNumber, functionBelong);
-
-                conditionStmtMap.put(lineNumber, conditionStmt);
-
-            }
-
-            @Override
-            public void visitWhileStatement(PsiWhileStatement psiWhileStatement) {
-                super.visitWhileStatement(psiWhileStatement);
-                String condition = psiWhileStatement.getCondition().getText();
-
-                int lineNumber = getLineNumber(psiWhileStatement);
-
-                PsiElement context = psiWhileStatement.getContext();
-                PsiMethod rootFunction = findRootFunction(context);
-                String functionBelong = rootFunction.getName();
-
-                ConditionStmt conditionStmt = new ConditionStmt(psiWhileStatement, condition, lineNumber, functionBelong);
-                conditionStmtMap.put(lineNumber, conditionStmt);
-
-            }
-
-            */
 
             @Override
             public void visitNewExpression(PsiNewExpression psiNewExpression) {
